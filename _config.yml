@@ -104,3 +104,12 @@ deploy:
   type: git
   repo: git@github.com:tianxingleo/tianxingleo.github.io.git
   branch: main  # 或者 master，取决于你的 GitHub Pages 仓库设置
+
+katex:
+  enable: true
+  copy_tex: false
+  mhchem: true  # 启用化学扩展
+  cdn:
+    css: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+    js: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+    mhchem: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/mhchem.min.js
