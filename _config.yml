@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://tianxingleo.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -113,3 +113,19 @@ katex:
     css: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
     js: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
     mhchem: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/mhchem.min.js
+
+algolia:
+  appId: "66YB7CN8AP"
+  apiKey: "61956196bfa43507ef197aade2f06e78"
+  adminApiKey: "653ef56a451f5a1c02fe32c0fb6a9238"
+  chunkSize: 5000
+  indexName: "my-hexo-blog"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
