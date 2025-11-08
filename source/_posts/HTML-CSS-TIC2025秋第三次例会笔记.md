@@ -2,6 +2,10 @@
 title: HTML/CSS-TIC2025秋第三次例会笔记
 date: 2025-11-02 15:14:41
 tags:
+  - tic
+  - 前端
+  - html
+  - css
 ---
 
 # HTML

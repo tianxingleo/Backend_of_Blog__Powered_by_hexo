@@ -2,6 +2,8 @@
 title: 解决vscode写的cpp程序在控制台默认编码不一致问题
 date: 2025-10-27 09:49:07
 tags:
+  - cpp
+  - vscode
 ---
 
 

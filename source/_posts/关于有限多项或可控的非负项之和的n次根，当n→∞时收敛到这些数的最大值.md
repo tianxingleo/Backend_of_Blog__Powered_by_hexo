@@ -2,6 +2,8 @@
 title: 关于有限多项或可控的非负项之和的n次根，当n→∞时收敛到这些数的最大值
 date: 2025-10-25 21:15:17
 tags:
+  - 数学
+  - 高等数学
 ai: true
 main_color: #66ccff
 top_img: 
