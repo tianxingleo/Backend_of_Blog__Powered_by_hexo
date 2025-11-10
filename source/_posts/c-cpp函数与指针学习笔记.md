@@ -1,6 +1,8 @@
 ---
 title: c/cpp函数与指针学习笔记
 date: 2025-11-09 13:02:23
+toc: true 
+toc_number: true # 是否显示编号
 tags:
   - 大学
   - c

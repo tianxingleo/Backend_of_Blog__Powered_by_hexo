@@ -129,3 +129,9 @@ algolia:
     - slug
     - tags
     - title
+
+
+
+toc:
+  maxdepth: 2
+  class: toc
