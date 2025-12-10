@@ -215,5 +215,4 @@ ns-process-data images \
 ### 6. WSL 特有的文件系统问题
 
 - **现象：** 报错 `PIL.UnidentifiedImageError: cannot identify image file '...:Zone.Identifier'`。
-- **原因：** Windows 下载的文件带有 Web 标记（Mark of the Web）。在 WSL 中，这些标记变成了可见的 `Zone.Identifier` 文本文件。Python 的 `glob` 扫描时误将其当作图片读取。
-- **解决方案：** ```bash find . -name "*:Zone.Identifier" -type f -delete
+- **原因：** Windows 下载的文件带有 Web 标记（Mark of the Web）。在 WSL 中，这些标记变成了可见的 `Zone.Identifier` 文本文件。Python 的 `glob` 扫描时误将其当作图片读取
