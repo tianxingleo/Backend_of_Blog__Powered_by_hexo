@@ -102,7 +102,7 @@ algolia_search:
 # Crawler Admin Console: see https://crawler.algolia.com/
 # Settings: https://www.algolia.com/
 docsearch:
-  enable: true
+  enable: false
   appId: # see email
   apiKey: # see email
   indexName: # see email
@@ -480,9 +480,9 @@ footer:
       # - title: facebook
       #   link: https://www.facebook.com/profile.php?id=100092208016287&sk=about
       #   icon: anzhiyu-icon-facebook1
-       - title: RSS
-         link: atom.xml
-         icon: anzhiyu-icon-rss
+      # - title: RSS
+      #   link: atom.xml
+      #   icon: anzhiyu-icon-rss
     right:
       # - title: Github
       #   link: https://github.com/anzhiyu-c

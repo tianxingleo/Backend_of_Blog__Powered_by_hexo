@@ -477,9 +477,9 @@ footer:
       # - title: facebook
       #   link: https://www.facebook.com/profile.php?id=100092208016287&sk=about
       #   icon: anzhiyu-icon-facebook1
-       - title: RSS
-         link: atom.xml
-         icon: anzhiyu-icon-rss
+      # - title: RSS
+      #   link: atom.xml
+      #   icon: anzhiyu-icon-rss
     right:
       # - title: Github
       #   link: https://github.com/anzhiyu-c
