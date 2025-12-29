@@ -3,8 +3,10 @@ title: 计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi Di
 date: 2025-12-27 21:33:52
 tags:
   - SDFoam
-  - 计算机图形学
+  - CV
+  - CG
   - sdf
+  - 三维重建
 ---
 
 在计算机视觉与图形学的最新研究（如 CVPR/SIGGRAPH）中，**混合表征 (Hybrid Representation)** 正逐渐成为主流。SDFoam 作为其中的代表作，其核心难点往往不在于神经网络架构本身，而在于其底层采用的**计算几何 (Computational Geometry)** 结构。
