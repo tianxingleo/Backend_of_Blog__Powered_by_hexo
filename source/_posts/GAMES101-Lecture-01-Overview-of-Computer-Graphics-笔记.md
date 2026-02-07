@@ -1,15 +1,15 @@
 ---
-title: GAMES101笔记： Lecture 01 Overview of Computer Graphics & Lecture 02 Review of Linear Algebra & Lecture 03 Transformation
-date: 2026-02-01 19:11:55
+title: GAMES101笔记： Lecture 01 Overview of Computer Graphics & Lecture 02 Review of Linear Algebra & Lecture 03 Transformation & Lecture 04 Transformation Cont. 
+date: 2026-02-02 19:11:55
 tags:
   - GAMES101
   - GAMES
   - CG
 ---
 
+# Lecture 03 Transformation
+
 ## 缩放矩阵：
-
-
 
 ### 标准缩放：![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_9126def1648d71779450e6341c0329aa.webp)
 
@@ -83,6 +83,98 @@ $$\begin{pmatrix} x' \\ y' \\ w' \end{pmatrix} = \begin{pmatrix} 1 & 0 & t_x \\ 
 使用 $4 \times 4$ 矩阵进行仿射变换（affine transformations）：
 
 $$\begin{pmatrix} x' \\ y' \\ z' \\ 1 \end{pmatrix} = \begin{pmatrix} a & b & c & t_x \\ d & e & f & t_y \\ g & h & i & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix} \cdot \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$$
+
+
+
+# Lecture 04 Transformation Cont. 
+
+## 旋转矩阵的性质
+
+**旋转矩阵定义：**
+
+$$R_{\theta} = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$$
+
+**反向旋转矩阵：**
+
+$$R_{-\theta} = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} = R_{\theta}^T$$
+
+**定义推论：**
+
+$$R_{-\theta} = R_{\theta}^{-1} \text{ (by definition)}$$
+
+## 3D Transformations
+
+### Scale（缩放）
+
+$$\mathbf{S}(s_x, s_y, s_z) = \begin{pmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+### Translation（平移）
+
+$$\mathbf{T}(t_x, t_y, t_z) = \begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+### Rotation around x-, y-, or z-axis（绕 x, y, z 轴旋转）
+
+#### 绕 x 轴旋转
+
+$$\mathbf{R}_x(\alpha) = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos \alpha & -\sin \alpha & 0 \\ 0 & \sin \alpha & \cos \alpha & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+#### 绕 y 轴旋转
+
+$$\mathbf{R}_y(\alpha) = \begin{pmatrix} \cos \alpha & 0 & \sin \alpha & 0 \\ 0 & 1 & 0 & 0 \\ -\sin \alpha & 0 & \cos \alpha & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+#### 绕 z 轴旋转
+
+$$\mathbf{R}_z(\alpha) = \begin{pmatrix} \cos \alpha & -\sin \alpha & 0 & 0 \\ \sin \alpha & \cos \alpha & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+### Compose any 3D rotation from $\mathbf{R}_x, \mathbf{R}_y, \mathbf{R}_z$?（如何通过 $\mathbf{R}_x, \mathbf{R}_y, \mathbf{R}_z$ 组合成任意三维旋转？）
+
+$$\mathbf{R}_{xyz}(\alpha, \beta, \gamma) = \mathbf{R}_x(\alpha) \mathbf{R}_y(\beta) \mathbf{R}_z(\gamma)$$
+
+- **So-called Euler angles（即所谓的欧拉角）**
+- **Often used in flight simulators: roll, pitch, yaw（常用于飞行模拟器：翻滚、俯仰、偏航）**
+
+
+
+### Rodrigues' Rotation Formula（罗德里格旋转公式）
+
+#### Rotation by angle $\alpha$ around axis $\mathbf{n}$
+
+（绕轴 $\mathbf{n}$ 旋转角度 $\alpha$）
+
+$$\mathbf{R}(\mathbf{n}, \alpha) = \cos(\alpha) \mathbf{I} + (1 - \cos(\alpha)) \mathbf{n}\mathbf{n}^T + \sin(\alpha) \underbrace{\begin{pmatrix} 0 & -n_z & n_y \\ n_z & 0 & -n_x \\ -n_y & n_x & 0 \end{pmatrix}}_{\mathbf{N}}$$
+
+### 内容解析：
+
+- **$\mathbf{I}$**：单位矩阵。
+- **$\mathbf{n}\mathbf{n}^T$**：由单位旋转轴向量 $\mathbf{n}$ 构成的外积矩阵。
+- **$\mathbf{N}$**：由旋转轴向量 $\mathbf{n} = (n_x, n_y, n_z)^T$ 构建的反对称矩阵（Skew-symmetric matrix），常用于表示向量叉积运算。
+
+
+
+
+
+------
+
+## Projection Transformation（投影变换）
+
+- ### **Projection in Computer Graphics（计算机图形学中的投影）**
+
+  - 3D to 2D（从三维到二维）
+  - Orthographic projection（正交投影）
+  - Perspective projection（透视投影）
+
+| **正交投影 (Orthographic)**              | **透视投影 (Perspective)**                   |
+| ---------------------------------------- | -------------------------------------------- |
+| 正交投影示意图：立方体边线保持平行       | 透视投影示意图：立方体边线向远方收缩         |
+| 属性：保持平行线，没有“近大远小”的效果。 | 属性：符合人类视觉，存在“近大远小”的消失点。 |
+
+------
+
+
+
+
+
+
 
 
 
@@ -249,3 +341,37 @@ $$\begin{pmatrix} x' \\ y' \\ z' \\ 1 \end{pmatrix} = \begin{pmatrix} a & b & c 
 >     *   **仿射变换矩阵：** 4x4矩阵，最后一行固定为 `[0, 0, 0, 1]`。
 >     *   **矩阵结构：** 左上角3x3表示线性变换（如缩放、旋转），最后一列表示平移量(Tx, Ty, Tz)。
 >     *   **变换顺序：** 与二维情况一致，4x4的仿射变换矩阵表示的是先进行线性变换，再进行平移。
+
+
+
+> Lecture 04 Transformation Cont.
+>
+> 1.  **旋转矩阵的数学性质补充**
+>     *   旋转矩阵是**正交矩阵**，即其逆矩阵等于其转置矩阵（$M^{-1} = M^T$）。这一性质在求反向旋转变换时非常有用。
+>
+> 2.  **三维变换的基础**
+>     *   **齐次坐标**：在3D空间中使用 $(x, y, z, w)$ 表示。$w=1$ 表示点，$w=0$ 表示向量。
+>     *   **仿射变换**：使用 $4 \times 4$ 矩阵表示，涵盖了线性变换（缩放、旋转、切变）和平移。
+>     *   **欧拉角**：任何复杂的3D旋转都可以分解为绕 $x, y, z$ 三个轴旋转的组合（Roll, Pitch, Yaw）。
+>     *   **罗德里格斯旋转公式**：用于计算绕任意过原点的轴 $\mathbf{n}$ 旋转角度 $\alpha$ 的矩阵。
+>
+> 3.  **观测变换（Viewing Transformation）的概念**
+>     *   拍照过程类比为 **MVP 变换**：
+>         *   **Model transformation（模型变换）**：摆放模型。
+>         *   **View transformation（视图变换）**：架设相机。
+>         *   **Projection transformation（投影变换）**：将3D场景变为2D照片。
+>
+> 4.  **视图变换（View/Camera Transformation）**
+>     *   **定义相机**：需要位置 ($\mathbf{e}$)、观察方向 ($\mathbf{g}$) 和向上方向 ($\mathbf{t}$)。
+>     *   **标准变换**：为了简化计算，通常将相机变换到“标准位置”（原点、看向 $-Z$ 轴、向上为 $+Y$ 轴），场景中所有物体随相机同步变换。
+>
+> 5.  **正交投影（Orthographic Projection）**
+>     *   **特点**：没有“近大远小”现象，平行线保持平行。
+>     *   **操作过程**：将空间中的一个长方体 $[l, r] \times [b, t] \times [f, n]$ 平移并缩放至一个“标准立方体”（Canonical Cube，范围在 $[-1, 1]^3$）。
+>
+> 6.  **透视投影（Perspective Projection）**
+>     *   **特点**：符合人类视觉，具有“近大远小”特征，平行线会相交于一点。
+>     *   **推导思路（核心难点）**：
+>         1.  **挤压（Squish）**：先将透视投影的视锥体（Frustum）挤压成一个长方体。
+>         2.  **应用正交投影**：对挤压后的长方体应用正交投影矩阵。
+>     *   **数学推导关键**：利用**相似三角形**原理确定 $x$ 和 $y$ 的变化，并利用齐次坐标的性质（点乘以非零常数表示同一点）及“近平面不变、远平面中心点不变”的约束条件推导出最终的变换矩阵。
