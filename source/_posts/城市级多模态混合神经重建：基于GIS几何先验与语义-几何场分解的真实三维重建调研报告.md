@@ -335,28 +335,34 @@ $$\Omega = \Omega_{static} \cup \Omega_{vol} \cup \Omega_{dyn}$$
 
 ### 6.1 统一渲染方程：基于几何引导的统一光栅化 (Geometry-Guided Unified Rasterization)
 
-我们摒弃了昂贵的 Ray Marching 和复杂的积分公式。相反，我们在每一帧渲染前，根据 SDF 的零等势面（Zero-Level Set）**动态生成或更新**附着在建筑表面的 3DGS 点云。 渲染时，场景被统一视为高斯场：
+我们摒弃了昂贵的 Ray Marching 和复杂的积分公式。相反，根据 SDF 的零等势面（Zero-Level Set）**生成**附着在建筑表面的 3DGS 点云。 渲染时，场景被统一视为高斯场：
 
 $$S_{render} = \{ G_{surface} \mid G \in \Omega_{static} \} \cup \{ G_{vol} \mid G \in \Omega_{vol} \}$$
 
 其中 $G_{surface}$ 是**受约束的高斯**（位置锁定在 SDF 表面，法线锁定为 $\nabla SDF$），而 $G_{vol}$ 是**自由生长的体积高斯**（用于树木）。两者通过标准的 Tile-based Rasterizer 进行统一排序和混合，实现了真正的 60FPS+ 实时渲染。
 
-### 6.2 静态场优化：主从耦合优化 (Master-Slave Coupled Optimization)
+  光线穿过半透明的 3DGS 树叶时，透射率 $T(t)$ 会下降但不会归零；剩余能量继续前进击中 SDF 建筑表面。这实现了真正的 **“软遮挡（Soft Occlusion）”**，能够完美渲染出树影婆娑投射在墙面上的效果，彻底解决了传统 Z-buffer 在半透明边界处的锯齿问题 [Idea 2]。
 
-针对 $\Omega_{static}$（建筑/道路），为了防止光照变化和纹理细节破坏几何，我们建立了一种“几何-外观解耦”的优化机制，SDF 是“老师（Master）”，3DGS 是“学生（Slave）”：
+### 6.2 静态场优化：物理感知与本征分解 (Physics-Aware Static Optimization)
 
-1. **SDF 负责几何 (Geometry Update)**：
-   仅通过 **LiDAR Loss** ($L_{geo}$) 和 **GIS 法向约束** 来更新 SDF 网络。**注意：** 我们不再让 RGB Loss 直接更新 SDF（避免纹理把几何带偏，产生“纹理浮雕”伪影）。
+针对 $\Omega_{static}$（建筑/道路），为了防止光照变化（阴影）和材质特性（反光）破坏几何，我们引入两套全新的机制：
 
-2. **3DGS 负责外观 (Appearance Update)**：
-   通过 **RGB Rendering Loss** ($L_{rgb}$) 更新高斯球的颜色（SH）、不透明度和大小。
+**A. 多模态置信度仲裁 (Multi-modal Confidence Arbitration)**
 
-3. **表面附着约束 (Surface Attachment Constraint)**：
-   这是连接两者的桥梁。我们定义每个建筑高斯点 $p_i$ 的位置必须满足：
+我们利用 **LiDAR 强度 (Intensity)** 和 **GIS 先验** 构建动态 Loss 权重，解决“几何-视觉”冲突 [Idea 3, Idea 7]：
 
-   $$p_i = \mu_i - SDF(\mu_i) \cdot \nabla SDF(\mu_i)$$
+$$L_{static} = w(\mathbf{x}) \cdot L_{rgb} + (1 - w(\mathbf{x})) \cdot \lambda \cdot L_{geo}$$
 
-   即：高斯点始终被“钉”在 SDF 的最近表面上。当 LiDAR 优化了 SDF（墙面变平了），挂在上面的高斯点会自动跟随移动。
+- **在普通墙面（漫反射，高强度）**：$w \to 1$。网络信任图像纹理，LiDAR 仅作为弱约束。
+- **在玻璃幕墙（镜面反射，低强度/穿透）**：$w \to 0$。**冲突仲裁机制**启动。网络自动判定视觉信息为“虚像（Virtual Image）”，强制屏蔽 $L_{rgb}$，并利用 **GIS 法向约束** 和 **LiDAR 空间点** 将 SDF 表面强行“钉”在物理平面上，防止产生凹陷的伪几何 [Idea 3]。
+
+**B. LiDAR 引导的本征分解 (LiDAR-Guided Intrinsic Decomposition)**
+
+为了防止墙上的**投射阴影（Cast Shadows）**被错误重建为几何凹坑，我们采用物理分解渲染 [Idea 5]：
+
+$$C(\mathbf{x}) = \text{Albedo}(\mathbf{x}) \odot (V(\mathbf{x}) \cdot L_{sun} + L_{sky})$$
+
+- **阴影吸收机制**：利用 LiDAR 的几何真值“锁死”SDF 表面。当图像变暗但 LiDAR 显示表面平整时，网络被迫将亮度下降解释为**可见性项 $V(\mathbf{x})$** 的变化，而非几何变形。这使得提取出的 Mesh 表面异常干净，且自动获得了去阴影的 Albedo 贴图 [Idea 5]。
 
 ### 6.3 体积场优化：实例互斥与“清道夫”效应 (Instance-Aware Volumetric Optimization)
 
