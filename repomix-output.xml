@@ -71,6 +71,7 @@ source/_posts/关于回文质数筛选的优化路径.md
 source/_posts/关于有限多项或可控的非负项之和的n次根，当n→∞时收敛到这些数的最大值.md
 source/_posts/关于在-Google-Colab-平台基于-Tesla-T4-加速器全流程部署三维高斯泼溅（3DGS）技术的实施协议（2025-12）.md
 source/_posts/积分复习笔记.md
+source/_posts/极简条件下的房间3D重建，DA3与各3DGS-Pipeline方案横评.md
 source/_posts/计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi-Diagram-Delaunay-Triangulation）.md
 source/_posts/结构体，类，迭代器学习日志.md
 source/_posts/解决vscode写的cpp程序在控制台默认编码不一致问题.md
@@ -5739,7 +5740,7 @@ tags:
 
 ## Pipeline：
 
-利用GIS提供的粗糙几何作为先验约束，利用图像提供的语义信息将场景分解，针对不同属性的物体采用不同的数学表示（SDF用于刚体，Gaussian用于非刚体），并利用LiDAR增强几何约束。
+利用GIS提供的粗糙几何作为先验约束，利用图像提供的语义信息将场景分解，针对不同属性的物体采用不同的数学表示（**SDF+3DGS双重表征**用于刚体，Gaussian用于非刚体），并利用LiDAR增强几何约束。
 
 为了实现“真实三维表示”的目标，我们不能对所有物体一视同仁。城市是一个由人工规则几何体（建筑、道路）和自然不规则几何体（植被）以及动态物体（车辆）组成的复合体。因此，我们的核心理论框架是**“分而治之，混合输出”**。
 
@@ -5749,7 +5750,9 @@ $$\Omega = \Omega_{static} \cup \Omega_{vol} \cup \Omega_{dyn}$$
 
 其中：
 
-- **$\Omega_{static}$（静态几何场）**：包含建筑物、道路、人行道、围墙等具有明确表面边界（Manifold Surface）的物体。其目标输出为**Mesh**。
+- **$\Omega_{static}$（静态几何场）**：包含建筑物、道路、人行道、围墙等具有明确表面边界（Manifold Surface）的物体。其目标输出为 **Mesh + Textured Gaussian Cloud**。我们将采用**双重表征（Dual-Representation）**：
+    1. **几何骨架 (Backbone)**：使用 Neural SDF 结合 GIS/LiDAR 约束，保证表面平整和拓扑正确。
+    2. **外观皮肤 (Skin)**：使用 **Surface-Attached Gaussians**（附着于 SDF 表面的扁平高斯），负责高频纹理和实时渲染。
 - **$\Omega_{vol}$（体积场）**：包含树木、灌木、草地等具有复杂几何结构、难以用单一表面描述的物体。其目标输出为**3D Gaussians点云**。
 - **$\Omega_{dyn}$（动态场）**：包含车辆、行人等随时间变化的物体。其目标输出为**4D Animatable Models**。
 
@@ -5959,7 +5962,7 @@ $$\Omega = \Omega_{static} \cup \Omega_{vol} \cup \Omega_{dyn}$$
 
 | **子空间**            | **物理特性**                 | **推荐数学表示**                            | **优势**                                         | **对应数据先验**           |
 | --------------------- | ---------------------------- | ------------------------------------------- | ------------------------------------------------ | -------------------------- |
-| **$\Omega_{static}$** | 分段平面、刚体、不透明       | **Neural SDF** 或 **2D Gaussian Splatting** | 保证水密性（Watertight）、表面平滑、易于提取Mesh | GIS矢量底图、LiDAR平面拟合 |
+| **$\Omega_{static}$** | 分段平面、刚体、不透明       | **Dual-Rep (SDF + Surface 3DGS)**           | **优势**：既拥有 SDF 的**几何物理属性**（可用于 GIS 测绘、碰撞检测），又拥有 3DGS 的**实时渲染速度**和**照片级质感**。 | GIS矢量底图、LiDAR平面拟合 |
 | **$\Omega_{vol}$**    | 高频细节、半透明、无明确边界 | **3D Gaussian Splatting**                   | 渲染速度快、能表现毛发/树叶的微观结构            | 图像语义分割、LiDAR离散点  |
 | **$\Omega_{dyn}$**    | 刚体/非刚体运动              | **Deformable 3DGS** (Street Gaussians)      | 支持解耦编辑、重放                               | 视频跟踪、车辆CAD模型库    |
 
@@ -6055,13 +6058,13 @@ $$\Omega = \Omega_{static} \cup \Omega_{vol} \cup \Omega_{dyn}$$
 
 我们提出 **“交互式混合光线投射（Interleaved Hybrid Ray Marching）”** [Idea 2]，在一个统一的可微渲染管线中，同时优化隐式表面（SDF）和显式体积（3DGS），并通过物理约束实现二者的**几何互斥**与**视觉解耦**。
 
-### 6.1 统一渲染方程：交互式光线投射 (Interleaved Ray Marching)
+### 6.1 统一渲染方程：基于几何引导的统一光栅化 (Geometry-Guided Unified Rasterization)
 
-为了实现像素级的无缝融合，我们设计了一条统一的光线 $r(t)$。它在穿过空间时，会同时与 3D 高斯球（植被）和 SDF 零等势面（建筑）发生相互作用 [Idea 2]。
+我们摒弃了昂贵的 Ray Marching 和复杂的积分公式。相反，根据 SDF 的零等势面（Zero-Level Set）**生成**附着在建筑表面的 3DGS 点云。 渲染时，场景被统一视为高斯场：
 
-$$C(r) = \int_{t_n}^{t_f} T(t) \cdot \left( \underbrace{\sigma_{SDF}(t)c_{SDF}(t)}_{\text{Static Surface}} + \underbrace{\sum_{i} \alpha_i G_i(t) c_i}_{\text{Volumetric Instances}} \right) dt$$
+$$S_{render} = \{ G_{surface} \mid G \in \Omega_{static} \} \cup \{ G_{vol} \mid G \in \Omega_{vol} \}$$
 
-- **透射率耦合 (Transmittance Coupling)**：
+其中 $G_{surface}$ 是**受约束的高斯**（位置锁定在 SDF 表面，法线锁定为 $\nabla SDF$），而 $G_{vol}$ 是**自由生长的体积高斯**（用于树木）。两者通过标准的 Tile-based Rasterizer 进行统一排序和混合，实现了真正的 60FPS+ 实时渲染。
 
   光线穿过半透明的 3DGS 树叶时，透射率 $T(t)$ 会下降但不会归零；剩余能量继续前进击中 SDF 建筑表面。这实现了真正的 **“软遮挡（Soft Occlusion）”**，能够完美渲染出树影婆娑投射在墙面上的效果，彻底解决了传统 Z-buffer 在半透明边界处的锯齿问题 [Idea 2]。
 
@@ -6125,11 +6128,10 @@ $$C(\mathbf{x}) = \text{Albedo}(\mathbf{x}) \odot (V(\mathbf{x}) \cdot L_{sun} +
 
 1. **高保真几何提取 (Geometry Extraction)**：
    - **核心变更**：我们不再将 2DGS 转化为 TSDF，而是直接对 **Residual SDF** 的零水平集（Zero-level set）应用 Marching Cubes 算法。
-   - **优势**：由于在阶段三引入了 LiDAR 强度仲裁和 GIS 平面约束，提取出的建筑 Mesh 在白墙区域平整、在玻璃幕墙区域无噪点，且自动保持了水密性（Watertight），无需繁琐的后处理修补 **[Idea 1]**。
-2. **本征纹理烘焙 (Intrinsic Texture Baking)**：
-   - **核心变更**：我们不烘焙带有光照的 RGB 颜色，而是烘焙 **Albedo（反照率）** 贴图。
-   - **机制**：根据 **[Idea 5]** 的物理分解结果，我们将优化得到的 Albedo 场映射到 Mesh 的 UV 上。
-   - **价值**：导出的资产自带“去阴影（De-shadowing）”效果。这使得我们在 Demo 平台中可以自由改变太阳位置（Relighting），而不会出现“静态阴影”与“动态阴影”冲突的穿帮现象。
+   - **优势**：提取出的建筑 Mesh 在白墙区域平整、在玻璃幕墙区域无噪点，且自动保持了水密性（Watertight），**作为完美的“白模”底座**。
+2. **纹理烘焙与资产格式 (Texture Baking & Asset Format)**：
+   - **核心变更**：我们不再是简单的烘焙一张图，而是直接将优化好的 **Surface Gaussians** 烘焙到 Mesh 的 UV 贴图上，或者直接导出为一种新型资产格式 **"Mesh + 3DGS Skin"**。
+   - **价值**：Mesh 提供了物理碰撞和遮挡关系，而挂在上面的 Surface Gaussians 提供了照片级的视觉质感（包含各向异性反光），完美兼容现有的工业界流程（如 Nvidia 的最新研究方向）。
 3. **GIS 数据库的反向更新 (GIS Database Update)**：
    - **核心变更**：重建不仅是单向的，我们利用 **Geo-Gaussian [Idea 8]** 的优化结果反哺 GIS。
    - **内容**：将优化后的高斯协方差矩阵解析为树木的**精确冠幅（Crown Radius）和高度**，并将这些属性写回 GIS 数据库（如 CityGML）。这将粗糙的“点位”数据升级为带有精确形态属性的“实例”数据。
@@ -6233,7 +6235,7 @@ $$C(\mathbf{x}) = \text{Albedo}(\mathbf{x}) \odot (V(\mathbf{x}) \cdot L_{sun} +
 
 1. **从“从零学习”到“残差修补”**：利用 **[Idea 1]** 的 GIS 残差 SDF，我们证明了城市重建不应是无中生有，而应是对粗糙先验的精细化变形，这从根本上解决了白墙与弱纹理区域的重建难题。
 2. **从“数据融合”到“物理仲裁”**：通过 **[Idea 3 & 7]** 的强度感知机制，我们赋予了算法“质疑数据”的能力。在玻璃与反光区域，算法敢于**“抛弃视觉，信任物理”**，从而突破了神经渲染在镜面世界中的理论瓶颈。
-3. **从“混合拼接”到“耦合生长”**：利用 **[Idea 2 & 8]** 的交互式渲染与 Geo-Gaussian，我们实现了刚体（建筑）与非刚体（植被）在数学上的统一与互斥，输出了结构化、可编辑的 **[Idea 4]** 场景图资产。
+3. **从“混合拼接”到“双重表征”**：我们提出了**“SDF 引导的 Surface Gaussians”**。利用 **[Master-Slave]** 耦合优化，我们结合了 SDF 的几何物理属性与 3DGS 的实时渲染能力，彻底解决了“几何模糊”与“渲染低效”的矛盾，输出了结构化、可编辑的 **[Idea 4]** 场景图资产。
 
 最终，本方案产出的不再仅仅是一段逼真的视频，而是一个**物理属性解耦、几何拓扑正确、语义实例清晰**的“可计算城市底座”。这为未来的城市仿真、自动驾驶模拟以及元宇宙内容生产提供了坚实的技术地基。
 
@@ -8457,6 +8459,225 @@ $$ I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx = \int_0^{\frac{\pi}{2}} \cos^n x dx
 1. $\frac{1}{2}\rho^2$; $y^2(x)$; $x|y(x)|$
 2. $\sqrt{1+y'^2}$; $\sqrt{x'^2+y'^2}$; $\sqrt{\rho^2+(\rho')^2}$
 3. $\frac{\pi}{2}$
+</file>
+
+<file path="source/_posts/极简条件下的房间3D重建，DA3与各3DGS-Pipeline方案横评.md">
+---
+title: 极简条件下的房间3D重建，DA3与各3DGS Pipeline方案横评
+date: 2026-02-20 16:21:03
+tags:
+  - 3DGS
+  - SDF
+  - Depth Anything 3
+  - CG
+  - CV
+---
+
+# 极少素材极低质量的极端情况下房间三维重建不同Pipeline对比
+
+在推进个人 3D 记忆库构建的过程中，我们经常会遇到一个棘手的问题：日常随手记录的视频往往是不完美的。我们无法像实验室里那样，架设专业设备去获取无死角、高分辨率的素材。 如果只有一段极少视角的手机视频、极低画质、再加上满屋子的白墙和反光地板，三维重建还能做吗？ 传统的 SfM（如 COLMAP）在这种大面积弱纹理场景下往往直接宣告失败。为了探寻在**极少素材、极低质量**的极端情况下的最佳解决方案，我在本地（RTX 5070 12G）对目前主流的几种结合深度先验的 3DGS Pipeline 进行了横向对比测试。
+
+## 素材
+
+手机拍摄视频，抽取165张约500*700的照片，焦段15mm广角镜头（极少素材极低质量的极端情况）
+
+## 训练环境
+
+12600kF + RTX5070 12G + 64G RAM
+
+## Depth Anything 3
+
+### 720P原图（多白墙，多噪点，低清晰度）：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_3d0dd1f7dc1b5b8547ae0312d097278a.webp)
+
+### DA3 stream 单目深度图（准确性高）：
+
+![image-20260220153206893](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153206893.png)
+
+![image-20260220153226383](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153226383.png)
+
+## Depth Anything 3+DepthSplat（优先级1）
+
+### 处理时间
+
+1.5min+1s
+
+### 正面：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_a8d633748ae490da40a73ef14fd72cd0.webp)
+
+### 外面：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_73014c3c7c3c64d00d7cc8cf7f47c4f4.webp)
+
+### 优缺点
+
+优点：干净。快速。有Mesh
+
+缺点：对于没拍到或者没拍好的地方会断裂
+
+## Depth Anything 3+DN-Splatter 30k迭代（优先级2）
+
+### 处理时间：
+
+1.5min+30min~1h
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_9a89026981c4cf91e815a5155502a8d4.webp)
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_c965149975a8fef85052458fadc756d1.webp)
+
+### 优缺点：
+
+优点：内部细节丰富，外部相对干净，唯一一个几乎无断裂的（包括基本没有拍到的地板或者反光严重的地板）
+
+缺点：视觉效果还是不算满意
+
+## Depth Anything 3+原生3DGS 迭代30000步
+
+### 优缺点：
+
+1.5min+15min
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_96b3b30d409d434095f1c82d341ea0bb.webp)
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_abf277c3c374d9bd2bcc3473e3b5eac7.webp)
+
+### 优缺点：
+
+优点：没有什么空洞
+
+缺点：有点模糊不清。模型太大约900mb
+
+## COLMAP+SuGaR  SDF模式（非SDF模式如Mesh模式和无约束模式都是重建失败）Part3 15000步迭代
+
+### 训练时间：
+
+约1.5h
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_05e88c77d03d3e60f31ca8ca3f275e35.webp)
+
+### 外部：
+
+![image-20260220145423262](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220145423262.png)
+
+### 优缺点：
+
+优点：传统COLMAP下唯一内成功的
+
+缺点：太慢了，太破碎了
+
+## COLMAP+SuGaR  SDF模式（非SDF模式如Mesh模式和无约束模式都是重建失败）Part3 30000步迭代
+
+### 训练时间：
+
+1.5h+
+
+## 内部：
+
+支离破碎没法看
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_cd527cbfd8bbfb7d2a1d51e02c2ef732.webp)
+
+### 优缺点：
+
+优点：整个房间基本都有高斯椭球覆盖，比15000步的多
+
+缺点：漂浮的椭球过多，完全不能看；太慢了
+
+## COLMAP+原生3DGS，迭代5k步，24mm主设拍摄（只有这个素材是24mm，其他都是15mm广角）
+
+### 训练时间：
+
+约20min
+
+### 内部：
+
+![image-20260220150244539](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150244539.png)
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_111e2324d43e8bc0e64592ed971624bf.webp)
+
+### 优缺点
+
+优点：内部细节还行
+
+缺点：整个房间只有一半重建成功，另一半断裂，房间外太凌乱
+
+## COLMAP+原生3DGS，迭代15k步，15mm广角拍摄
+
+### 训练时间：
+
+约15min
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_b31087952912b9f0843e17a4cb604d37.webp)
+
+### 外部：
+
+![image-20260220150756550](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150756550.png)
+
+### 优缺点：
+
+优点：COLMAP不断裂了
+
+缺点：内部细节不足，外部凌乱
+
+## Depth Anything 3+2DGS 3w步
+
+### 训练时间：
+
+1.5min+30min~1h
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_ab25060e9be6192e4a8fa3107b4f3a6a.webp)
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_0d5094b581880fc046e1c087d08a8d89.webp)
+
+### 优缺点：
+
+优点：外部相对干净
+
+特点：内部看像是在看mesh
+
+缺点：内部细节不足
+
+## Depth Anything 3+SuGaR
+
+### 训练时长：
+
+1.5min+1.5h
+
+### 内部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_101bb0e71a1e83913583aa123ef90a7a.webp)
+
+### 外部：
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_ee8b59be3a192215a519d3df05c90816.webp)
+
+### 优缺点：
+
+优点：外部相对干净，内部细节还行
+
+缺点：内部不够整洁，耗时太多
 </file>
 
 <file path="source/_posts/计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi-Diagram-Delaunay-Triangulation）.md">
