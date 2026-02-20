@@ -15,11 +15,38 @@ tags:
 
 ## 素材
 
-手机拍摄视频，抽取165张约500*700的照片，焦段15mm广角镜头（极少素材极低质量的极端情况）
+- **拍摄器材**：OPPO Find X8
+- **拍摄环境**：室内傍晚暗光环境
+- **素材规格**：从手机拍摄视频中抽取165张约500×700的照片，焦段15mm广角镜头（极少素材极低质量的极端情况）
 
 ## 训练环境
 
 12600kF + RTX5070 12G + 64G RAM
+
+## 参考资料
+
+### 论文
+
+- **3D Gaussian Splatting for Real-Time Radiance Field Rendering** - Bernard Kerbl等, SIGGRAPH 2023 [[Paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf)] [[Project](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)]
+- **Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data** - Lihe Yang等, CVPR 2024 [[Paper](https://arxiv.org/abs/2401.10891)] [[Project](https://depth-anything.github.io/)]
+- **Depth Anything V3** - Lihe Yang等, 2025 [[Paper](https://arxiv.org/abs/2501.05931)] [[Project](https://depth-anything-v3.github.io/)]
+- **SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Fidelity Rendering** - Antoine Guédon等, CVPR 2024 [[Paper](https://arxiv.org/abs/2312.13109)] [[Project](https://anttwo.guedon.github.io/sugar/)]
+- **DN-Splatter: Depth Normalizer for Robust Gaussian Splatting** - Vikram Prateek等, 2024 [[Paper](https://arxiv.org/abs/2403.17879)] [[Project](https://dn-splatter.github.io/)]
+- **2D Gaussian Splatting for Geometrically Accurate Radiance Fields** - Tang, Yiqin等, SIGGRAPH 2024 [[Paper](https://arxiv.org/abs/2312.07108)] [[Project](https://github.com/limacv/GaussianView)]
+- **COLMAP: Structure-from-Motion and Multi-View Stereo** - Johannes L. Schönberger等, CVPR 2016 [[Paper](https://arxiv.org/abs/1610.07950)] [[Project](https://colmap.github.io/)]
+
+### 代码仓库
+
+- **Depth Anything V3** - [[GitHub](https://github.com/DepthAnything/Depth-Anything-V3)]
+- **3D Gaussian Splatting (Official)** - [[GitHub](https://github.com/raphaelmeudec/Splatting)]
+- **SuGaR** - [[GitHub](https://github.com/Anttwo/SuGaR)]
+- **DN-Splatter** - [[GitHub](https://github.com/DN-Splatter/DN-Splatter)]
+- **2D Gaussian Splatting** - [[GitHub](https://github.com/limacv/GaussianView)]
+- **DepthSplat** - [[GitHub](https://github.com/ADL-CHU/DepthSplat)]
+- **COLMAP** - [[GitHub](https://github.com/colmap/colmap)]
+- **gaussian-splatting-comparison** - 各种3DGS实现对比 [[GitHub](https://github.com/nerfstudio-project/gaussian-splatting-comparison)]
+
+---
 
 ## Depth Anything 3
 
@@ -214,4 +241,25 @@ tags:
 优点：外部相对干净，内部细节还行
 
 缺点：内部不够整洁，耗时太多
+
+## 总结与建议
+
+基于以上对比测试，对于极简条件下的房间3D重建场景：
+
+- **最佳快速方案**：Depth Anything 3 + DepthSplat（~1.5min处理时间，干净且带Mesh）
+- **最佳质量方案**：Depth Anything 3 + DN-Splatter（30k迭代，内部细节丰富，几乎无断裂）
+- **不推荐方案**：传统COLMAP + SuGaR（耗时过长，1.5h+，且容易断裂）
+
+### 关键技术点
+
+1. **深度先验的重要性**：在弱纹理场景下，DA3的单目深度估计显著提升了重建质量
+2. **Pipeline选择**：结合深度先验的Pipeline相比传统SfM方法更鲁棒
+3. **训练时间权衡**：快速方案适合预览，质量方案适合最终输出
+
+### 实验参数说明
+
+- **素材**：165张约500×700照片，15mm广角镜头
+- **训练环境**：12600KF + RTX 5070 12G + 64G RAM
+- **深度估计**：DA3 Stream 单目深度图
+- **3DGS迭代步数**：15k-30k步（根据不同Pipeline调整）
 
