@@ -56,9 +56,9 @@ tags:
 
 ### DA3 stream 单目深度图（准确性高）：
 
-![image-20260220153206893](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153206893.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_3cc2f07120cbba149ca80859ddb1f64c.webp)
 
-![image-20260220153226383](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153226383.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_7e7a1b3007c2065f79ef5522de7f8fd2.webp)
 
 ## Depth Anything 3+DepthSplat（优先级1）
 
@@ -132,7 +132,7 @@ tags:
 
 ### 外部：
 
-![image-20260220145423262](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220145423262.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_dfc3596887047cfa8cbe84234d3ba890.webp)
 
 ### 优缺点：
 
@@ -168,7 +168,7 @@ tags:
 
 ### 内部：
 
-![image-20260220150244539](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150244539.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_608cbb59a995c0ca55568305326c6ecb.webp)
 
 ### 外部：
 
@@ -192,7 +192,7 @@ tags:
 
 ### 外部：
 
-![image-20260220150756550](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150756550.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_fe6603b819013a49cd8f4e0821dbc958.webp)
 
 ### 优缺点：
 
