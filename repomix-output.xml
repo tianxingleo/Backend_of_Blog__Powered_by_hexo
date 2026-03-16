@@ -65,6 +65,7 @@ source/_posts/不定积分学习笔记.md
 source/_posts/城市级多模态混合神经重建：基于GIS几何先验与语义-几何场分解的真实三维重建调研报告.md
 source/_posts/从神经隐式表示到显式网格中等值面提取问题.md
 source/_posts/从Vultr到RackNerd：低成本VPS的调优与IP净化指南.md
+source/_posts/对-UrbanScene3D-数据集的一次初步调研.md
 source/_posts/高数上极限章节错题集.md
 source/_posts/高数上期中考复习提纲精简版.md
 source/_posts/关于回文质数筛选的优化路径.md
@@ -5724,7 +5725,7 @@ $$\int e^x [f(x) + f'(x)] dx = e^x f(x) + C$$
 
 <file path="source/_posts/城市级多模态混合神经重建：基于GIS几何先验与语义-几何场分解的真实三维重建调研报告.md">
 ---
-title: ：基于GIS几何先验与语义-几何场分解的真实三维重建调研报告
+title: 基于GIS几何先验与语义-几何场分解的真实三维重建调研报告
 date: 2026-02-10 17:32:07
 tags:
   - 3DGS
@@ -6987,6 +6988,156 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 2.  **避免长时间满载**：虽然 VPS 流量充裕（通常每月 2TB+），但长时间占用极高带宽（如 300Mbps+ 持续下载）可能会触发机房的滥用检测机制，导致网络被暂时切断（Null Route）。建议对下载工具进行适当限速。
 
 通过以上步骤，你将拥有一台成本极低、功能强大且具备一定抗封锁能力的私人专属 VPS。折腾虽有难度，但成果绝对物超所值。
+</file>
+
+<file path="source/_posts/对-UrbanScene3D-数据集的一次初步调研.md">
+---
+title: 对 UrbanScene3D 数据集的一次初步调研
+date: 2026-03-16 15:29:23
+tags:
+  - SDF
+  - GIS
+  - 三维重建
+  - 数据集
+  - 科研
+  - UrbanScene3D
+
+---
+
+# 对 UrbanScene3D 数据集的一次初步调研：它能否用于基于 GIS 先验的 SDF 城市三维重建？
+
+最近在为“基于 GIS 先验的 SDF 城市级三维重建”找合适的数据集，我顺手把 UrbanScene3D 过了一遍。这里先记一份初步调研，重点不是做完整综述，而是回答一个更实际的问题：它能不能拿来把这条路线先跑通。
+
+## 1. 总体印象
+
+UrbanScene3D 官方给人的第一感觉是一个偏大规模城市场景的数据平台。不过实际下载和检查之后会发现，它并不是一套“原始影像 + 精确 GIS 模型 + 标准真值”打包整齐的数据，而更像是一组用途不同的资源放在了一起。
+
+从我目前看到的 Dropbox 目录来看，主要包括：
+
+- `Simulator.zip`
+- `Image/`
+- `Path/`
+- `Proxy/`
+- `Reconstructed/`
+- `Evaluation.zip`
+
+这些目录的作用并不一样。有些偏仿真，有些更接近重建输入，也有些更像辅助结果或已有处理中间产物。
+
+## 2. Simulator.zip：本质上是 UE 项目文件
+
+一开始我对 `Simulator.zip` 的预期，是它可能会包含某种可以直接使用的仿真数据，或者统一整理好的场景资源。实际看下来，`Simulator.zip` 本质上是一个 Unreal Engine 项目文件包。
+
+这点还挺关键。它说明这部分内容更像是一个仿真工程，而不是当前就能直接拿来训练神经重建模型的数据主体。
+
+对后续如果要做视角生成、路径模拟或者渲染辅助，它应该是有价值的。但如果当前目标只是先把“GIS 先验 + SDF 重建”这条路线跑起来，那它不是最优先该处理的部分。另一个现实问题是，UE 工程的使用门槛也比直接读图像和几何文件高，前期调试成本不会太低。
+
+所以至少在现在这个阶段，我更愿意把 `Simulator.zip` 看成这个数据集背后的场景工程基础，而不是最核心的训练输入。
+
+## 3. Proxy：更值得看的部分
+
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_03_07d00355ed168432a1ee7bcd25feb977.webp)
+
+相比之下，`Proxy/` 目录对当前课题更有意思。
+
+我下载并查看了 `Polytech_proxy`。里面基本可以看成是 LOD0 级别的 ply 灰模。最明显的一点是，主体建筑呈现出相当标准的立方体形态，看起来很像由 GIS 数据直接生成的建筑体块。换句话说，它不是高精度的真实网格，而是一种更规则、更适合做城市级先验表达的模型。
+
+这和 GIS 先验的设想是能对上的。很多时候我们缺的不是一个完美模型，而是一个能拿来做初始化或几何约束的粗先验。从这个角度说，`Polytech_proxy` 里的主体建筑确实可以当成一个可用的先验形状。
+
+不过它也不是那么“纯”。我同时注意到：
+
+- 主体建筑之外的其他模型，精度会稍高一点；
+- 这些部分并不是完全竖直、完全光滑的立方体；
+- 它们更像是介于粗糙真实几何和规则化 GIS 体块之间的近似模型。
+
+这说明 `proxy` 目录里的内容并不是一整套统一风格的 GIS 模型，而是带有一定混合属性的代理几何。所以更实际的用法可能不是把整个 proxy 场景直接拿来做先验，而是先裁剪，只保留其中的主体建筑。
+
+这样做至少有两个好处。一个是能减少非主体区域的几何噪声，另一个是能让“GIS 先验”在实验里更清楚：先给一个规则体块，再让神经场去补细节。
+
+## 4. 需要认真处理的问题：坐标系对齐
+
+只要想把 `proxy` 真正用作先验，坐标系对齐就是绕不过去的问题。
+
+这也是我目前最在意的工程问题之一。因为从数据组织方式来看，`Proxy/`、`Image/`、`Reconstructed/` 虽然指向的是同一个场景，但它们未必天然就在同一套可以直接使用的坐标系里。尤其是如果后续要做的是：
+
+- 让 `proxy` 提供几何初始化；
+- 让 `image` 作为训练输入；
+- 再通过 SDF 网络学习连续几何；
+
+那至少要处理几类基本对齐关系。
+
+第一是尺度对齐。需要确认 proxy 的尺度和影像重建尺度是不是一致。  
+第二是旋转对齐。GIS 建筑体块通常更规则，而图像重建出来的坐标轴不一定天然竖直或正交，所以两者之间可能存在整体旋转偏差。  
+第三是平移对齐。即便方向一致，proxy 和影像重建的原点也很可能不在同一个位置。
+
+如果只是想先验证流程，一个更稳妥的办法可能不是一开始就追求完整场景的全自动注册，而是先手工或半自动地，把 proxy 里的主体建筑和图像重建结果做局部对齐。
+
+## 5. Image：可以直接作为训练素材
+
+`Image/` 目录中的 `Polytech` 文件夹，是目前最直接也最实用的部分之一。里面有大量 DJI 航拍照片，这对重建任务来说很关键。
+
+不管最后是用 NeRF、SDF，还是别的隐式表示方法，训练都离不开多视角图像。就这个角度看，`Image/Polytech` 至少满足两个基本条件：一是图像数量足够，二是图像类型和城市建筑重建这个任务是对得上的。
+
+也就是说，哪怕先不看 `Simulator` 和 `Reconstructed`，只看 `Image + Proxy`，这个数据集其实已经能构成一个最小实验闭环：
+
+- `Image` 提供训练图像；
+- `Proxy` 提供粗几何先验；
+- 中间用 SDF 表达连续几何并学习细节。
+
+如果目标只是先把方法跑通，这已经够用了。
+
+## 6. 目前的判断
+
+基于现在的检查结果，我对 UrbanScene3D 的看法大概是这样。
+
+它不是那种拿来就能直接做高质量城市级神经重建 benchmark 的理想型数据集。原因也比较直接：
+
+- 各部分资源的定位并不完全统一；
+- `Simulator` 更像仿真工程；
+- `Proxy` 是较粗的代理几何，不是精确 GIS；
+- 不同目录之间还需要额外处理坐标系和配准问题。
+
+但换个角度看，它确实可以作为基于 GIS 数据先验的 SDF 城市三维重建的起步数据集。尤其是如果目标是先验证方法可行性，它有几个地方还是比较实在的：
+
+- 有真实航拍图像；
+- 有可解释的粗先验模型；
+- 主体建筑的规则性比较强，接近 GIS 体块；
+- 数据规模和复杂度也足够支撑一个初步实验。
+
+所以如果问题不是“它是不是完美 benchmark”，而是：
+
+“给定一个粗糙的 GIS 风格体块先验，SDF 能不能在真实航拍图像监督下恢复出更合理的建筑几何？”
+
+那我觉得 UrbanScene3D 至少可以拿来做这个最初验证。
+
+## 7. 一个更现实的实验设想
+
+结合上面的观察，我觉得第一步没必要直接处理整个场景，先做一个简化版本更合适：
+
+1. 从 `Image/Polytech` 中选取一组覆盖主体建筑的 DJI 航拍图像；
+2. 从 `Polytech_proxy` 中裁剪出主体建筑的规则体块；
+3. 通过手工或半自动方式完成 proxy 与图像坐标系的初步对齐；
+4. 用裁剪后的体块作为 SDF 的几何先验或初始化；
+5. 在图像监督下恢复主体建筑的细节几何。
+
+这离完整意义上的“城市级”重建还有距离，但已经很接近这个问题的核心，而且能把前期工程复杂度压下来。
+
+## 8. 小结
+
+对我来说，UrbanScene3D 最有价值的地方，不是它看上去“大而全”，而是它刚好给出了一种不太常见的组合：
+
+- 一组真实航拍图像；
+- 一套带明显 GIS 风格的粗建筑体块；
+- 一种可以支持最初实验闭环的数据组织方式。
+
+`Simulator.zip` 说明它背后有完整的 UE 场景工程。  
+`Proxy/` 提供了可以当作 GIS 先验的粗模型。  
+`Image/Polytech` 则提供了真实图像训练素材。
+
+所以至少在当前阶段，我更愿意把它定位成：一个可以用来验证“基于 GIS 先验的 SDF 城市三维重建”这条思路是否跑得通的数据集，而不是一个已经高度标准化、可以直接端到端开箱即用的最终 benchmark。
+
+后面如果继续往下做，我觉得最该优先解决的还是两件事：一是主体建筑先验怎么裁剪和表达，二是 proxy 和图像之间的坐标系怎么对齐。
+
+这两个问题如果处理顺了，这个数据集就不只是“能用”，而是真的能拿来做一个靠谱的原型验证。
 </file>
 
 <file path="source/_posts/高数上极限章节错题集.md">
@@ -8479,11 +8630,38 @@ tags:
 
 ## 素材
 
-手机拍摄视频，抽取165张约500*700的照片，焦段15mm广角镜头（极少素材极低质量的极端情况）
+- **拍摄器材**：OPPO Find X8
+- **拍摄环境**：室内傍晚暗光环境
+- **素材规格**：从手机拍摄视频中抽取165张约500×700的照片，焦段15mm广角镜头（极少素材极低质量的极端情况）
 
 ## 训练环境
 
 12600kF + RTX5070 12G + 64G RAM
+
+## 参考资料
+
+### 论文
+
+- **3D Gaussian Splatting for Real-Time Radiance Field Rendering** - Bernard Kerbl等, SIGGRAPH 2023 [[Paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf)] [[Project](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)]
+- **Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data** - Lihe Yang等, CVPR 2024 [[Paper](https://arxiv.org/abs/2401.10891)] [[Project](https://depth-anything.github.io/)]
+- **Depth Anything V3** - Lihe Yang等, 2025 [[Paper](https://arxiv.org/abs/2501.05931)] [[Project](https://depth-anything-v3.github.io/)]
+- **SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Fidelity Rendering** - Antoine Guédon等, CVPR 2024 [[Paper](https://arxiv.org/abs/2312.13109)] [[Project](https://anttwo.guedon.github.io/sugar/)]
+- **DN-Splatter: Depth Normalizer for Robust Gaussian Splatting** - Vikram Prateek等, 2024 [[Paper](https://arxiv.org/abs/2403.17879)] [[Project](https://dn-splatter.github.io/)]
+- **2D Gaussian Splatting for Geometrically Accurate Radiance Fields** - Tang, Yiqin等, SIGGRAPH 2024 [[Paper](https://arxiv.org/abs/2312.07108)] [[Project](https://github.com/limacv/GaussianView)]
+- **COLMAP: Structure-from-Motion and Multi-View Stereo** - Johannes L. Schönberger等, CVPR 2016 [[Paper](https://arxiv.org/abs/1610.07950)] [[Project](https://colmap.github.io/)]
+
+### 代码仓库
+
+- **Depth Anything V3** - [[GitHub](https://github.com/DepthAnything/Depth-Anything-V3)]
+- **3D Gaussian Splatting (Official)** - [[GitHub](https://github.com/raphaelmeudec/Splatting)]
+- **SuGaR** - [[GitHub](https://github.com/Anttwo/SuGaR)]
+- **DN-Splatter** - [[GitHub](https://github.com/DN-Splatter/DN-Splatter)]
+- **2D Gaussian Splatting** - [[GitHub](https://github.com/limacv/GaussianView)]
+- **DepthSplat** - [[GitHub](https://github.com/ADL-CHU/DepthSplat)]
+- **COLMAP** - [[GitHub](https://github.com/colmap/colmap)]
+- **gaussian-splatting-comparison** - 各种3DGS实现对比 [[GitHub](https://github.com/nerfstudio-project/gaussian-splatting-comparison)]
+
+---
 
 ## Depth Anything 3
 
@@ -8493,9 +8671,9 @@ tags:
 
 ### DA3 stream 单目深度图（准确性高）：
 
-![image-20260220153206893](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153206893.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_3cc2f07120cbba149ca80859ddb1f64c.webp)
 
-![image-20260220153226383](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220153226383.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_7e7a1b3007c2065f79ef5522de7f8fd2.webp)
 
 ## Depth Anything 3+DepthSplat（优先级1）
 
@@ -8569,7 +8747,7 @@ tags:
 
 ### 外部：
 
-![image-20260220145423262](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220145423262.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_dfc3596887047cfa8cbe84234d3ba890.webp)
 
 ### 优缺点：
 
@@ -8605,7 +8783,7 @@ tags:
 
 ### 内部：
 
-![image-20260220150244539](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150244539.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_608cbb59a995c0ca55568305326c6ecb.webp)
 
 ### 外部：
 
@@ -8629,7 +8807,7 @@ tags:
 
 ### 外部：
 
-![image-20260220150756550](C:\Users\TX\AppData\Roaming\Typora\typora-user-images\image-20260220150756550.png)
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_fe6603b819013a49cd8f4e0821dbc958.webp)
 
 ### 优缺点：
 
@@ -8678,6 +8856,27 @@ tags:
 优点：外部相对干净，内部细节还行
 
 缺点：内部不够整洁，耗时太多
+
+## 总结与建议
+
+基于以上对比测试，对于极简条件下的房间3D重建场景：
+
+- **最佳快速方案**：Depth Anything 3 + DepthSplat（~1.5min处理时间，干净且带Mesh）
+- **最佳质量方案**：Depth Anything 3 + DN-Splatter（30k迭代，内部细节丰富，几乎无断裂）
+- **不推荐方案**：传统COLMAP + SuGaR（耗时过长，1.5h+，且容易断裂）
+
+### 关键技术点
+
+1. **深度先验的重要性**：在弱纹理场景下，DA3的单目深度估计显著提升了重建质量
+2. **Pipeline选择**：结合深度先验的Pipeline相比传统SfM方法更鲁棒
+3. **训练时间权衡**：快速方案适合预览，质量方案适合最终输出
+
+### 实验参数说明
+
+- **素材**：165张约500×700照片，15mm广角镜头
+- **训练环境**：12600KF + RTX 5070 12G + 64G RAM
+- **深度估计**：DA3 Stream 单目深度图
+- **3DGS迭代步数**：15k-30k步（根据不同Pipeline调整）
 </file>
 
 <file path="source/_posts/计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi-Diagram-Delaunay-Triangulation）.md">
