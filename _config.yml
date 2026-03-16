@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://tianxingleo.top
+url: https://tianxingleo.top
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -106,7 +106,7 @@ deploy:
   branch: main  # 或者 master，取决于你的 GitHub Pages 仓库设置
 
 katex:
-  enable: true
+  enable: false
   copy_tex: false
   mhchem: true  # 启用化学扩展
   cdn:
