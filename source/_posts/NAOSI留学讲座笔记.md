@@ -11,30 +11,30 @@ tags:
 
 
 
-```mermaid
+{% mermaid %}
 graph LR
     A((为什么留学?<br>留 or 学)) --> B(留 学)
     B -- 去哪留学? --> C(预算$, 目的)
     C -- 根据预算先选择国家地区 --> D(目的)
-    
+
     subgraph 国家地区
     E[美国, 加拿大, 日本, 英国,<br>新加坡, 中国香港, 欧洲, 澳洲]
     end
     E -.-> C
-    
+
     D --> F{留还是学?}
     F --> F1[留在海外?]
     F --> F2[深造回国?]
     F --> F3[深造后留海外, 我全都要?]
-    
+
     D -- 选出最终范围 --> G(查询目标院校要求)
     G --> G1[GPA要求<br>语言要求<br>考试要求<br>科研要求]
-    
+
     G -- 按要求准备申请 --> H(申请, 套磁)
     H --> I((上岸))
-    
+
     style I fill:#f9f,stroke:#333,stroke-width:2px
-```
+{% endmermaid %}
 
 ------
 
@@ -75,17 +75,17 @@ graph LR
 
 
 
-```mermaid
+{% mermaid %}
 graph LR
     A[大一] --> B[大二]
     B --> C[大三]
     C --> D[大四]
-    
+
     style A fill:#fff,stroke:#333
     style B fill:#fdf6e3,stroke:#333
     style C fill:#fdf6e3,stroke:#333
     style D fill:#eee,stroke:#333
-```
+{% endmermaid %}
 
 ### **大一：打基础与初步探索**
 

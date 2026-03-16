@@ -999,7 +999,7 @@ icons:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: true
+  enable: false
   exclude:
     # - xxxx
     # - xxxx
@@ -1021,7 +1021,7 @@ snackbar:
 
 # https://instant.page/
 # prefetch (预加载)
-instantpage: true
+instantpage: false
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之间添加空格)
@@ -1033,7 +1033,7 @@ pangu:
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: true
-  field: site # site/post
+  field: post # site/post
   placeholder:
   blur: true
   progressive: true
