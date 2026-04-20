@@ -7,10 +7,13 @@
 'use strict'
 
 const { escapeHTML } = require('hexo-util')
+const DOLLAR_PLACEHOLDER = '__ANZHIYU_MERMAID_DOLLAR__'
 
 function mermaid (args, content) {
+  const source = escapeHTML(content).replace(new RegExp(DOLLAR_PLACEHOLDER, 'g'), '&#36;')
+
   return `<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  ${escapeHTML(content)}
+  ${source}
   </pre></div>`
 }
 

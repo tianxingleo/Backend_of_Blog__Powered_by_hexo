@@ -1,6 +1,9 @@
 ---
 title: NAOSI留学讲座笔记
 date: 2026-02-01 19:59:49
+categories:
+  - 生活
+hidden: true
 tags:
   - NAOSI
   - 大学
@@ -21,18 +24,18 @@ graph LR
     E[美国, 加拿大, 日本, 英国,<br>新加坡, 中国香港, 欧洲, 澳洲]
     end
     E -.-> C
-
+    
     D --> F{留还是学?}
     F --> F1[留在海外?]
     F --> F2[深造回国?]
     F --> F3[深造后留海外, 我全都要?]
-
+    
     D -- 选出最终范围 --> G(查询目标院校要求)
     G --> G1[GPA要求<br>语言要求<br>考试要求<br>科研要求]
-
+    
     G -- 按要求准备申请 --> H(申请, 套磁)
     H --> I((上岸))
-
+    
     style I fill:#f9f,stroke:#333,stroke-width:2px
 {% endmermaid %}
 

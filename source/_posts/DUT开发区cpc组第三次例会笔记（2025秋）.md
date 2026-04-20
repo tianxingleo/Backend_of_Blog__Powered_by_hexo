@@ -1,8 +1,11 @@
 ---
 title: DUT开发区cpc组第三次例会笔记（2025秋）
 date: 2025-11-07 10:51:57
+categories:
+  - 学习
 toc: true 
 toc_number: false # 是否显示编号
+hidden: true
 tags:
   - cpc
   - cpp

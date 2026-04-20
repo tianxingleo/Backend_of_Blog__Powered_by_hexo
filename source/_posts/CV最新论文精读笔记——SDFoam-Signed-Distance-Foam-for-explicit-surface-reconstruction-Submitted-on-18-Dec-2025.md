@@ -3,6 +3,8 @@ title: >-
   CV最新论文精读笔记——SDFoam: Signed-Distance Foam for explicit surface
   reconstruction[Submitted on 18 Dec 2025]
 date: 2025-12-28 00:09:14
+categories:
+  - 学习
 ai: true
 main_color: #66CCFF
 tags:

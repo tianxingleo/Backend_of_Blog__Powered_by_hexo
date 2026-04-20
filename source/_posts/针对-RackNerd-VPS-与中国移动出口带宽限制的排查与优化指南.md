@@ -1,6 +1,8 @@
 ---
 title: 针对 RackNerd VPS 与中国移动出口带宽限制的排查与优化指南
 date: 2026-01-15 23:06:03
+categories:
+  - 项目
 tags:
   - vps
   - RackNerd

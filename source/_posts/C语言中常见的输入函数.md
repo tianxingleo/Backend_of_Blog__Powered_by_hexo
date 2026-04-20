@@ -1,6 +1,9 @@
 ---
 title: C语言中常见的输入函数
 date: 2025-11-24 20:56:49
+categories:
+  - 学习
+hidden: true
 tags:
   - c
 ---

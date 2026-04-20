@@ -1,6 +1,8 @@
 ---
 title: Nuxt3+Supabase全栈应用私有化部署全记录
 date: 2026-02-10 16:01:34
+categories:
+  - 项目
 tags:
   - nuxt
   - supabase

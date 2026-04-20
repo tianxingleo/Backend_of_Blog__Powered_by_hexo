@@ -1,6 +1,8 @@
 ---
 title: 用 GLOMAP 替换 COLMAP 加速 3DGS 重建管线
 date: 2025-12-10 23:02:02
+categories:
+  - 项目
 tags:
   - glomap
   - colmap

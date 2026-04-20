@@ -1,0 +1,89 @@
+- class_name: 关于页
+  subtitle: 天行健，君子以自强不息
+  avatarImg: https://avatars.githubusercontent.com/u/237200863?v=4
+  name: Tianxing Leo
+  description: 是一名 学生、开发者、独立项目爱好者、博主
+  avatarSkills:
+    left:
+      - Python
+      - C++
+      - TypeScript
+      - Vue
+    right:
+      - AI Systems
+      - 3D Reconstruction
+      - Flutter
+      - Docker
+  helloAbout: Hello there!
+  skillsTips:
+    tips: 技能
+    title: 开启创造力
+  careers:
+    tips: 生涯
+    title: 无限进步
+    list:
+      - desc: 大连理工大学·国际信息与软件学院
+        color: "#357ef5"
+      - desc: AI Systems & 3D Reconstruction
+        color: "#f5a623"
+      - desc: Creative Web Projects
+        color: "#43a6c6"
+  aboutsiteTips:
+    tips: 追求
+    title1: 源于
+    title2: 热爱而去 感受
+    word:
+      - 学习
+      - 创造
+      - 程序
+      - 体验
+  statistic:
+    link: /archives
+    text: 文章隧道
+    cover: https://img02.anzhiy.cn/adminuploads/1/2022/09/23/632d634f8376d.jpg
+  map:
+    title: 我现在住在
+    StrengthenTitle: 中国，大连 / 中国，广州
+    background: https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632e6f48981d8.jpg
+    backgroundDark: https://img02.anzhiy.cn/adminuploads/1/2022/09/26/6330ebf1f3e65.jpg
+  selfInfo:
+    selfInfoTips1: 生于
+    selfInfoContentYear: 2007
+    selfInfoTips2: 大连理工大学
+    selfInfoContent2: 国际信息与软件学院
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 大学生 / 独立开发者
+  personalities:
+    author_name: Tianxing Leo
+    personality_type: ENTJ-A
+    photo_url: https://avatars.githubusercontent.com/u/237200863?v=4
+    personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
+    name_url: https://www.16personalities.com/ch
+    personality_type_color: "#43a6c6"
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 天行健，
+    maxim_bottom: 君子以自强不息。
+  buff:
+    buff_tips: 特长
+    buff_top: 把研究想法做成
+    buff_bottom: 能交互、能讲清楚的项目
+  game:
+    game_tips: 爱好游戏
+    game_title: Muse Dash / Beat Saber
+    game_uid: ""
+    game_bg: https://img02.anzhiy.cn/adminuploads/1/2022/12/19/63a079ca63c8a.webp
+  comic:
+    comic_tips: 爱好番剧
+    comic_title: 追番
+    comic_list: null
+  like:
+    like_tips: 关注偏好
+    like_title: AI · 3D视觉 · 创意编程
+    like_bg: https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632f0dd8f33c6.webp
+    like_bottom: AI 系统、多模态检索、世界模型
+  music:
+    music_tips: 音乐偏好
+    music_title: JPOP
+    music_bg: https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg
+    music_link: /music

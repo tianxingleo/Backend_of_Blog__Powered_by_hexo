@@ -126,6 +126,15 @@ div#category {
   text-decoration: none;
   font-family: inherit;
 }
+
+#article-container a.markdownIt-Anchor {
+  display: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
 #article-container
   a:not([data-fancybox="gallery"]):not(.headerlink):not(.cf-friends-link):not(.btn-anzhiyu):not(
     .no-text-decoration

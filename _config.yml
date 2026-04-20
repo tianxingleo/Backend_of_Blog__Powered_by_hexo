@@ -136,6 +136,15 @@ algolia:
 #   maxdepth: 2
 #   class: toc
 
+markdown_it_plus:
+  plugins:
+    - plugin:
+        name: markdown-it-toc-and-anchor
+        enable: true
+        options:
+          anchorLink: false
+          tocFirstLevel: 2
+
 # RSS Feed 配置
 feed:
   type: atom

@@ -1,6 +1,8 @@
 ---
 title: 2w+的3D打印机拓竹H2D上手体验
 date: 2026-04-07 00:16:55
+categories:
+  - 生活
 tags:
   - 3D打印
 ---

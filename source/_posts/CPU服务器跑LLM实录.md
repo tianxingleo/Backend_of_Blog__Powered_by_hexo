@@ -1,6 +1,8 @@
 ---
 title: CPU服务器跑LLM实录
 date: 2026-01-30 22:35:08
+categories:
+  - 项目
 tags:
   - AI
   - LLM

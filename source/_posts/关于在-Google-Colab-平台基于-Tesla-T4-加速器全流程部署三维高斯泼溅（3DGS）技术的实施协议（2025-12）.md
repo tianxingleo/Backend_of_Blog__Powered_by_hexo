@@ -1,6 +1,8 @@
 ---
 title: 关于在 Google Colab 平台基于 Tesla T4 加速器全流程部署三维高斯泼溅（3DGS）技术的实施协议（2025.12）
 date: 2025-12-05 10:22:33
+categories:
+  - 项目
 tags:
   - 3dgs
   - colmap

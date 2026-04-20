@@ -1,6 +1,9 @@
 ---
 title: 基于GIS几何先验与语义-几何场分解的真实三维重建调研报告
 date: 2026-02-10 17:32:07
+categories:
+  - 学习
+hidden: true
 tags:
   - 3DGS
   - SDF

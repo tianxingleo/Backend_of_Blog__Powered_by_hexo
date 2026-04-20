@@ -1,6 +1,8 @@
 ---
 title: VSCode远程开发指南：使用FRP自建公网穿透与内网直连方案
 date: 2026-01-15 23:31:46
+categories:
+  - 项目
 tags:
   - ssh
   - vscode

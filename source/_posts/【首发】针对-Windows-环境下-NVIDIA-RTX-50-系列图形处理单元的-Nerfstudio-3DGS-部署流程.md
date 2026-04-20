@@ -1,6 +1,8 @@
 ---
 title: 【首发】针对 Windows 环境下 NVIDIA RTX 50 系列图形处理单元的 Nerfstudio (3DGS) 部署流程
 date: 2025-12-05 11:02:33
+categories:
+  - 项目
 tags:
   - 3dgs
   - pytorch

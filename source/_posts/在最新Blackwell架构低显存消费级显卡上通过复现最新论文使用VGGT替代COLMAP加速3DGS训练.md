@@ -1,6 +1,8 @@
 ---
 title: 在最新Blackwell架构低显存消费级显卡上通过复现最新论文使用VGGT替代COLMAP加速3DGS训练
 date: 2025-12-10 21:53:53
+categories:
+  - 项目
 tags:
   - vggt
   - 3dgs

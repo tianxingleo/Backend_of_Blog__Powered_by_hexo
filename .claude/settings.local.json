@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__github__search_users",
+      "Bash(curl:*)",
+      "mcp__github__get_file_contents",
+      "mcp__zread__get_repo_structure",
+      "mcp__github__search_code"
+    ]
+  }
+}

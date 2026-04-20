@@ -1,6 +1,8 @@
 ---
 title: 3DGS：利用YOLO+SAM+Mask彻底消除伪影与背景漂浮物——基于 Nerfstudio 的对象级重建最佳实践
 date: 2025-12-10 23:04:59
+categories:
+  - 项目
 tags:
   - mask
   - nerfstudio

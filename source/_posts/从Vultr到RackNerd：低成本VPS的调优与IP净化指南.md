@@ -1,6 +1,8 @@
 ---
 title: 从Vultr到RackNerd：低成本VPS的调优与IP净化指南
 date: 2026-01-11 23:50:59
+categories:
+  - 项目
 tags:
   - VPS
   - Vultr

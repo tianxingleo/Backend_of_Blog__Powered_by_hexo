@@ -1,6 +1,8 @@
 ---
 title: 计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi Diagram & Delaunay Triangulation）
 date: 2025-12-27 21:33:52
+categories:
+  - 学习
 tags:
   - SDFoam
   - CV

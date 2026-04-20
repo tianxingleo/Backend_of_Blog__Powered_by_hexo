@@ -1,6 +1,9 @@
 ---
 title: C/C++ 易错点深度解析：指针、结构体与运算符优先级 
 date: 2025-11-19 10:28:47
+categories:
+  - 学习
+hidden: true
 tags:
   - c
   - cpp

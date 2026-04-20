@@ -1,6 +1,8 @@
 ---
 title: 【首发】在 RTX 5070 (Blackwell) + WSL2 上跑通最新模型 Meta SAM 3D 的终极方案
 date: 2025-12-08 14:29:13
+categories:
+  - 项目
 tags:
   - 5070
   - blackwell

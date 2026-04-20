@@ -1,6 +1,8 @@
 ---
 title: 对 UrbanScene3D 数据集的一次初步调研
 date: 2026-03-16 15:29:23
+categories:
+  - 学习
 tags:
   - SDF
   - GIS

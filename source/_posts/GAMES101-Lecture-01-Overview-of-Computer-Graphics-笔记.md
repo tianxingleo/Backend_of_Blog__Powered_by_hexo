@@ -1,6 +1,8 @@
 ---
 title: GAMES101笔记： Lecture 01 Overview of Computer Graphics & Lecture 02 Review of Linear Algebra & Lecture 03 Transformation & Lecture 04 Transformation Cont. 
 date: 2026-02-02 19:11:55
+categories:
+  - 学习
 tags:
   - GAMES101
   - GAMES

@@ -1,6 +1,8 @@
 ---
 title: 在 Linux (WSL) + RTX 50 系列显卡上部署原生 GPU 加速 COLMAP 的指南
 date: 2025-12-07 00:48:20
+categories:
+  - 项目
 tags:
   - colmap
   - 3dgs

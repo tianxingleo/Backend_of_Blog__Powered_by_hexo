@@ -1,6 +1,8 @@
 ---
 title: 极简条件下的房间3D重建，DA3与各3DGS Pipeline方案横评
 date: 2026-02-20 16:21:03
+categories:
+  - 学习
 tags:
   - 3DGS
   - SDF

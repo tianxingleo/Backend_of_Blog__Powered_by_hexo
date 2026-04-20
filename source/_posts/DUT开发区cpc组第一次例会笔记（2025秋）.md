@@ -1,6 +1,9 @@
 ---
 title: DUT开发区cpc组第一次例会笔记（2025秋）
 date: 2025-10-30 21:21:46
+categories:
+  - 学习
+hidden: true
 tags:
   - cpc
   - cpp

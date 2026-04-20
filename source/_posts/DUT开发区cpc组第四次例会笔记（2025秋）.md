@@ -1,6 +1,9 @@
 ---
 title: DUT开发区cpc组第四次例会笔记（2025秋）
 date: 2025-11-13 13:52:15
+categories:
+  - 学习
+hidden: true
 tags:
 ---
 
