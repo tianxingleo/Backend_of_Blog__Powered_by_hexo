@@ -35,6 +35,10 @@ meta(name="application-name", content=pageTitle)
 meta(name="apple-mobile-web-app-capable", content="yes")
 meta(name="apple-mobile-web-app-status-bar-style", content=themeColor)
 
+//- noindex support for thin content pages
+if page.noindex
+  meta(name="robots" content="noindex, nofollow")
+
 
 //- Open_Graph
 include ./head/Open_Graph.pug
