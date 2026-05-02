@@ -9,6 +9,9 @@ tags:
   - 前端
   - html
   - css
+slug: html-css-tic-meeting-3-2025
+alias:
+  - '/2025/11/02/HTML-CSS-TIC2025秋第三次例会笔记/'
 ---
 
 # HTML

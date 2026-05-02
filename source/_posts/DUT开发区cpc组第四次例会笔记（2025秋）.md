@@ -5,6 +5,9 @@ categories:
   - 学习
 hidden: true
 tags:
+slug: dut-cpc-meeting-4-2025
+alias:
+  - '/2025/11/13/DUT开发区cpc组第四次例会笔记（2025秋）/'
 ---
 
 # 前缀和

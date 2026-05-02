@@ -7,6 +7,9 @@ tags:
   - VPS
   - Vultr
   - RackNerd
+slug: vultr-to-racknerd-vps
+alias:
+  - '/2026/01/11/从Vultr到RackNerd：低成本VPS的调优与IP净化指南/'
 ---
 
 # 从 Vultr 到 RackNerd：打造高性价比、IPv6 免流与 AI 解锁的全能 VPS 指南

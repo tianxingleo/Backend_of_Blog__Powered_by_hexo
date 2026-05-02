@@ -8,6 +8,9 @@ tags:
   - vscode
   - vps
   - frp
+slug: vscode-remote-dev-frp
+alias:
+  - '/2026/01/15/VSCode远程开发指南：使用FRP自建公网穿透与内网直连方案/'
 ---
 
 ## 背景

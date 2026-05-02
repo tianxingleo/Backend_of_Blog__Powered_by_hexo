@@ -9,6 +9,9 @@ tags:
   - Depth Anything 3
   - CG
   - CV
+slug: room-3d-reconstruction-da3-3dgs
+alias:
+  - '/2026/02/20/极简条件下的房间3D重建，DA3与各3DGS-Pipeline方案横评/'
 ---
 
 # 极少素材极低质量的极端情况下房间三维重建不同Pipeline对比

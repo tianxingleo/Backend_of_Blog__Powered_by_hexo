@@ -10,6 +10,9 @@ tags:
 ai: true
 main_color: #66ccff
 top_img: 
+slug: nth-root-limit-maximum
+alias:
+  - '/2025/10/25/关于有限多项或可控的非负项之和的n次根，当n→∞时收敛到这些数的最大值/'
 ---
 
 结论（有限项）

@@ -6,6 +6,9 @@ categories:
 tags:
   - cpp
   - vscode
+slug: vscode-cpp-encoding-fix
+alias:
+  - '/2025/10/27/解决vscode写的cpp程序在控制台默认编码不一致问题/'
 ---
 
 

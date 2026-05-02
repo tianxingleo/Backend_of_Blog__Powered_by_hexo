@@ -11,6 +11,9 @@ tags:
   - 科研
   - UrbanScene3D
 
+slug: urbanscene3d-dataset-survey
+alias:
+  - '/2026/03/16/对-UrbanScene3D-数据集的一次初步调研/'
 ---
 
 # 对 UrbanScene3D 数据集的一次初步调研：它能否用于基于 GIS 先验的 SDF 城市三维重建？

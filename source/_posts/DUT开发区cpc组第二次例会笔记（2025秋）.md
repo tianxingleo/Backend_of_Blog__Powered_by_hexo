@@ -8,6 +8,9 @@ tags:
   - cpc
   - cpp
   - 算法
+slug: dut-cpc-meeting-2-2025
+alias:
+  - '/2025/10/30/DUT开发区cpc组第二次例会笔记（2025秋）/'
 ---
 
 ## 1. 二分查找

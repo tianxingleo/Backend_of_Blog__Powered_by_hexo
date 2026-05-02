@@ -12,6 +12,9 @@ tags:
   - cpp
   - 函数
   - 指针
+slug: cpp-functions-pointers
+alias:
+  - '/2025/11/09/c-cpp函数与指针学习笔记/'
 ---
 
 # 函数

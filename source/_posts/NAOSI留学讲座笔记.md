@@ -8,6 +8,9 @@ tags:
   - NAOSI
   - 大学
   - 留学
+slug: naosi-study-abroad-notes
+alias:
+  - '/2026/02/01/NAOSI留学讲座笔记/'
 ---
 
 ## 留学准备过程

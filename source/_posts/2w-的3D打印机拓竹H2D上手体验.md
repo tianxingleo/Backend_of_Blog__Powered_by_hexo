@@ -5,6 +5,9 @@ categories:
   - 生活
 tags:
   - 3D打印
+slug: bambu-h2d-3d-printer-review
+alias:
+  - '/2026/04/07/2w-的3D打印机拓竹H2D上手体验/'
 ---
 
 有幸使用了拓竹H2D顶配3D打印机器，以下是这几周的使用体验。

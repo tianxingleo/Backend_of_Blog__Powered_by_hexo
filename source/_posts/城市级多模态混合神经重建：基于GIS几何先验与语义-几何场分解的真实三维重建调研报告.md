@@ -12,6 +12,9 @@ tags:
   - CV
   - CG
 
+slug: urban-neural-reconstruction-gis
+alias:
+  - '/2026/02/10/城市级多模态混合神经重建：基于GIS几何先验与语义-几何场分解的真实三维重建调研报告/'
 ---
 
 # 城市级多模态混合神经重建简要思路

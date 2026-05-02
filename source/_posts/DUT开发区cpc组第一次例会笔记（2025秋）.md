@@ -7,6 +7,9 @@ hidden: true
 tags:
   - cpc
   - cpp
+slug: dut-cpc-meeting-1-2025
+alias:
+  - '/2025/10/30/DUT开发区cpc组第一次例会笔记（2025秋）/'
 ---
 
 ## 1.向上取整

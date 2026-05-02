@@ -8,6 +8,9 @@ tags:
   - 3dgs
   - linux
   - wsl
+slug: colmap-gpu-wsl-rtx50
+alias:
+  - '/2025/12/07/在-Linux-WSL-RTX-50-系列显卡上部署原生-GPU-加速-COLMAP-的指南/'
 ---
 
 # 在 Linux (WSL) + RTX 50 系列显卡上部署原生 GPU 加速 COLMAP 的指南

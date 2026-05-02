@@ -10,6 +10,9 @@ tags:
   - sam3
   - sam
   - yolo
+slug: 3dgs-artifact-removal-nerfstudio
+alias:
+  - '/2025/12/10/3DGS-进阶：如何彻底消除伪影与背景漂浮物——基于-Nerfstudio-的对象级重建最佳实践/'
 ---
 
 # 3DGS 进阶指南：如何彻底消除“伪影”与背景漂浮物——基于 Nerfstudio 的对象级重建最佳实践

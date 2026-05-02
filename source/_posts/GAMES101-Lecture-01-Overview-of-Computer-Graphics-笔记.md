@@ -7,6 +7,9 @@ tags:
   - GAMES101
   - GAMES
   - CG
+slug: games101-lecture-01-notes
+alias:
+  - '/2026/02/02/GAMES101-Lecture-01-Overview-of-Computer-Graphics-笔记/'
 ---
 
 # Lecture 03 Transformation

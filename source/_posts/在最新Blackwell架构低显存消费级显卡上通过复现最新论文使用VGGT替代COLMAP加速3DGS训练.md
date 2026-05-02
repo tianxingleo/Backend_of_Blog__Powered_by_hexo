@@ -12,6 +12,9 @@ tags:
   - colmap
   - linux
   - pytorch
+slug: vggt-colmap-3dgs-blackwell
+alias:
+  - '/2025/12/10/在最新Blackwell架构低显存消费级显卡上通过复现最新论文使用VGGT替代COLMAP加速3DGS训练/'
 ---
 
 # 在 RTX 5070 + WSL 上使用 VGGT 替代 COLMAP 加速 3DGS 训练

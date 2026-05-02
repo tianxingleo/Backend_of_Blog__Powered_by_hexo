@@ -7,6 +7,9 @@ tags:
   - vps
   - RackNerd
   - Hysteria 2
+slug: racknerd-vps-china-mobile-optimization
+alias:
+  - '/2026/01/15/针对-RackNerd-VPS-与中国移动出口带宽限制的排查与优化指南/'
 ---
 
 # 针对 RackNerd VPS 与中国移动出口带宽限制的排查与利用Hysteria 2优化指南

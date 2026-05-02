@@ -12,6 +12,9 @@ tags:
   - SAM3D
   - linux
   - 3dgs
+slug: meta-sam3d-rtx5070-wsl2
+alias:
+  - '/2025/12/08/【首发】在-RTX-5070-Blackwell-WSL2-上跑通最新模型-Meta-SAM-3D-的终极方案/'
 ---
 
 **关键词**：RTX 5070, WSL2, PyTorch Stable (CUDA 12.8), SAM 3D, Runtime Mocking, 显存流水线优化

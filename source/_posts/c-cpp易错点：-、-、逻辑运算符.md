@@ -11,6 +11,9 @@ tags:
   - 指针
   - 链表
   - 结构体
+slug: cpp-common-mistakes
+alias:
+  - '/2025/11/19/c-cpp易错点：-、-、逻辑运算符/'
 ---
 
 

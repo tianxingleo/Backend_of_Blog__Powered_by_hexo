@@ -9,6 +9,9 @@ tags:
   - 3dgs
   - wsl
   - linux
+slug: glomap-colmap-3dgs
+alias:
+  - '/2025/12/10/用-GLOMAP-替换-COLMAP-加速-3DGS-重建管线/'
 ---
 
 # 用 GLOMAP 替换 COLMAP 加速 3DGS 重建管线

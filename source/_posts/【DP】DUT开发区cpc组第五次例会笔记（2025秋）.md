@@ -9,6 +9,9 @@ tags:
   - dp
   - 算法
   - cpp
+slug: dut-cpc-meeting-5-dp-2025
+alias:
+  - '/2025/11/24/【DP】DUT开发区cpc组第五次例会笔记（2025秋）/'
 ---
 
 # DP

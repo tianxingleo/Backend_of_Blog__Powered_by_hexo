@@ -7,6 +7,9 @@ tags:
   - AI
   - LLM
   - 服务器
+slug: cpu-server-llm
+alias:
+  - '/2026/01/30/CPU服务器跑LLM实录/'
 ---
 
 ## 1. 硬件配置概况

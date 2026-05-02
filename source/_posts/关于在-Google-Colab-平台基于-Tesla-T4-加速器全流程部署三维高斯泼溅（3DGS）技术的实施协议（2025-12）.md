@@ -7,6 +7,9 @@ tags:
   - 3dgs
   - colmap
   - google colab
+slug: 3dgs-colab-tesla-t4
+alias:
+  - '/2025/12/05/关于在-Google-Colab-平台基于-Tesla-T4-加速器全流程部署三维高斯泼溅（3DGS）技术的实施协议（2025-12）/'
 ---
 
 # 关于首次在 Google Colab 平台基于 Tesla T4 加速器全流程部署三维高斯泼溅（3DGS）技术的实施协议（2025.12）

@@ -6,6 +6,9 @@ categories:
 hidden: true
 tags:
   - c
+slug: c-input-functions
+alias:
+  - '/2025/11/24/C语言中常见的输入函数/'
 ---
 
 ##  C 语言中常见的输入函数
