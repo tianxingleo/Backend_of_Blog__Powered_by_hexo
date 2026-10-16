@@ -9,9 +9,10 @@ tags:
   - github
   - blog
 slug: tic-meeting-2-hexo-blog-guide
+permalink: posts/tic-meeting-2-hexo-blog-guide/
 alias:
   - '/2026/10/16/TIC第二节例会-1小时0代码做出你的个人博客静态网站/'
-  - '/posts/tic-meeting-2-hexo-blog-guide/'
+  - '/posts/1bae6588cb39/'
 ---
 
 # TIC 第二节例会：**1小时，0代码，做出你的个人博客静态网站**
@@ -27,15 +28,16 @@ alias:
 > 2. **注册 GitHub 账号**：开启加速后，前往 [GitHub 官网](https://github.com/) 注册一个账号（**请牢记你的用户名、注册邮箱和密码**，用户名未来会成为你网站网址的一部分，建议取简短好记的英文/数字）。
 >
 > 3. **下载三大基础开发软件安装包**（先下载好安装包即可，不会装的可以等例会一起装）：
->   * **Node.js**：[Node.js 官方下载页](https://nodejs.org/en/download)
->    
->   * **Git**：[Git 官方安装页](https://git-scm.com/install/)
->    
->   * **VS Code）**：[Visual Studio Code 官方下载页](https://code.visualstudio.com/download)
->    
->4. **带上你的电脑和充电器**，我们例会现场见！
+>
+> * **Node.js**：[Node.js 官方下载页](https://nodejs.org/en/download)
+>
+> * **Git**：[Git 官方安装页](https://git-scm.com/install/)
+>
+> * **VS Code）**：[Visual Studio Code 官方下载页](https://code.visualstudio.com/download)
+>
+>1. **带上你的电脑和充电器**，我们例会现场见！
 
-##  一、今天这节例会我们要做什么？
+## 一、今天这节例会我们要做什么？
 
 | 关卡阶段 | 核心任务 | 你将解锁的新技能 |
 | ----- | ----- | ----- |
@@ -87,9 +89,9 @@ alias:
 
 2. **理解“静态网站（Static Website）”是怎么回事**： 网站通常分为两类：
    * **动态网站**（如淘宝、B站）：需要后台服务器和数据库每时每刻实时计算、推送千人千面的内容，租服务器既贵又复杂。
-   
+
    * **静态网站**（如我们的个人博客）：文章写好后内容是固定的。我们只需要一个“加工厂”，把我们写的笔记提前转换成浏览器能看懂的网页文件（`HTML` + `CSS` + `JavaScript`），然后丢到 [GitHub Pages](https://pages.github.com/) 提供的免费服务器上，全世界就能免费、高速地访问你的网站了！
-   
+
 3. **为什么选择 [Hexo](https://hexo.io/zh-cn/) 框架？** [Hexo](https://hexo.io/zh-cn/) 是目前全球最受欢迎的开源静态博客框架之一（基于 [Node.js](https://nodejs.org/en) 开发）。它的核心优势就三个字：**快、爽、美**——几秒钟就能把上百篇 Markdown 笔记编译成完整网页，支持一条命令一键发布到 GitHub，而且社区里有成百上千套开箱即用的神仙主题（见 [Hexo 官方主题列表](https://hexo.io/themes/)），零前端基础也能改出大师级视觉效果！
 
 ## 三、第一阶段：前置准备——打通网络、账号与三大开发神器
@@ -126,13 +128,11 @@ alias:
 
 1. 按照提示依次输入你的**常用邮箱（Email）**、**密码（Password）以及用户名（Username）**。
 
-   *  **起名特别提醒**：你的 GitHub 用户名（比如 `zhangsan`）将来会直接变成你博客的专属网址：`https://zhangsan.github.io`！所以强烈建议取一个**简短、好记、全英文/数字**的名字，并且拿小本本记好你的**用户名**和**注册邮箱**，后面配置连接时要用！
+   * **起名特别提醒**：你的 GitHub 用户名（比如 `zhangsan`）将来会直接变成你博客的专属网址：`https://zhangsan.github.io`！所以强烈建议取一个**简短、好记、全英文/数字**的名字，并且拿小本本记好你的**用户名**和**注册邮箱**，后面配置连接时要用！
 
    ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_24c160b072c7b35fed4cb4c03021ebd1.webp)
 
 2. 去邮箱查收验证码完成验证，即可成功登录 GitHub。
-
-
 
 ### Step 3：安装三大核心软件（Node.js + Git + VS Code）
 
@@ -168,15 +168,15 @@ alias:
 
 2. 双击安装，在 **“选择其他任务（Select Additional Tasks）”** 这一步，**强烈建议把下面所有框都勾上**：
 
-   *  将“通过 Code 打开”操作添加到 Windows 资源管理器文件上下文菜单
+   * 将“通过 Code 打开”操作添加到 Windows 资源管理器文件上下文菜单
 
-   *  将“通过 Code 打开”操作添加到 Windows 资源管理器目录上下文菜单
+   * 将“通过 Code 打开”操作添加到 Windows 资源管理器目录上下文菜单
 
-   *  添加到 PATH（重启后生效） 
+   * 添加到 PATH（重启后生效）
 
 ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_1b960443bf1ef525c8fe4dbf6d1ec85e.webp)
 
-##  四、第二阶段：零基础命令行入门与安装 Hexo
+## 四、第二阶段：零基础命令行入门与安装 Hexo
 
 很多新手看到电影里黑客敲的“黑色窗口”就觉得头皮发麻。其实，**命令行（Command Line Interface，简称 CLI）** 和你平时用鼠标双击文件夹没有任何本质区别——只不过平时你是用**鼠标点击图标**跟电脑说话，而命令行是用**敲英文单词**跟电脑说话
 
@@ -227,7 +227,7 @@ npm config get registry
 
 如果屏幕打印出 `https://registry.npmmirror.com/`，说明你的高速下载通道已经开启！ *(此外，如果你以后在别的电脑上只想临时加速某一条安装命令，也可以在任何 `npm install ...` 命令的末尾加上 `--registry=https://registry.npmmirror.com` 后缀。)*
 
-### 4. 正式安装 Hexo！
+### 4. 正式安装 Hexo
 
 现在，在命令行中输入下面这行命令并回车，让 `npm` 帮我们把 [Hexo 官方脚手架](https://hexo.io/zh-cn/docs/) 安装到电脑上：
 
@@ -250,7 +250,7 @@ hexo -v
 
 看到跳出一长串 `hexo-cli: x.x.x` 的版本信息，说明 Hexo 已经准备就绪
 
-##  五、第三阶段：初始化你的博客仓库 & 本地调试预览
+## 五、第三阶段：初始化你的博客仓库 & 本地调试预览
 
 现在所有工具都齐了，我们要正式在电脑上搭建网站了
 
@@ -265,7 +265,6 @@ hexo -v
    ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_c3208d0d41713a7ef07c5b1490747ff3.webp)
 
    ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_9ab6c25d5b1050f58e99c1715e59b346.webp)
-
 
 ### Step 2：初始化博客代码仓库（`hexo init`）
 
@@ -319,7 +318,7 @@ hexo s
   
 * 当你想继续在命令行里敲其他命令时，只需要回到命令行窗口，按下键盘上的 **`Ctrl + C`**，就能关掉这个本地预览服务器。
 
-##  六、第四阶段：看懂项目文件结构 & 用 VS Code 写第一篇 Markdown 博客
+## 六、第四阶段：看懂项目文件结构 & 用 VS Code 写第一篇 Markdown 博客
 
 刚才执行完 `hexo init` 后，`myblog` 文件夹里多出来的一堆文件到底是干嘛的？千万别乱删！我们现在用“宇宙第一编辑器” [**VS Code**](https://code.visualstudio.com/) 打开它，顺便教你如何优雅地写一篇博客。
 
@@ -334,14 +333,14 @@ hexo s
 | 文件 / 文件夹名称 | 重要程度 | 它的身份与作 |
 | ----- | ----- | ----- |
 | **`_config.yml`** | ⭐⭐⭐⭐⭐ | 网站的标题、副标题、你的作者名字、语言（改中文 `zh-CN`）、网站主题、以及最后上传到 GitHub 的地址，全都在这个文件里修改！ |
-| **`source/`** | ⭐⭐⭐⭐     | 点开它里面的 **`_posts/`** 文件夹，你会看到一篇 `hello-world.md`。**以后你写的所有博客文章（`.md` 文件）全都放在 `source/_posts/` 里面！** |
+| **`source/`** | ⭐⭐⭐⭐ | 点开它里面的 **`_posts/`** 文件夹，你会看到一篇 `hello-world.md`。**以后你写的所有博客文章（`.md` 文件）全都放在 `source/_posts/` 里面！** |
 | **`themes/`** | ⭐⭐⭐⭐ | 存放你下载的各种博客主题皮肤（默认自带一个叫 `landscape` 的基础皮肤）。 |
 | **`scaffolds/`** | ⭐⭐ | 当你用命令新建文章时，Hexo 会按照这里的模板自动生成文章开头的标题和日期格式。 |
 | **`public/`** | ⭐⭐ | 只有当你运行了 `hexo g` 之后它才会出现，里面装的是编译好的 HTML 网页成品（不需要手动去改它）。 |
-| **`package.json`** | ⭐⭐ | 记录当前博客安装了哪些插件和版本信息。                       |
+| **`package.json`** | ⭐⭐ | 记录当前博客安装了哪些插件和版本信息。 |
 | **`node_modules/`** | 勿动 | 里面有成千上万个支撑 Hexo 运行的代码模块，**千万不要手动打开或删改里面的文件**。 |
 
->  **修改 `_config.yml` 的要求**： `.yml`（YAML）是一种对格式极其挑剔的配置文件。在修改 `_config.yml` 时，**每一个冒号 `:` 后面，都必须紧跟至少一个英文空格！**
+> **修改 `_config.yml` 的要求**： `.yml`（YAML）是一种对格式极其挑剔的配置文件。在修改 `_config.yml` 时，**每一个冒号 `:` 后面，都必须紧跟至少一个英文空格！**
 >
 > * 错误写法：`title:我的博客`（冒号后面没空格，运行报错）
 >
@@ -362,12 +361,12 @@ hexo s
    ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_4749ee77ca17a825f03585511fa562a2.webp)
 
    * [**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)：写 Markdown 必备的快捷键与自动目录补全神器。
-   
+
    * [**Markdown Preview Enhanced**](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)：超强大的实时预览插件，让你左边打字，右边实时看到渲染出来的精美排版！
 
 ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_061cf34ae1db5166e656da37a8f86d03.webp)
 
-### 4. 亲手写下你的第一篇博客文章！
+### 4. 亲手写下你的第一篇博客文章
 
 让我们把刚才学到的操作串起来，发一篇属于你自己的文章：
 
@@ -450,6 +449,7 @@ hexo s
 
 4. 下面的可见性保持默认的 **`Public`（公开）**，其他什么都不用勾选，直接拉到最底下点击绿色的 **`Create repository`** 按钮！
 ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_53d19c51ea71d03c9a6915c93a05e867.webp)
+
 ### Step 2：配置 Git 身份与生成 SSH Key（给你的电脑办一张免密通行证）
 
 仓库建好了，但 GitHub 怎么知道现在坐在电脑前上传代码的真的是你本人，而不是冒充你的黑客呢？ 我们需要用 Git 给电脑生成一把专属的**加密钥匙（SSH Key）**，把锁头（公钥）挂到你的 GitHub 账号上。以后你在电脑上敲命令上传博客，GitHub 核对钥匙无误就会瞬间放行！
@@ -505,15 +505,13 @@ cat ~/.ssh/id_rsa.pub
 
      ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_0d266e9db16e554d3f96d38bf471405c.webp)
 
-   
-
 4. **测试电脑和 GitHub 能不能握手成功**： 回到你的 Git Bash 黑框框，输入下面这行测试命令并回车：
 
    ```
    ssh -T git@github.com
    ```
-   
-   *  敲完回车后，屏幕会弹出一句询问： `Are you sure you want to continue connecting (yes/no/[fingerprint])?` **注意！这里不能直接按回车，必须用键盘敲入三个英文字母 `yes`，然后再按回车！**
+
+   * 敲完回车后，屏幕会弹出一句询问： `Are you sure you want to continue connecting (yes/no/[fingerprint])?` **注意！这里不能直接按回车，必须用键盘敲入三个英文字母 `yes`，然后再按回车！**
 
    * 当你看到屏幕跳出下面这句热情的问候：
 
@@ -530,7 +528,7 @@ cat ~/.ssh/id_rsa.pub
    ```
    npm install hexo-deployer-git --save --registry=https://registry.npmmirror.com
    ```
-   
+
 2. **修改博客根目录的 `_config.yml` 配置文件**： 在 VS Code 中打开 `myblog` 最外层的 **`_config.yml`** 文件，一直拉到**最底部（最后几行）**，你会看到一个 `# Deployment` 部分。 把它修改成下面这样（**请把两处 `你的GitHub用户名` 替换成你真实的 GitHub 用户名！**）：
 
    ```
@@ -541,7 +539,7 @@ cat ~/.ssh/id_rsa.pub
      repo: git@github.com:你的GitHub用户名/你的GitHub用户名.github.io.git
      branch: main
    ```
-   
+
    * 自查 3 件事**：
 
      1. `type:`、`repo:`、`branch:` 的**冒号后面是不是都有一个英文空格**？
@@ -550,7 +548,7 @@ cat ~/.ssh/id_rsa.pub
 
      3. 修改完之后，按 **`Ctrl + S` 保存**了吗？
 
-### Step 4：一键部署上线！
+### Step 4：一键部署上线
 
 见证奇迹的最后一步到了！
 在 `myblog` 的命令行窗口中，依次输入下面 **3 行命令**（以后每次写完新文章想发到网上，也是敲这三行）：
@@ -582,14 +580,14 @@ hexo d
 
 编程世界里有一个最重要的能力叫 **“看官方文档（Read The Friendly Manual）”**。下面这几款是目前开源社区最火、中文文档最完善的神仙主题，大家课后可以挑一款自己最喜欢的去折腾：
 
-| 主题名称 | 视觉风格特点 | 官方配置文档（保姆级中文教程） | GitHub 源码仓库 | 
-| ----- | ----- | ----- | ----- | 
-| [**Butterfly**](https://butterfly.js.org/en/) | 二次元/现代卡片风颜值天花板，内置打字机特效、背景粒子、夜间模式与丰富标签外挂 | [Butterfly 官方文档](https://butterfly.js.org/en/posts/butterfly-docs-en-get-started/) | [jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | 
-| [**Fluid**](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) | 极具呼吸感的 Material Design 设计，大图视差滚动，阅读体验清爽优雅，配置极简 | [Hexo Fluid 官方文档](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) | [fluid-dev/hexo-theme-fluid](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) | 
-| [**NexT**](https://github.com/next-theme/hexo-theme-next) | 经典极简极客风，留白克制、层次分明，深受技术大佬喜爱 | [NexT 官方仓库与指南](https://github.com/next-theme/hexo-theme-next) | [next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next) | 
-| [**更多官方主题**](https://hexo.io/themes/) | 涵盖极简、杂志、作品集、复古终端等上百种风格 | [Hexo Themes 官方主题商城](https://hexo.io/themes/) | [hexojs/awesome-hexo](https://github.com/hexojs/awesome-hexo) | 
+| 主题名称 | 视觉风格特点 | 官方配置文档（保姆级中文教程） | GitHub 源码仓库 |
+| ----- | ----- | ----- | ----- |
+| [**Butterfly**](https://butterfly.js.org/en/) | 二次元/现代卡片风颜值天花板，内置打字机特效、背景粒子、夜间模式与丰富标签外挂 | [Butterfly 官方文档](https://butterfly.js.org/en/posts/butterfly-docs-en-get-started/) | [jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
+| [**Fluid**](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) | 极具呼吸感的 Material Design 设计，大图视差滚动，阅读体验清爽优雅，配置极简 | [Hexo Fluid 官方文档](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) | [fluid-dev/hexo-theme-fluid](https://fluid-dev.github.io/hexo-fluid-docs/en/start/) |
+| [**NexT**](https://github.com/next-theme/hexo-theme-next) | 经典极简极客风，留白克制、层次分明，深受技术大佬喜爱 | [NexT 官方仓库与指南](https://github.com/next-theme/hexo-theme-next) | [next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next) |
+| [**更多官方主题**](https://hexo.io/themes/) | 涵盖极简、杂志、作品集、复古终端等上百种风格 | [Hexo Themes 官方主题商城](https://hexo.io/themes/) | [hexojs/awesome-hexo](https://github.com/hexojs/awesome-hexo) |
 
-### 2. 手把手实战：3 步换上 Butterfly 主题！
+### 2. 手把手实战：3 步换上 Butterfly 主题
 
 如何用 1 分钟把默认皮肤换成高颜值的 [**Butterfly**](https://github.com/jerryc127/hexo-theme-butterfly) 主题：
 
@@ -599,29 +597,29 @@ hexo d
    ```
    git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
    ```
-   
+
 2. **Step 2：安装 Butterfly 主题需要的渲染插件**
    Butterfly 主题使用了 `pug` 和 `stylus` 编写页面样式，所以需要一行命令补齐这两个小插件：
 
    ```
    npm install hexo-renderer-pug hexo-renderer-stylus --save --registry=https://registry.npmmirror.com
    ```
-   
+
 3. **Step 3：去 `_config.yml` 总控开关里换主题**
    用 VS Code 打开 `myblog` 根目录下的 **`_config.yml`**，按 `Ctrl + F` 搜索 `theme:`（大概在第 99 行左右），你会看到原本写着：
 
    ```
    theme: landscape
    ```
-   
+
    把它改成：
 
    ```
    theme: butterfly
    ```
-   
+
    *( 再次确认：`theme:` 的冒号后面有一个空格，然后按 `Ctrl + S` 保存！)*
-   
+
 4. **本地预览新皮肤，满意后再一键推上 GitHub！**
    回到命令行，先用本地三连招看看效果：
 
@@ -630,7 +628,7 @@ hexo d
    hexo g
    hexo s
    ```
-   
+
    打开 `http://localhost:4000` 刷新——哇！整个网站瞬间变成了精美的卡片式布局！
    确认好看之后，按 `Ctrl + C` 停掉本地预览，执行 **`hexo d`**，1 分钟后你线上的 `https://你的用户名.github.io` 也同步换上新皮肤啦！
 
