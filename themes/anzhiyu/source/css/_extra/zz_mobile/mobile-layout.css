@@ -200,7 +200,10 @@ body {
     min-width: 0;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info .recent-post-info-top-tips {
+  #recent-posts
+    > .recent-post-item
+    > .recent-post-info
+    .recent-post-info-top-tips {
     margin-top: 0;
   }
 
@@ -226,13 +229,21 @@ body {
     overflow: visible;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .post-meta-date {
+  #recent-posts
+    > .recent-post-item
+    > .recent-post-info
+    > .article-meta-wrap
+    > .post-meta-date {
     max-width: 100%;
     font-size: 13px;
     white-space: normal !important;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .article-meta.tags {
+  #recent-posts
+    > .recent-post-item
+    > .recent-post-info
+    > .article-meta-wrap
+    > .article-meta.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 8px;
@@ -312,6 +323,8 @@ body {
     flex-wrap: wrap;
     gap: 6px;
     white-space: normal;
+    height: auto;
+    min-height: 32px;
   }
 
   #post-info #post-meta .post-meta-separator {
