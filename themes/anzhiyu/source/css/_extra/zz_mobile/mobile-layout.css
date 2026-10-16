@@ -327,6 +327,15 @@ body {
     min-height: 32px;
   }
 
+  /* 徽标自身锁死单行高度，防止 height:100% 把换行后的容器高度整行吃掉 */
+  #post-firstinfo .meta-firstline > a.post-meta-original,
+  #post-firstinfo .meta-firstline > span.post-meta-categories,
+  #post-firstinfo .meta-firstline a.post-meta-categories {
+    height: 32px;
+    line-height: 32px;
+    flex: 0 0 auto;
+  }
+
   #post-info #post-meta .post-meta-separator {
     margin: 0 4px;
   }
