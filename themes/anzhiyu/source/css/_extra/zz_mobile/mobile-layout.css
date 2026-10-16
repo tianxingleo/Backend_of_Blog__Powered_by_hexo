@@ -200,7 +200,7 @@ body {
     min-width: 0;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info .recent-post-info-top-tips {
+  #recent-posts .recent-post-info-top-tips {
     margin-top: 0;
   }
 
@@ -226,13 +226,13 @@ body {
     overflow: visible;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .post-meta-date {
+  #recent-posts .post-meta-date {
     max-width: 100%;
     font-size: 13px;
     white-space: normal !important;
   }
 
-  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .article-meta.tags {
+  #recent-posts .article-meta.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 8px;
@@ -316,11 +316,25 @@ body {
     min-height: 32px;
   }
 
-  /* 徽标自身锁死单行高度，防止 height:100% 把换行后的容器高度整行吃掉 */
-  #post-firstinfo .meta-firstline > a.post-meta-original, #post-firstinfo .meta-firstline > span.post-meta-categories, #post-firstinfo .meta-firstline a.post-meta-categories {
+  /* 封面徽标：紧凑成组居中，文字居中 */
+  #post-firstinfo .meta-firstline {
+    justify-content: center;
+  }
+  #post-firstinfo .meta-firstline>a.post-meta-original {
+    width: auto;
     height: 32px;
-    line-height: 32px;
-    flex: 0 0 auto;
+    margin: 0;
+    justify-content: center;
+  }
+  #post-firstinfo .meta-firstline>span.post-meta-categories {
+    width: auto;
+    height: 32px;
+    margin: 0;
+  }
+  #post-firstinfo .meta-firstline a.post-meta-categories {
+    height: 32px;
+    justify-content: center;
+    margin-left: 0 !important;
   }
 
   #post-info #post-meta .post-meta-separator {
