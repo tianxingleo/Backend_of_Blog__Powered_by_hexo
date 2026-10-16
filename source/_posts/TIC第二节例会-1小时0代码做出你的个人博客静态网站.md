@@ -3,7 +3,6 @@ title: TIC第二节例会：1小时，0代码，做出你的个人博客静态�
 date: 2026-10-16 20:30:00
 categories:
   - 学习
-hidden: true
 tags:
   - tic
   - hexo
