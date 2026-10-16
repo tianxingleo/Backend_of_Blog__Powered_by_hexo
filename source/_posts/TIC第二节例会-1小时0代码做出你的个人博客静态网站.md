@@ -11,6 +11,7 @@ tags:
 slug: tic-meeting-2-hexo-blog-guide
 alias:
   - '/2026/10/16/TIC第二节例会-1小时0代码做出你的个人博客静态网站/'
+  - '/posts/tic-meeting-2-hexo-blog-guide/'
 ---
 
 # TIC 第二节例会：**1小时，0代码，做出你的个人博客静态网站**
@@ -472,8 +473,6 @@ git config --global user.email "你的GitHub注册邮箱"
 
 ```
 ssh-keygen -t rsa -C "你的GitHub注册邮箱"
-
-
 ```
 
 **敲完这行回车后，屏幕会停住问你 3 个问题（保存在哪、设不设密码）——请不要输入任何字符，直接连续按 3 下回车键（`Enter` -> `Enter` -> `Enter`）** 。直到你看到屏幕上打印出一个由字符组成的方框图案，说明钥匙已经生成完毕！
@@ -502,7 +501,11 @@ cat ~/.ssh/id_rsa.pub
 
    * 点击下方绿色的 **`Add SSH key`** 保存！
 
-   * > （原文档此处为 GitHub 添加 SSH Key 的操作截图，请对照 GitHub 页面 Settings → SSH and GPG keys → New SSH key 操作）
+   * ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_8a5665f9fc3a58c653bdef0232a78138.webp)
+
+     ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_0d266e9db16e554d3f96d38bf471405c.webp)
+
+   
 
 4. **测试电脑和 GitHub 能不能握手成功**： 回到你的 Git Bash 黑框框，输入下面这行测试命令并回车：
 
@@ -604,7 +607,7 @@ hexo d
    npm install hexo-renderer-pug hexo-renderer-stylus --save --registry=https://registry.npmmirror.com
    ```
    
-3. **Step 3：去 `_config.yml` 总控开关里换衣服！**
+3. **Step 3：去 `_config.yml` 总控开关里换主题**
    用 VS Code 打开 `myblog` 根目录下的 **`_config.yml`**，按 `Ctrl + F` 搜索 `theme:`（大概在第 99 行左右），你会看到原本写着：
 
    ```
@@ -617,7 +620,7 @@ hexo d
    theme: butterfly
    ```
    
-   *( 再次确认：`theme:` 的冒号后面有一个空格！然后按 `Ctrl + S` 保存！)*
+   *( 再次确认：`theme:` 的冒号后面有一个空格，然后按 `Ctrl + S` 保存！)*
    
 4. **本地预览新皮肤，满意后再一键推上 GitHub！**
    回到命令行，先用本地三连招看看效果：
@@ -631,7 +634,7 @@ hexo d
    打开 `http://localhost:4000` 刷新——哇！整个网站瞬间变成了精美的卡片式布局！
    确认好看之后，按 `Ctrl + C` 停掉本地预览，执行 **`hexo d`**，1 分钟后你线上的 `https://你的用户名.github.io` 也同步换上新皮肤啦！
 
-> （原文档此处为换上 Butterfly 主题后的效果截图）
+![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_22d632616d2343478489608a722c5e9f.webp)
 
 ### 3. 课后可以继续怎么玩？（美化与进阶指路）
 
@@ -645,3 +648,4 @@ hexo d
 
 * **添加炫酷插件**：比如 Live2D 桌面看板娘、网易云音乐吸底播放器、Giscus/Waline 评论区、网站访问人数统计（不蒜子）、全站文章搜索等！
 
+甚至修改主题代码（css、js）...
