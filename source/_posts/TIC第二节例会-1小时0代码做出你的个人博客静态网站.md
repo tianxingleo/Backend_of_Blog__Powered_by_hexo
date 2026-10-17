@@ -61,7 +61,7 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 [Tianxingleo的Blog](https://tianxingleo.top/)：
 
-![](https://img.tianxingleo.top/26_10_2b1c2bb838bf9913767d0222a592bde9.gif)
+<video src="https://img.tianxingleo.top/26_10_2b1c2bb838bf9913767d0222a592bde9.mp4" autoplay muted loop playsinline controls preload="metadata" style="width:100%;border-radius:12px;"></video>
 
 [Dinglz 's Blog](https://dinglz.cn/)：
 
@@ -648,3 +648,11 @@ hexo d
 * **添加炫酷插件**：比如 Live2D 桌面看板娘、网易云音乐吸底播放器、Giscus/Waline 评论区、网站访问人数统计（不蒜子）、全站文章搜索等！
 
 甚至修改主题代码（css、js）...
+
+### 4. 欢迎将自己的博客加入到NAOSI（大工开源协会）的友链/视奸学长学姐们的blog
+
+![](https://img.tianxingleo.top/26_10_a729f4a8c7d2c6ba3daec9bcac141aa8.webp)
+
+[NAOSI-DLUT/blogroll: 收集大工人们的博客友链](https://github.com/NAOSI-DLUT/blogroll)：
+
+![](https://img.tianxingleo.top/26_10_81585563bd22e26c8ab8b540e1bc06b8.webp)
