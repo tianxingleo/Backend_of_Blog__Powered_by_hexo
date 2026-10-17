@@ -1254,6 +1254,8 @@ inject:
     # - <script src="/js/xxx"></script>
     # 子页面智能预取：空闲时按优先级预加载子页面 + 悬停/触摸抢先预取（见 source/js/prefetch.js）
     - <script src="/js/prefetch.js" defer></script>
+    # 首页大横幅遮罩揭开（配合 cover-fade.styl，见 source/js/cover-fade.js）
+    - <script src="/js/cover-fade.js" defer></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

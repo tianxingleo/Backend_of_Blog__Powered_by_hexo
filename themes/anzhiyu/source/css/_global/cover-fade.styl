@@ -1,0 +1,86 @@
+// ============================================================================
+// 封面渐显（cover-fade）：文章卡片封面 / 今日推荐卡片 / 首页大横幅
+// ----------------------------------------------------------------------------
+// 原理：vanilla-lazyload 会在图片加载完成时自动加 .loaded 类（失败加 .error），
+// 此处用纯 CSS 监听这些类，实现"模糊 + 渐显 + 轻微回弹"，代替直接闪现。
+// 首页大横幅是 CSS background，无法直接过渡，改用"遮罩揭开"模拟渐显。
+// ============================================================================
+
+// ---------- 1. 封面占位底：加载完成前显示柔和渐变，避免白闪 ----------
+.post_cover
+  background: linear-gradient(135deg, #e8eef4 0%, #d9e2ec 50%, #e8eef4 100%)
+
+[data-theme='dark'] .post_cover
+  background: linear-gradient(135deg, #222a37 0%, #2c3644 50%, #222a37 100%)
+
+// ---------- 2. 待加载态：透明 + 模糊 + 轻微放大 ----------
+// 只命中带 data-lazy-src 的懒加载图片，普通图片不受影响
+#recent-posts img.post_bg[data-lazy-src]:not(.loaded):not(.error),
+#home_top .topGroup img.post_bg[data-lazy-src]:not(.loaded):not(.error)
+  opacity: 0
+  filter: blur(12px) saturate(1.2)
+  transform: scale(1.06)
+  transition: opacity 0.7s ease, filter 0.7s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1)
+
+// ---------- 3. 加载完成态：渐显 + 清晰 + 回弹 ----------
+// transition 必须同时写在这里：CSS 过渡以后状态的 transition 为准
+#recent-posts > .recent-post-item .post_cover img.post_bg.loaded,
+#recent-posts > .recent-post-item .post_cover img.post_bg.error,
+#home_top .topGroup img.post_bg.loaded,
+#home_top .topGroup img.post_bg.error
+  opacity: 1
+  filter: blur(0)
+  transform: scale(1)
+  transition: opacity 0.7s ease, filter 0.7s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1)
+
+// ---------- 4. 今日推荐大卡片封面：只做渐显 + 去模糊 ----------
+// 不动 transform，避免与卡片展开/收起的缩放动画冲突
+#todayCard .todayCard-cover[data-lazy-src]:not(.loaded):not(.error)
+  opacity: 0
+  filter: blur(10px)
+  transition: opacity 0.8s ease, filter 0.8s ease
+
+#todayCard .todayCard-cover.loaded,
+#todayCard .todayCard-cover.error
+  opacity: 1
+  filter: blur(0)
+  transition: opacity 0.8s ease, filter 0.8s ease
+
+// ---------- 5. 首页大横幅：遮罩揭开 ----------
+// 盖一层与底色相同的遮罩，等图片解码完成后（cover-fade.js 加 .hero-ready 类）再淡出揭开
+#page-header.full_page
+  &::after
+    content: ""
+    position: absolute
+    inset: 0
+    z-index: 1
+    pointer-events: none
+    background: #8ba9c4
+    opacity: 1
+    transition: opacity 1s ease
+    // 纯 CSS 兜底：即使 JS 未执行，6 秒后也强制揭开，避免遮罩永久遮挡
+    animation: hero-overlay-fallback 0.5s ease 6s forwards
+  &.hero-ready::after
+    opacity: 0
+  // 内容层提到遮罩之上（导航是 fixed z-index 90，本来就在上面）
+  #site-info
+    z-index: 2
+
+[data-theme='dark'] #page-header.full_page::after
+  background: #2c3644
+
+@keyframes hero-overlay-fallback
+  to
+    opacity: 0
+
+// ---------- 6. 尊重"减弱动态效果"系统偏好 ----------
+@media (prefers-reduced-motion: reduce)
+  #recent-posts img.post_bg,
+  #home_top .topGroup img.post_bg,
+  #todayCard .todayCard-cover
+    opacity: 1 !important
+    filter: none !important
+    transform: none !important
+    transition: none !important
+  #page-header.full_page::after
+    display: none

@@ -1123,7 +1123,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const lazyloadImg = () => {
     window.lazyLoadInstance = new LazyLoad({
       elements_selector: "img",
-      threshold: 0,
+      // 封面渐显（cover-fade）：提前 200px 开始加载，图片进入视口时动画更完整
+      threshold: 200,
       data_src: "lazy-src",
     });
   };
