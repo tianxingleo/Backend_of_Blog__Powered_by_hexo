@@ -157,10 +157,12 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: "background: url(https://img.tianxingleo.top/64761443_p01.webp) top / cover no-repeat"
+# 性能优化 2026-10：首屏顶图本地化（图床域名 img.* 未命中 CDN 缓存，DYNAMIC 回源极慢；主站静态资源已验证 HIT）。
+# 内联样式里带兜底底色 #8ba9c4（取自顶图天空蓝），图片加载前/失败后不再透出纯黑背景。
+index_img: "background: #8ba9c4 url(/images/hero-home.webp) top / cover no-repeat"
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: "https://img.tianxingleo.top/miku.webp"
+default_top_img: "/images/miku-banner.webp"
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -1083,7 +1085,7 @@ home_top:
   banner:
     tips: github.com/tianxingleo
     title: 我的github主页
-    image: https://img.tianxingleo.top/miku.webp
+    image: /images/miku-banner.webp
     link: https://github.com/tianxingleo
 
 # 朋友圈配置
@@ -1250,6 +1252,8 @@ inject:
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
+    # 子页面智能预取：空闲时按优先级预加载子页面 + 悬停/触摸抢先预取（见 source/js/prefetch.js）
+    - <script src="/js/prefetch.js" defer></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
