@@ -27,41 +27,8 @@ block content
             - let date_type = data_type_update ? 'updated' : 'date'
             time(itemprop="dateCreated datePublished" datetime=date_xml(page[date_type]) title=date_title + ' ' + full_date(page[date_type]))=date(page[date_type], config.date_format)
       !=page.content
-      script.
-        (() => {
-          const imgs = Array.from(document.querySelectorAll('#article-container.post-content img'));
-          const preloadQueue = [];
-          const inFlight = new Set();
-
-          imgs.forEach((img, index) => {
-            const src = img.dataset.lazySrc || img.currentSrc || img.src;
-            if (!src) return;
-
-            img.setAttribute('loading', 'eager');
-
-            if (index === 0) {
-              img.setAttribute('fetchpriority', 'auto');
-            }
-
-            preloadQueue.push(src);
-          });
-
-          const warmNext = () => {
-            while (inFlight.size < 2 && preloadQueue.length) {
-              const src = preloadQueue.shift();
-              const preloader = new Image();
-              inFlight.add(preloader);
-              preloader.decoding = 'async';
-              preloader.onload = preloader.onerror = () => {
-                inFlight.delete(preloader);
-                warmNext();
-              };
-              preloader.src = src;
-            }
-          };
-
-          warmNext();
-        })();
+      //- 注 2026-10：曾在此处以 2 并发预加载全文所有图片，窄带宽下屏外大文件会堵住队列、挤占视口图片带宽，已移除；
+      //- 视口前后 200px 的加载由 vanilla-lazyload（threshold: 200）负责，浏览器并行拉取，不再人为设限。
 
     include includes/post/post-copyright.pug
 

@@ -57,7 +57,7 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 [cxyx：](https://cccxyx.com/)
 
-![](https://img.tianxingleo.top/26_10_51572b2641f398d8d839b0950bab87ec.gif)
+<video src="https://img.tianxingleo.top/26_10_51572b2641f398d8d839b0950bab87ec.mp4" autoplay muted loop playsinline controls preload="metadata" style="width:100%;border-radius:12px;"></video>
 
 [Tianxingleo的Blog](https://tianxingleo.top/)：
 
@@ -65,7 +65,7 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 [Dinglz 's Blog](https://dinglz.cn/)：
 
-![](https://img.tianxingleo.top/26_10_63607399f36293a0cd4a825755923ff1.gif)
+<video src="https://img.tianxingleo.top/26_10_63607399f36293a0cd4a825755923ff1.mp4" autoplay muted loop playsinline controls preload="metadata" style="width:100%;border-radius:12px;"></video>
 
 看到这里你可能会问：**“这也太酷了吧！但我完全零基础，真的能在今天这节例会里做出来吗？”** 答案是：**完全可以！** 只要跟着下面的步骤一步步敲，1 小时后你也能拥有同款个人网站。
 
