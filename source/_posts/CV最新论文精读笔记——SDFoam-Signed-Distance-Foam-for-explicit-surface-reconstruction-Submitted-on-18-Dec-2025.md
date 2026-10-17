@@ -22,7 +22,7 @@ description: "SDFoam 是一种新型的 3D 重建与神经渲染框架，它创�
 
 SDFoam 是一种新型的 3D 重建与神经渲染框架，它创造性地将**显式的 Voronoi（沃罗诺伊）几何结构**与**隐式的 SDF（符号距离场）** 结合在一起，旨在同时实现**高质量的几何重建**和**高效的视图合成**。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_b24860bf17b1e18f1eac856c88518573.webp)
+![](https://img.tianxingleo.top/25_12_b24860bf17b1e18f1eac856c88518573.webp)
 
 > 论文标题：SDFoam: Signed-Distance Foam for explicit surface reconstruction*[Submitted on 18 Dec 2025]*
 >
@@ -69,7 +69,7 @@ SDFoam 的提出，正是为了解决现有三大主流技术路线在这一“�
   - **等值面提取困难：** 尝试通过阈值化密度（Thresholding density）来提取网格（Mesh）是非常不稳定的。选取的阈值稍有偏差，提取出的几何体就会出现严重的噪声、空洞或虚假的“云雾状”几何。
   - **应用受限：** 由此生成的几何体无法直接用于物理模拟、游戏引擎碰撞检测或 3D 打印，因为它们往往不是水密（Watertight）的，且包含大量非物理的半透明区域。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_6ca4dec7d7c2e744a8eb19cf25f3bd89.webp)
+![](https://img.tianxingleo.top/25_12_6ca4dec7d7c2e744a8eb19cf25f3bd89.webp)
 
 > 左：辐射场方法
 >
@@ -92,7 +92,7 @@ SDFoam 的提出，正是为了解决现有三大主流技术路线在这一“�
     - **离散化误差：** MC 需要在固定的体素网格上进行采样和线性插值，这引入了不可避免的数值近似误差（Numerical Approximations）。
     - **非端到端：** MC 是一个独立于训练过程的后处理步骤，无法在训练中直接优化网格拓扑。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_dd72745ca7717517ae31bcaf24fc6b18.webp)
+![](https://img.tianxingleo.top/25_12_dd72745ca7717517ae31bcaf24fc6b18.webp)
 
 > 左：传统神经隐式表示
 >
@@ -118,7 +118,7 @@ SDFoam 的提出，正是为了解决现有三大主流技术路线在这一“�
   - **“马赛克”效应：** 由于缺乏全局的表面约束（Global Surface Constraint），重建出的几何体往往呈现出碎片化特征。表面由离散的多边形面片拼凑而成，且场景中充斥着因局部极小值导致的**漂浮物 (Floaters)**。
   - **非物理结构：** 提取的模型通常是体积填充的（Volumetrically filled），而非原本的空心表面，且包含大量拓扑伪影（Topological Artifacts），难以进行后续的几何处理。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_cead196f3534292c8f7251049f36d6c1.webp)
+![](https://img.tianxingleo.top/25_12_cead196f3534292c8f7251049f36d6c1.webp)
 
 > 左：RadiantFoam
 >
@@ -154,7 +154,7 @@ SDFoam 的提出，正是为了解决现有三大主流技术路线在这一“�
 
 ### 第三部分：方法论
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_862e53ec9db6fc4397dd425857e26468.webp)
+![](https://img.tianxingleo.top/25_12_862e53ec9db6fc4397dd425857e26468.webp)
 
 > （图片摘自论文）
 
@@ -244,7 +244,7 @@ SDFoam 首先解决的是“如何在计算机中高效地存一个 3D 场景”
   - 同时，单元还存储了 **颜色参数 (RGB/SH)** 和 **位置参数 (x,y,z)**。
   - **本质改变：** 以前是“这块区域有多浓”，现在变成了“这块区域离表面有多远”。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_59a02a5d60fe7643929ca93ff9b12f49.webp)
+![](https://img.tianxingleo.top/25_12_59a02a5d60fe7643929ca93ff9b12f49.webp)
 
 > （图片由*Nano Banana Pro*生成）
 
@@ -267,7 +267,7 @@ SDFoam 首先解决的是“如何在计算机中高效地存一个 3D 场景”
   - **训练初期 (β 小)：** 曲线很宽，像一团雾。这让梯度能传得很远，帮助 AI 快速定位物体的大致轮廓。
   - **训练后期 (β 大)：** 曲线收紧成一根针。这迫使物体表面从“雾气”凝结成“石头”，实现高精度的锐利重建。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_03678024ad02dc16bd8861174ea1967f.webp)
+![](https://img.tianxingleo.top/25_12_03678024ad02dc16bd8861174ea1967f.webp)
 
 > （图片由*Nano Banana Pro*生成）
 
@@ -328,7 +328,7 @@ Figure 4 展示了 SDFoam 如何在不使用慢速 Marching Cubes 的情况下�
   - **无需插值：** 墙壁是现成的，不用像 Marching Cubes 那样去算三角形顶点的坐标插值。
   - **无需重连：** Voronoi 图天生就是无缝连接的，只要挑出来的面，天然就是拼好的。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_ff116b2ade51e535039982fc25fc4e79.webp)
+![](https://img.tianxingleo.top/25_12_ff116b2ade51e535039982fc25fc4e79.webp)
 
 Figure 4. From a trained SDFoam scene, we have access to both the SDF and the Voronoi Diagram. We infer the SDF value for each cell site, extracting the surface voronois via a threshold. The relevant surface faces are selected by thresholding their vertices against a close to zero SDF value. Since the VD is non-overlapping by nature, we don’t need to build additional connectivity at this step.
 
@@ -346,7 +346,7 @@ Figure 4. From a trained SDFoam scene, we have access to both the SDF and the Vo
   - **防止“平底锅”：** 如果没有它，网络可能会把表面附近一大片区域的 SDF 都设为 0（梯度消失）。Eikonal Loss 强迫 SDF 场呈 V 字形，确保 SDF=0 的位置是**唯一、锐利**的。
   - **保证距离真实：** 让光线步进算法（Ray Marching）能安全地跳跃，不会因为距离虚报而穿模或撞墙。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_dd72745ca7717517ae31bcaf24fc6b18.webp)
+![](https://img.tianxingleo.top/25_12_dd72745ca7717517ae31bcaf24fc6b18.webp)
 
 > （图片由*Nano Banana Pro*生成）
 
@@ -369,7 +369,7 @@ Figure 4. From a trained SDFoam scene, we have access to both the SDF and the Vo
 
 **结论：** 视觉上，SDFoam 从“一团雾”进化成了“一块砖”。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_5212aba51f79cd85bc6253d6564eed25.webp)
+![](https://img.tianxingleo.top/25_12_5212aba51f79cd85bc6253d6564eed25.webp)
 
 Figure 5. Mesh reconstruction qualitative results. Top to bottom: ground truth, RF, SDFoam. Modelling the voronoi cells as local SDFs improves the consistency of the extracted surface, thus filling the typical holes derived from the ray-tracing procedure in RF.
 
@@ -377,7 +377,7 @@ Figure 5. Mesh reconstruction qualitative results. Top to bottom: ground truth, 
 
 
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_1f61198ef660a2073ccc80aac9491ab6.webp)
+![](https://img.tianxingleo.top/25_12_1f61198ef660a2073ccc80aac9491ab6.webp)
 
 Figure 6. Novel view synthesis qualitative results. Top to bottom: ground truth, Radiant Foam, SDFoam. Our method is able to better model reflections, as can be seen in the metallic examples, has less floaters, while retaining a very good visual fidelity in highly textured surfaces (fur, stone, scratches, etc.).
 
@@ -385,7 +385,7 @@ Figure 6. Novel view synthesis qualitative results. Top to bottom: ground truth,
 
 
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_efa5399f58634c515f5cb58aaf2e7283.webp)
+![](https://img.tianxingleo.top/25_12_efa5399f58634c515f5cb58aaf2e7283.webp)
 
 Figure 12. Qualitative comparison of geometry and viewpoint rendering. From top to bottom: RadiantFoam RGB rendering, RadiantFoam depth, SDFoam RGB rendering, SDFoam depth, and (last row) SDFoam per-cell SDF.
 
@@ -412,9 +412,9 @@ Figure 12. Qualitative comparison of geometry and viewpoint rendering. From top 
   - **SDFoam 的绝杀：** 利用我们提到的“挑选法”（直接筛选 Voronoi 墙壁），网格重建速度提升了 **5 倍 (5× speed-up)**。
   - **意义：** 这意味着在实际应用中（比如用户用手机扫描物体），用户等待生成模型的时间从“去喝杯咖啡”变成了“眨眼之间”。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_8e4d2a3f988b113176ee857255ada4b6.webp)
+![](https://img.tianxingleo.top/25_12_8e4d2a3f988b113176ee857255ada4b6.webp)
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_7853eae7bc2fcc96daaffd5c9dbbc14d.webp)
+![](https://img.tianxingleo.top/25_12_7853eae7bc2fcc96daaffd5c9dbbc14d.webp)
 
 > （表格摘自论文）
 
@@ -502,6 +502,6 @@ SDFoam 不仅仅是一个具体的算法，它代表了计算机图形学（CG�
   - **现状：** SDFoam 处理不好镜面反射。
   - **脑洞：** 将 SDFoam 与 PBR（基于物理的渲染）结合。不仅学习颜色，还学习每个 Voronoi 单元的**粗糙度 (Roughness)、金属度 (Metallic) 和法线 (Normal)**。利用 Voronoi 的表面提取能力，做高质量的重打光（Relighting）。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/25_12_bc29fb799f9fe9eff0975a3186f43c99.webp)
+![](https://img.tianxingleo.top/25_12_bc29fb799f9fe9eff0975a3186f43c99.webp)
 
 > （图片由*Nano Banana Pro*生成）

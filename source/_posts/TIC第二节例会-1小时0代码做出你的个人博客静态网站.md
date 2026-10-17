@@ -57,15 +57,15 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 [cxyx：](https://cccxyx.com/)
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_51572b2641f398d8d839b0950bab87ec.gif)
+![](https://img.tianxingleo.top/26_10_51572b2641f398d8d839b0950bab87ec.gif)
 
 [Tianxingleo的Blog](https://tianxingleo.top/)：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_2b1c2bb838bf9913767d0222a592bde9.gif)
+![](https://img.tianxingleo.top/26_10_2b1c2bb838bf9913767d0222a592bde9.gif)
 
 [Dinglz 's Blog](https://dinglz.cn/)：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_63607399f36293a0cd4a825755923ff1.gif)
+![](https://img.tianxingleo.top/26_10_63607399f36293a0cd4a825755923ff1.gif)
 
 看到这里你可能会问：**“这也太酷了吧！但我完全零基础，真的能在今天这节例会里做出来吗？”** 答案是：**完全可以！** 只要跟着下面的步骤一步步敲，1 小时后你也能拥有同款个人网站。
 
@@ -105,17 +105,17 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 1. 打开浏览器，访问 [Watt Toolkit 官方网站](https://steampp.net/)（或在微软应用商店）。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_a3dd7c3b790812eae5b8baaf3b3a517d.png)
+![](https://img.tianxingleo.top/26_10_a3dd7c3b790812eae5b8baaf3b3a517d.png)
 
 1. 根据你的电脑系统（Windows / macOS）下载安装程序并打开。
 
 2. 打开软件后，在左侧菜单栏找到 **“网络加速”**。
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_3b85677607b2ef1f4dc9331cad404166.png)
+   ![](https://img.tianxingleo.top/26_10_3b85677607b2ef1f4dc9331cad404166.png)
 
 3. 在右侧列表中勾选 **“GitHub”**，然后点击右下角的 **“一键加速”** 按钮（如果是第一次使用，软件提示安装证书或 Hosts 权限时，请全部点击“确定/允许”）。
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_88a14a97f7ff4d5fcebf9d39e5001ba8.webp)
+   ![](https://img.tianxingleo.top/26_10_88a14a97f7ff4d5fcebf9d39e5001ba8.webp)
 
 ### Step 2：注册你的程序员身份证——GitHub 账号
 
@@ -125,13 +125,13 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 1. 浏览器访问 [GitHub 官网](https://github.com/)，点击右上角的 **Sign up**（注册）。
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_446c77e2a11ba75570b659988b466c56.webp)
+![](https://img.tianxingleo.top/26_10_446c77e2a11ba75570b659988b466c56.webp)
 
 1. 按照提示依次输入你的**常用邮箱（Email）**、**密码（Password）以及用户名（Username）**。
 
    * **起名特别提醒**：你的 GitHub 用户名（比如 `zhangsan`）将来会直接变成你博客的专属网址：`https://zhangsan.github.io`！所以强烈建议取一个**简短、好记、全英文/数字**的名字，并且拿小本本记好你的**用户名**和**注册邮箱**，后面配置连接时要用！
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_24c160b072c7b35fed4cb4c03021ebd1.webp)
+   ![](https://img.tianxingleo.top/26_10_24c160b072c7b35fed4cb4c03021ebd1.webp)
 
 2. 去邮箱查收验证码完成验证，即可成功登录 GitHub。
 
@@ -175,7 +175,7 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
    * 添加到 PATH（重启后生效）
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_1b960443bf1ef525c8fe4dbf6d1ec85e.webp)
+![](https://img.tianxingleo.top/26_10_1b960443bf1ef525c8fe4dbf6d1ec85e.webp)
 
 ## 四、第二阶段：零基础命令行入门与安装 Hexo
 
@@ -185,7 +185,7 @@ description: "在写第一行命令之前，先带大家看看我们 TIC 的学�
 
 在 Windows 电脑上打开命令行：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_e2f62b4bcc5d6d9aa01087a7f2f3fd50.webp)
+![](https://img.tianxingleo.top/26_10_e2f62b4bcc5d6d9aa01087a7f2f3fd50.webp)
 
 现在，请大家打开命令行窗口，依次输入下面 **3 行命令**（每输完一行按一下**回车键 `Enter`**），看看是否会输出版本号：
 
@@ -263,9 +263,9 @@ hexo -v
 
 3. 在文件夹空白处**点击鼠标右键 -> 选择 `在终端打开`**，此时弹出的命令行窗口路径末尾应该显示着 `/myblog`。
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_c3208d0d41713a7ef07c5b1490747ff3.webp)
+   ![](https://img.tianxingleo.top/26_10_c3208d0d41713a7ef07c5b1490747ff3.webp)
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_9ab6c25d5b1050f58e99c1715e59b346.webp)
+   ![](https://img.tianxingleo.top/26_10_9ab6c25d5b1050f58e99c1715e59b346.webp)
 
 ### Step 2：初始化博客代码仓库（`hexo init`）
 
@@ -306,11 +306,11 @@ hexo s
 
 * 快打开你的浏览器（Chrome / Edge 等），在地址栏输入 **`http://localhost:4000`** 并回车！
 
-  ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_5d42f9a08904b2a2e9943b043923efab.webp)
+  ![](https://img.tianxingleo.top/26_10_5d42f9a08904b2a2e9943b043923efab.webp)
 
 🎉 **恭喜你！！** 屏幕上出现了一个带着大图、写着 `Hello World` 的博客网站！这就是你亲手跑起来的第一个网站！
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_9486a55836b8309cdf7b85f019c88ac8.webp)
+![](https://img.tianxingleo.top/26_10_9486a55836b8309cdf7b85f019c88ac8.webp)
 
 * **零基础科普：什么是 `localhost:4000`？**
 * `localhost`（本地主机）指的是**你自己的这台电脑**，`:4000` 是房间门牌号（端口号）。
@@ -359,13 +359,13 @@ hexo s
 
    * [**Chinese (Simplified) Language Pack**](https://marketplace.visualstudio.com/)：搜 `Chinese`，第一个就是官方中文汉化包，装完右下角点重启就是全中文界面啦！
 
-   ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_4749ee77ca17a825f03585511fa562a2.webp)
+   ![](https://img.tianxingleo.top/26_10_4749ee77ca17a825f03585511fa562a2.webp)
 
    * [**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)：写 Markdown 必备的快捷键与自动目录补全神器。
 
    * [**Markdown Preview Enhanced**](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)：超强大的实时预览插件，让你左边打字，右边实时看到渲染出来的精美排版！
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_061cf34ae1db5166e656da37a8f86d03.webp)
+![](https://img.tianxingleo.top/26_10_061cf34ae1db5166e656da37a8f86d03.webp)
 
 ### 4. 亲手写下你的第一篇博客文章
 
@@ -381,7 +381,7 @@ hexo s
 
 3. **开启右侧实时预览**： 点击编辑器右上角的 **“带放大镜的分屏小图标”**（或者在编辑区空白处右键 -> 选择 `Markdown Preview Enhanced: Open Preview to the Side`），右边立刻就会出现预览窗口！
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_e4014e46432b71588e68eea4f7dd72f4.webp)
+![](https://img.tianxingleo.top/26_10_e4014e46432b71588e68eea4f7dd72f4.webp)
 
 1. **认识文章开头的“结构”并写点正文**： 你会看到文件最开头有两条 `---` 夹着的内容，千万别把 `---` 删了，这是给 Hexo 看的文章属性卡，我们在 `---` 下面用 Markdown 语法随便写几句话试试：
 
@@ -449,7 +449,7 @@ hexo s
    * **为什么要这么填？** 这是 [GitHub Pages 官方文档](https://docs.github.com/pages/quickstart) 规定的特殊暗号。只有当仓库名严格等于 `用户名.github.io` 时，GitHub 才会自动把这个仓库识别为你的个人主页网站，并免费送你这个同名网址！
 
 4. 下面的可见性保持默认的 **`Public`（公开）**，其他什么都不用勾选，直接拉到最底下点击绿色的 **`Create repository`** 按钮！
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_53d19c51ea71d03c9a6915c93a05e867.webp)
+![](https://img.tianxingleo.top/26_10_53d19c51ea71d03c9a6915c93a05e867.webp)
 
 ### Step 2：配置 Git 身份与生成 SSH Key（给你的电脑办一张免密通行证）
 
@@ -457,7 +457,7 @@ hexo s
 
 请在桌面或 `myblog` 文件夹右键打开 **`Git Bash`**，严格按顺序执行下面 **4 步**：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_1ea94d80e7cc67d295134a72adeb5b53.webp)
+![](https://img.tianxingleo.top/26_10_1ea94d80e7cc67d295134a72adeb5b53.webp)
 
 #### 🔹 1. 告诉 Git 你的名字和邮箱（替换成你自己的）
 
@@ -502,9 +502,9 @@ cat ~/.ssh/id_rsa.pub
 
    * 点击下方绿色的 **`Add SSH key`** 保存！
 
-   * ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_8a5665f9fc3a58c653bdef0232a78138.webp)
+   * ![](https://img.tianxingleo.top/26_10_8a5665f9fc3a58c653bdef0232a78138.webp)
 
-     ![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_0d266e9db16e554d3f96d38bf471405c.webp)
+     ![](https://img.tianxingleo.top/26_10_0d266e9db16e554d3f96d38bf471405c.webp)
 
 4. **测试电脑和 GitHub 能不能握手成功**： 回到你的 Git Bash 黑框框，输入下面这行测试命令并回车：
 
@@ -633,7 +633,7 @@ hexo d
    打开 `http://localhost:4000` 刷新——哇！整个网站瞬间变成了精美的卡片式布局！
    确认好看之后，按 `Ctrl + C` 停掉本地预览，执行 **`hexo d`**，1 分钟后你线上的 `https://你的用户名.github.io` 也同步换上新皮肤啦！
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_10_22d632616d2343478489608a722c5e9f.webp)
+![](https://img.tianxingleo.top/26_10_22d632616d2343478489608a722c5e9f.webp)
 
 ### 3. 课后可以继续怎么玩？（美化与进阶指路）
 

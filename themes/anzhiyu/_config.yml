@@ -157,10 +157,10 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: "background: url(https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/64761443_p01.webp) top / cover no-repeat"
+index_img: "background: url(https://img.tianxingleo.top/64761443_p01.webp) top / cover no-repeat"
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: "https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/miku.webp"
+default_top_img: "https://img.tianxingleo.top/miku.webp"
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -172,14 +172,16 @@ cover:
   position: left
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/【Pixiv画师精选（132）】八三_988777.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/7ae2047cde0451cf21fa7a8842565b58f0e9d1e1.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/8eb85bb13982d5a8187fee8a42adf1bc1a95a704.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/9c7026124dcb360f454545904aac9838cb95adb8.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/91953835_p0.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/94219701_p0.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/114477837_p0_master1200.webp
-    - https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/ae2d1eca082f876be72a1278e9e959e9.webp
+    # 中文文件名已做百分号编码（部分 RSS/爬虫不自动编码；续行反斜杠保证拼接后逐字一致）
+    - "https://img.tianxingleo.top/%E3%80%90Pixiv%E7%94%BB%E5%B8%88%E7%B2%BE%E9%80%89%EF%BC%88\
+      132%EF%BC%89%E3%80%91%E5%85%AB%E4%B8%89_988777.webp"
+    - https://img.tianxingleo.top/7ae2047cde0451cf21fa7a8842565b58f0e9d1e1.webp
+    - https://img.tianxingleo.top/8eb85bb13982d5a8187fee8a42adf1bc1a95a704.webp
+    - https://img.tianxingleo.top/9c7026124dcb360f454545904aac9838cb95adb8.webp
+    - https://img.tianxingleo.top/91953835_p0.webp
+    - https://img.tianxingleo.top/94219701_p0.webp
+    - https://img.tianxingleo.top/114477837_p0_master1200.webp
+    - https://img.tianxingleo.top/ae2d1eca082f876be72a1278e9e959e9.webp
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -1081,7 +1083,7 @@ home_top:
   banner:
     tips: github.com/tianxingleo
     title: 我的github主页
-    image: https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/miku.webp
+    image: https://img.tianxingleo.top/miku.webp
     link: https://github.com/tianxingleo
 
 # 朋友圈配置

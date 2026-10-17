@@ -58,13 +58,13 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 720P原图（多白墙，多噪点，低清晰度）：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_3d0dd1f7dc1b5b8547ae0312d097278a.webp)
+![](https://img.tianxingleo.top/26_02_3d0dd1f7dc1b5b8547ae0312d097278a.webp)
 
 ### DA3 stream 单目深度图（准确性高）：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_3cc2f07120cbba149ca80859ddb1f64c.webp)
+![](https://img.tianxingleo.top/26_02_3cc2f07120cbba149ca80859ddb1f64c.webp)
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_7e7a1b3007c2065f79ef5522de7f8fd2.webp)
+![](https://img.tianxingleo.top/26_02_7e7a1b3007c2065f79ef5522de7f8fd2.webp)
 
 ## Depth Anything 3+DepthSplat（优先级1）
 
@@ -74,11 +74,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 正面：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_a8d633748ae490da40a73ef14fd72cd0.webp)
+![](https://img.tianxingleo.top/26_02_a8d633748ae490da40a73ef14fd72cd0.webp)
 
 ### 外面：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_73014c3c7c3c64d00d7cc8cf7f47c4f4.webp)
+![](https://img.tianxingleo.top/26_02_73014c3c7c3c64d00d7cc8cf7f47c4f4.webp)
 
 ### 优缺点
 
@@ -94,11 +94,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_9a89026981c4cf91e815a5155502a8d4.webp)
+![](https://img.tianxingleo.top/26_02_9a89026981c4cf91e815a5155502a8d4.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_c965149975a8fef85052458fadc756d1.webp)
+![](https://img.tianxingleo.top/26_02_c965149975a8fef85052458fadc756d1.webp)
 
 ### 优缺点：
 
@@ -114,11 +114,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_96b3b30d409d434095f1c82d341ea0bb.webp)
+![](https://img.tianxingleo.top/26_02_96b3b30d409d434095f1c82d341ea0bb.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_abf277c3c374d9bd2bcc3473e3b5eac7.webp)
+![](https://img.tianxingleo.top/26_02_abf277c3c374d9bd2bcc3473e3b5eac7.webp)
 
 ### 优缺点：
 
@@ -134,11 +134,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_05e88c77d03d3e60f31ca8ca3f275e35.webp)
+![](https://img.tianxingleo.top/26_02_05e88c77d03d3e60f31ca8ca3f275e35.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_dfc3596887047cfa8cbe84234d3ba890.webp)
+![](https://img.tianxingleo.top/26_02_dfc3596887047cfa8cbe84234d3ba890.webp)
 
 ### 优缺点：
 
@@ -158,7 +158,7 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_cd527cbfd8bbfb7d2a1d51e02c2ef732.webp)
+![](https://img.tianxingleo.top/26_02_cd527cbfd8bbfb7d2a1d51e02c2ef732.webp)
 
 ### 优缺点：
 
@@ -174,11 +174,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_608cbb59a995c0ca55568305326c6ecb.webp)
+![](https://img.tianxingleo.top/26_02_608cbb59a995c0ca55568305326c6ecb.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_111e2324d43e8bc0e64592ed971624bf.webp)
+![](https://img.tianxingleo.top/26_02_111e2324d43e8bc0e64592ed971624bf.webp)
 
 ### 优缺点
 
@@ -194,11 +194,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_b31087952912b9f0843e17a4cb604d37.webp)
+![](https://img.tianxingleo.top/26_02_b31087952912b9f0843e17a4cb604d37.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_fe6603b819013a49cd8f4e0821dbc958.webp)
+![](https://img.tianxingleo.top/26_02_fe6603b819013a49cd8f4e0821dbc958.webp)
 
 ### 优缺点：
 
@@ -214,11 +214,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_ab25060e9be6192e4a8fa3107b4f3a6a.webp)
+![](https://img.tianxingleo.top/26_02_ab25060e9be6192e4a8fa3107b4f3a6a.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_0d5094b581880fc046e1c087d08a8d89.webp)
+![](https://img.tianxingleo.top/26_02_0d5094b581880fc046e1c087d08a8d89.webp)
 
 ### 优缺点：
 
@@ -236,11 +236,11 @@ description: "在推进个人 3D 记忆库构建的过程中，我们经常会�
 
 ### 内部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_101bb0e71a1e83913583aa123ef90a7a.webp)
+![](https://img.tianxingleo.top/26_02_101bb0e71a1e83913583aa123ef90a7a.webp)
 
 ### 外部：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_ee8b59be3a192215a519d3df05c90816.webp)
+![](https://img.tianxingleo.top/26_02_ee8b59be3a192215a519d3df05c90816.webp)
 
 ### 优缺点：
 

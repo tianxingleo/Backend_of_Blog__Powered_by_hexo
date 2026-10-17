@@ -17,19 +17,19 @@ description: "为了能够用矩阵乘法统一表示平移（Translation），�
 
 ## 缩放矩阵：
 
-### 标准缩放：![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_9126def1648d71779450e6341c0329aa.webp)
+### 标准缩放：![](https://img.tianxingleo.top/26_02_9126def1648d71779450e6341c0329aa.webp)
 
 
 
 ### 非均匀缩放：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_0e17401833a10bdc83428824d9c6e502.webp)
+![](https://img.tianxingleo.top/26_02_0e17401833a10bdc83428824d9c6e502.webp)
 
 
 
 
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_c8ec8cb2bfe400339710414c75e5a886.webp)
+![](https://img.tianxingleo.top/26_02_c8ec8cb2bfe400339710414c75e5a886.webp)
 
 
 
@@ -37,11 +37,11 @@ description: "为了能够用矩阵乘法统一表示平移（Translation），�
 
 ### 切变：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_1a4ee8c0773dbc9e44e24e0b443a18ed.webp)
+![](https://img.tianxingleo.top/26_02_1a4ee8c0773dbc9e44e24e0b443a18ed.webp)
 
 ### 旋转：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_ad2a39ba722cf290b647ed413fdf4e8f.webp)
+![](https://img.tianxingleo.top/26_02_ad2a39ba722cf290b647ed413fdf4e8f.webp)
 
 
 
@@ -80,7 +80,7 @@ $$\begin{pmatrix} x' \\ y' \\ w' \end{pmatrix} = \begin{pmatrix} 1 & 0 & t_x \\ 
 
 ## 逆变换：
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_02_1da83ec0cc61ee90ad39a2e7451f56cf.webp)
+![](https://img.tianxingleo.top/26_02_1da83ec0cc61ee90ad39a2e7451f56cf.webp)
 
 ## 三维变换：
 

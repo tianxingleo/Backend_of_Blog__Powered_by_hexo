@@ -38,7 +38,6 @@ if theme.blog_title_font && theme.blog_title_font.font_link && theme.blog_title_
 if !theme.asset.busuanzi && (theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv)
   link(rel="preconnect" href="//busuanzi.ibruce.info")
 
-//- 性能优化：LCP 图片（R2 图床）与头像域名预连接（图片为 no-cors 请求，故不加 crossorigin）
-//- 注意：R2 迁移到自定义域名后请同步更新此处
-link(rel="preconnect" href="//pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev")
+//- 性能优化：LCP 图片（R2 图床自定义域）与头像域名预连接（图片为 no-cors 请求，故不加 crossorigin）
+link(rel="preconnect" href="//img.tianxingleo.top")
 link(rel="preconnect" href="//avatars.githubusercontent.com")

@@ -48,7 +48,7 @@ UrbanScene3D 官方给人的第一感觉是一个偏大规模城市场景的数�
 
 ## 3. Proxy：更值得看的部分
 
-![](https://pub-f8d3afa0c3274f1e943ee2f8c45dff96.r2.dev/26_03_07d00355ed168432a1ee7bcd25feb977.webp)
+![](https://img.tianxingleo.top/26_03_07d00355ed168432a1ee7bcd25feb977.webp)
 
 相比之下，`Proxy/` 目录对当前课题更有意思。
 
