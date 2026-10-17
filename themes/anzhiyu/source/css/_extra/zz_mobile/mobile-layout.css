@@ -320,13 +320,13 @@ body {
   #post-firstinfo .meta-firstline {
     justify-content: center;
   }
-  #post-firstinfo .meta-firstline>a.post-meta-original {
+  #post-firstinfo .meta-firstline > a.post-meta-original {
     width: auto;
     height: 32px;
     margin: 0;
     justify-content: center;
   }
-  #post-firstinfo .meta-firstline>span.post-meta-categories {
+  #post-firstinfo .meta-firstline > span.post-meta-categories {
     width: auto;
     height: 32px;
     margin: 0;

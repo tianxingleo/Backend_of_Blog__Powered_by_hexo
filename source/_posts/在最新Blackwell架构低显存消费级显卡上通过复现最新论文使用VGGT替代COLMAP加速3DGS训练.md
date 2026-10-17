@@ -15,6 +15,7 @@ tags:
 slug: vggt-colmap-3dgs-blackwell
 alias:
   - '/2025/12/10/在最新Blackwell架构低显存消费级显卡上通过复现最新论文使用VGGT替代COLMAP加速3DGS训练/'
+description: "在 3D 高斯泼溅（3DGS）和 NeRF 的工作流中，COLMAP 带来的稀疏重建（SfM）往往是耗时最长的瓶颈。Meta 推出的 VGGT (Visual Geometry Grounded Transformer) 提供了一种基于 Transformer 的前馈推理方案，能在几秒钟内完成传统算…"
 ---
 
 # 在 RTX 5070 + WSL 上使用 VGGT 替代 COLMAP 加速 3DGS 训练

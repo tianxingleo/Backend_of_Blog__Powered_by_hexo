@@ -11,6 +11,7 @@ tags:
 slug: naosi-study-abroad-notes
 alias:
   - '/2026/02/01/NAOSI留学讲座笔记/'
+description: "A((为什么留学?留 or 学)) --> B(留 学)"
 ---
 
 ## 留学准备过程

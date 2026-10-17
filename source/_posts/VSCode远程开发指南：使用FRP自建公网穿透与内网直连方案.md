@@ -11,6 +11,7 @@ tags:
 slug: vscode-remote-dev-frp
 alias:
   - '/2026/01/15/VSCode远程开发指南：使用FRP自建公网穿透与内网直连方案/'
+description: "VS Code 自带的 Tunnel 功能基于 Azure 中继服务器，在跨国或网络环境复杂的情况下（如国内连接海外），存在高延迟、连接不稳定及保存卡顿的问题。"
 ---
 
 ## 背景

@@ -10,6 +10,7 @@ tags:
 slug: games101-lecture-01-notes
 alias:
   - '/2026/02/02/GAMES101-Lecture-01-Overview-of-Computer-Graphics-笔记/'
+description: "为了能够用矩阵乘法统一表示平移（Translation），引入了第三个坐标分量：$w$ 坐标。"
 ---
 
 # Lecture 03 Transformation

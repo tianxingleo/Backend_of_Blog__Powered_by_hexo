@@ -10,6 +10,7 @@ tags:
 slug: dut-cpc-meeting-1-2025
 alias:
   - '/2025/10/30/DUT开发区cpc组第一次例会笔记（2025秋）/'
+description: "在 C++ 中，对两个整数做除法并实现向上取整（Ceiling Division）的通用方法是利用一个简单的数学技巧。"
 ---
 
 ## 1.向上取整

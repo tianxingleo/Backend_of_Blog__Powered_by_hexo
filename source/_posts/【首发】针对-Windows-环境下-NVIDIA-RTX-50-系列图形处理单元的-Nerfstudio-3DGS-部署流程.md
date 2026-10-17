@@ -12,6 +12,7 @@ tags:
 slug: nerfstudio-3dgs-rtx50-windows
 alias:
   - '/2025/12/05/【首发】针对-Windows-环境下-NVIDIA-RTX-50-系列图形处理单元的-Nerfstudio-3DGS-部署流程/'
+description: "鉴于搭载最新 Blackwell 架构（即 RTX 50 系列）的图形处理单元在 Windows 原生环境下的配置存在显著的复杂性及较高的编译失败率，本方案确立了利用 Windows Subsystem for Linux (WSL2) 的标准化部署流程。此架构旨在实现图形处理单元性能的无损调用，并…"
 ---
 
 # 【首发】针对 Windows 环境下 NVIDIA RTX 50 系列图形处理单元的 Nerfstudio (3DGS) 部署流程

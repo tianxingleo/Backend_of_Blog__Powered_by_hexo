@@ -1,0 +1,7 @@
+# yamllint 规则：Hexo 配置文件含大量长 URL，80 列不适用，放宽到 130。
+# 纯注释仍建议保持简短；超长配置值行接受现状（换行会破坏 URL）。
+extends: default
+rules:
+  line-length:
+    max: 130
+  document-start: disable

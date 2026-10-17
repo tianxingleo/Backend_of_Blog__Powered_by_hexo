@@ -9,6 +9,7 @@ tags:
 slug: c-input-functions
 alias:
   - '/2025/11/24/C语言中常见的输入函数/'
+description: "getchar() 函数用于从标准输入（通常是键盘）读取一个字符。"
 ---
 
 ##  C 语言中常见的输入函数

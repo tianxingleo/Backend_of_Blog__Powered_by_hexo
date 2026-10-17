@@ -15,6 +15,7 @@ tags:
 slug: cpp-functions-pointers
 alias:
   - '/2025/11/09/c-cpp函数与指针学习笔记/'
+description: "C 与 C++ 在函数机制上的关键区别：缺省参数、函数重载与指针传参。"
 ---
 
 # 函数

@@ -141,7 +141,7 @@ body[data-type="link"]
         height: fit-content;
 
         .flink-item-name
-          @extend .limit-one-line
+          // 注：原 @extend .limit-one-line 冗余（下方已有相同声明），移除以支持 CSS 分包编译
           text-align: left;
           line-height: 20px;
           color: var(--anzhiyu-fontcolor);
@@ -155,7 +155,9 @@ body[data-type="link"]
           white-space: nowrap;
 
         .flink-item-desc
-          @extend .limit-one-line
+          // 原 @extend .limit-one-line 展开为等价声明（支持 CSS 分包编译）
+          overflow: hidden
+          text-overflow: ellipsis
           white-space: normal;
           padding: 5px 10px 16px 0;
           color: var(--anzhiyu-fontcolor);

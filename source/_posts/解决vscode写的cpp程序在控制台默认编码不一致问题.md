@@ -9,6 +9,7 @@ tags:
 slug: vscode-cpp-encoding-fix
 alias:
   - '/2025/10/27/解决vscode写的cpp程序在控制台默认编码不一致问题/'
+description: "在您的 C++ 代码中使用 system('chcp 65001') 命令来临时将控制台的编码更改为 UTF-8（Windows 编码 65001 就是 UTF-8），从而与您的源文件编码匹配。"
 ---
 
 

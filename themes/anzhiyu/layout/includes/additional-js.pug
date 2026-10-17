@@ -25,10 +25,10 @@ div
     script.
       var meting_api = "!{theme.asset.meting_api}";
 
-  //- 深色模式粒子效果canvas
+  //- 深色模式粒子效果canvas（性能优化：换到已预连接的 jsdelivr，减少 DNS/建连）
   if theme.universe.enable
     canvas(id="universe")
-    script(async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js")
+    script(async src="https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/dark/dark.js")
 
   //- 控制台打印信息
   if theme.console.enable
@@ -41,16 +41,42 @@ div
   if theme.footer.runtime.enable
     != partial("includes/third-party/runtime/runtime-js.pug", {}, { cache: true })
 
-  //- search
+  //- search（性能优化：Algolia 三件套改为首次点击搜索时才加载，首屏省 ~150KB JS）
   if theme.algolia_search.enable
-    script(src=url_for(theme.asset.algolia_search))
-    script(src=url_for(theme.asset.instantsearch))
-    script(src=url_for(theme.asset.algolia_js))
+    script.
+      (function () {
+        var loaded = false, loading = false;
+        function loadAlgolia(done) {
+          if (loaded) { done && done(); return; }
+          if (loading) return;
+          loading = true;
+          getScript("!{url_for(theme.asset.algolia_search)}")
+            .then(function () { return getScript("!{url_for(theme.asset.instantsearch)}"); })
+            .then(function () { return getScript("!{url_for(theme.asset.algolia_js)}"); })
+            .then(function () { loaded = true; done && done(); })
+            .catch(function (err) { loading = false; console.error("[search] failed to load algolia", err); });
+        }
+        window.__loadAlgolia = loadAlgolia;
+        // 拦截搜索按钮首次点击：先加载脚本，加载完再触发真正的打开逻辑
+        document.addEventListener("click", function (e) {
+          var btn = e.target && e.target.closest ? e.target.closest("#search-button > .search") : null;
+          if (!btn || loaded || loading) return;
+          e.preventDefault();
+          e.stopPropagation();
+          loadAlgolia(function () { btn.click(); });
+        }, true);
+        // Shift+S 快捷键首次按下时预加载（第二次按下即可打开）
+        document.addEventListener("keydown", function (e) {
+          if (loaded || loading) return;
+          if (e.keyCode === 83 && e.shiftKey) loadAlgolia();
+        });
+      })();
   else if theme.local_search.enable
     script(src=url_for(theme.asset.local_search))
 
-
-
+  //- colorthief
+  if theme.mainTone.mode === "colorthief"
+    script(src=url_for(theme.asset.colorthief))
 
   .js-pjax
     if theme.peoplecanvas.enable && is_home()
@@ -94,16 +120,17 @@ div
     script.
       var visitorMail = "#{mail}";
 
-  //- 即刻依赖waterfall
-  script(async data-pjax src=url_for(theme.asset.waterfall))
-  //- 文章二维码
-  script(src='https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js')
+  //- waterfall 仅 essay/album 类页面需要（即刻/相册），其他页面不加载
+  if page.type === 'essay' || page.type === 'album' || page.type === 'album_detail'
+    script(async data-pjax src=url_for(theme.asset.waterfall))
+  //- 文章二维码：仅文章页需要；延迟加载；原小众 cbd 域名换 jsdelivr（已验证文件存在）
+  if is_post()
+    script(defer src='https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js')
   //- 右键菜单
   if (theme.rightClickMenu && theme.rightClickMenu.enable)
     script(src=url_for(theme.asset.right_click_menu_js))
 
-  //- iconfont依赖
-  link(rel="stylesheet" href=url_for(theme.asset.ali_iconfont_css))
+  //- iconfont依赖（样式已移入 head 尽早加载，此处仅保留可选的 symbol JS）
   if (theme.icons && theme.icons.ali_iconfont_js)
     script(async src=url_for(theme.icons.ali_iconfont_js))
 
@@ -125,7 +152,7 @@ div
   if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
     script(async data-pjax src= theme.asset.busuanzi || '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
   if theme.accesskey.enable
-    script(charset="UTF-8" src=url_for(theme.asset.accesskey_js))
+    script(defer charset="UTF-8" src=url_for(theme.asset.accesskey_js))
 
   if is_current("/") && theme.greetingBox.enable
     #greetingBox

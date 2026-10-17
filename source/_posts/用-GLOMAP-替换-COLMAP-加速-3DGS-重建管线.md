@@ -12,6 +12,7 @@ tags:
 slug: glomap-colmap-3dgs
 alias:
   - '/2025/12/10/用-GLOMAP-替换-COLMAP-加速-3DGS-重建管线/'
+description: "在 3D Gaussian Splatting (3DGS) 的数据预处理阶段，稀疏重建（Sparse Reconstruction）往往是耗时瓶颈。传统的 COLMAP 采用增量式（Incremental）重建策略，虽然精度高但随着图片数量增加速度呈指数级下降。"
 ---
 
 # 用 GLOMAP 替换 COLMAP 加速 3DGS 重建管线

@@ -1,0 +1,85 @@
+// 页面级 / 低频功能样式包
+// 经由 head 非阻塞加载（media="print" onload），不影响首屏渲染。
+// 注意：本文件与 index.styl 为互斥拆分，两处 import 的并集必须覆盖原有全部文件。
+// 如需启用新功能页（相册/即刻/音乐/房间等），样式已包含，无需改动。
+if hexo-config('css_prefix')
+  @import 'nib'
+
+@import 'var'
+
+// 媒体查询混入（与 _global/function.styl 同步）：纯 mixin 定义，不产生任何 CSS 输出，
+// 供本包内页面样式使用，避免引入整个 function.styl 造成 keyframes 重复。
+schemeDark()
+  @media (prefers-color-scheme: dark)
+    {block}
+schemeLight()
+  @media (prefers-color-scheme: light)
+    {block}
+maxWidth500()
+  @media screen and (max-width: 500px)
+    {block}
+maxWidth600()
+  @media screen and (max-width: 600px)
+    {block}
+maxWidth768()
+  @media screen and (max-width: 768px)
+    {block}
+minWidth768()
+  @media screen and (min-width: 768px)
+    {block}
+maxWidth1200()
+  @media screen and (max-width: 1200px)
+    {block}
+maxWidth1400()
+  @media screen and (max-width: 1400px)
+    {block}
+maxWidth900()
+  @media screen and (max-width: 900px)
+    {block}
+minWidth901()
+  @media screen and (min-width: 901px)
+    {block}
+minWidth900()
+  @media screen and (min-width: 900px)
+    {block}
+minWidth1200()
+  @media screen and (min-width: 1200px)
+    {block}
+minWidth2000()
+  @media screen and (min-width: 2000px)
+    {block}
+maxHeight680()
+  @media screen and (max-height: 680px)
+    {block}
+maxHeight580()
+  @media screen and (max-height: 580px)
+    {block}
+
+// 低频页面（关于/设备/友链/音乐/打赏）
+@import '_page/about'
+@import '_page/equipment'
+@import '_page/flink'
+@import '_page/music'
+@import '_page/reward'
+
+// 低频页面组件与未启用功能
+@import '_extra/album/album.css'
+@import '_extra/album/album_detail.css'
+@import '_extra/aside_weixin/aside_weixin.css'
+@import '_extra/commentBarrage/commentBarrage.css'
+@import '_extra/essay_page/essay_page.css'
+@import '_extra/essay_page/home_essay_bar.css'
+@import '_extra/fix/aplayer.css'
+@import '_extra/fix/bilibili-bangumi.css'
+@import '_extra/fix/fcircle_page.css'
+@import '_extra/fix/gitcalendar.css'
+@import '_extra/fix/hexo-tag-dplayer.css'
+@import '_extra/greeting_box/greeting_box.css'
+@import '_extra/home_top/swiperstyle.css'
+@import '_extra/local_search/local_search.css'
+@import '_extra/reward/about-reward.css'
+@import '_extra/room/room.css'
+@import '_extra/runtime/runtime.css'
+
+// 未启用的评论系统样式（当前使用 Giscus）
+@import '_third-party/twikoo'

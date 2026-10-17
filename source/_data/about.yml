@@ -2,7 +2,7 @@
   subtitle: 天行健，君子以自强不息
   avatarImg: https://avatars.githubusercontent.com/u/237200863?v=4
   name: Tianxing Leo
-  description: 是一名 学生、开发者、独立项目爱好者、博主
+  description: 大连理工软件工程本科在读，喜欢把想法做成真实项目
   avatarSkills:
     left:
       - Python
@@ -22,12 +22,14 @@
     tips: 生涯
     title: 无限进步
     list:
-      - desc: 大连理工大学·国际信息与软件学院
+      - desc: 大连理工大学 · 软件工程本科在读
         color: "#357ef5"
-      - desc: AI Systems & 3D Reconstruction
+      - desc: 全国软件创新大赛 一等奖（队长）
         color: "#f5a623"
-      - desc: Creative Web Projects
+      - desc: ACGTI 独立开发 · 1k+ Stars
         color: "#43a6c6"
+      - desc: 大工腾讯创新俱乐部 · 组织者
+        color: "#b04fe6"
   aboutsiteTips:
     tips: 追求
     title1: 源于
@@ -42,8 +44,8 @@
     text: 文章隧道
     cover: https://img02.anzhiy.cn/adminuploads/1/2022/09/23/632d634f8376d.jpg
   map:
-    title: 我现在住在
-    StrengthenTitle: 中国，大连 / 中国，广州
+    title: 来自广州，
+    StrengthenTitle: 目前在大连读书
     background: https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632e6f48981d8.jpg
     backgroundDark: https://img02.anzhiy.cn/adminuploads/1/2022/09/26/6330ebf1f3e65.jpg
   selfInfo:
@@ -57,9 +59,9 @@
     author_name: Tianxing Leo
     personality_type: ENTJ-A
     photo_url: https://avatars.githubusercontent.com/u/237200863?v=4
-    personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
+    personality_img: /images/entj-badge.svg
     name_url: https://www.16personalities.com/ch
-    personality_type_color: "#43a6c6"
+    personality_type_color: "#9b5de5"
   maxim:
     maxim_tips: 座右铭
     maxim_top: 天行健，

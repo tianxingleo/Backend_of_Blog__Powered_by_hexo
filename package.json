@@ -7,29 +7,29 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "d": "hexo clean && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update - $(Get-Date -Format 'yyyy-MM-dd')\" && git push"
+    "d": "hexo clean && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update\" && git push"
   },
   "hexo": {
     "version": "8.1.1"
   },
   "dependencies": {
     "hexo": "^8.1.1",
+    "hexo-all-minifier": "^0.5.7",
     "hexo-algoliasearch": "^2.0.1",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-katex": "^1.1.0",
-    "hexo-filter-mathjax": "^0.9.1",
     "hexo-generator-alias": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^4.0.0",
-    "hexo-generator-index": "https://github.com/hexojs/hexo-generator-index/tarball/a4f5e76812fdd7c8dea016b7a8cf5e3f8cb3311a",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.6",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^1.0.0",
-    "markdown-it-katex": "^2.0.3"
+    "hexo-theme-landscape": "^1.0.0"
   }
 }

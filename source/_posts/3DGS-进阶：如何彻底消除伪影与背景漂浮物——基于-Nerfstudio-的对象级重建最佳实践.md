@@ -13,6 +13,7 @@ tags:
 slug: 3dgs-artifact-removal-nerfstudio
 alias:
   - '/2025/12/10/3DGS-进阶：如何彻底消除伪影与背景漂浮物——基于-Nerfstudio-的对象级重建最佳实践/'
+description: "摘要：在针对特定物体进行 3D Gaussian Splatting (3DGS) 重建时，背景噪声（Floaters）和边缘伪影是影响模型质量的两大顽疾。本文将深入探讨一种“反直觉”的训练策略：通过构建 RGBA 数据集并禁用显式蒙版输入，配合随机背景训练机制，迫使 3DGS 模型自动收敛至零背景…"
 ---
 
 # 3DGS 进阶指南：如何彻底消除“伪影”与背景漂浮物——基于 Nerfstudio 的对象级重建最佳实践

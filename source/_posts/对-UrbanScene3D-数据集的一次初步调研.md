@@ -14,6 +14,7 @@ tags:
 slug: urbanscene3d-dataset-survey
 alias:
   - '/2026/03/16/对-UrbanScene3D-数据集的一次初步调研/'
+description: "最近在为“基于 GIS 先验的 SDF 城市级三维重建”找合适的数据集，我顺手把 UrbanScene3D 过了一遍。这里先记一份初步调研，重点不是做完整综述，而是回答一个更实际的问题：它能不能拿来把这条路线先跑通。"
 ---
 
 # 对 UrbanScene3D 数据集的一次初步调研：它能否用于基于 GIS 先验的 SDF 城市三维重建？

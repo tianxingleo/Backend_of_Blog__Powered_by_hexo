@@ -10,6 +10,7 @@ tags:
 slug: racknerd-vps-china-mobile-optimization
 alias:
   - '/2026/01/15/针对-RackNerd-VPS-与中国移动出口带宽限制的排查与优化指南/'
+description: "美西廉价 VPS 遇上移动宽带：出口带宽限制排查与 Hysteria 2 优化实录。"
 ---
 
 # 针对 RackNerd VPS 与中国移动出口带宽限制的排查与利用Hysteria 2优化指南

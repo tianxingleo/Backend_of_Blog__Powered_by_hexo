@@ -11,6 +11,7 @@ tags:
 slug: colmap-gpu-wsl-rtx50
 alias:
   - '/2025/12/07/在-Linux-WSL-RTX-50-系列显卡上部署原生-GPU-加速-COLMAP-的指南/'
+description: "针对在 Linux（或 WSL2）环境下运行 COLMAP 时因缺乏 CUDA 支持而导致的计算效率低下问题，本技术文档旨在提供一套标准化的解决方案。当前，主流 Linux 发行版的官方软件仓库（如 apt）所提供的 COLMAP 预编译包通常不包含 CUDA 模块，导致仅能调用 CPU 资源，严重…"
 ---
 
 # 在 Linux (WSL) + RTX 50 系列显卡上部署原生 GPU 加速 COLMAP 的指南

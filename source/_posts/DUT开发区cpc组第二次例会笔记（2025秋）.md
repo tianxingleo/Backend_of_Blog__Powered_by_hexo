@@ -11,6 +11,7 @@ tags:
 slug: dut-cpc-meeting-2-2025
 alias:
   - '/2025/10/30/DUT开发区cpc组第二次例会笔记（2025秋）/'
+description: "迭代器可以被理解为一个“智能指针”或“书签”，它指向容器（如 vector, list, set, map 等）中的某个特定元素。"
 ---
 
 ## 1. 二分查找

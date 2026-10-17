@@ -12,6 +12,7 @@ tags:
 slug: html-css-tic-meeting-3-2025
 alias:
   - '/2025/11/02/HTML-CSS-TIC2025秋第三次例会笔记/'
+description: "VS Code 内置了对 Emmet 的支持，这是编写 HTML 和 CSS 最强大的“语法糖”。"
 ---
 
 # HTML

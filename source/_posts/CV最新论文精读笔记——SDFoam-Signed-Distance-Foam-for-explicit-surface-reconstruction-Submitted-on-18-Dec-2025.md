@@ -15,6 +15,7 @@ tags:
 slug: cv-paper-sdfoam
 alias:
   - '/2025/12/28/CV最新论文精读笔记——SDFoam-Signed-Distance-Foam-for-explicit-surface-reconstruction-Submitted-on-18-Dec-2025/'
+description: "SDFoam 是一种新型的 3D 重建与神经渲染框架，它创造性地将显式的 Voronoi（沃罗诺伊）几何结构与隐式的 SDF（符号距离场） 结合在一起，旨在同时实现高质量的几何重建和高效的视图合成。"
 ---
 
 # 摘要

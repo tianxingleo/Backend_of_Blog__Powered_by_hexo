@@ -13,6 +13,7 @@ permalink: posts/tic-meeting-2-hexo-blog-guide/
 alias:
   - '/2026/10/16/TIC第二节例会-1小时0代码做出你的个人博客静态网站/'
   - '/posts/1bae6588cb39/'
+description: "在写第一行命令之前，先带大家看看我们 TIC 的学长学姐们自己搭建的个人博客是什么样子的！"
 ---
 
 # TIC 第二节例会：**1小时，0代码，做出你的个人博客静态网站**

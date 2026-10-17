@@ -1,6 +1,9 @@
-window.addEventListener("load", () => {
+// 性能优化 2026-10：本文件改为按需加载（首次点击搜索按钮时注入），不再等待 window.load，直接初始化
+(function initAlgoliaSearch() {
   const $searchMask = document.getElementById("search-mask");
-  const $searchDialog = document.querySelector("#algolia-search .search-dialog");
+  const $searchDialog = document.querySelector(
+    "#algolia-search .search-dialog",
+  );
 
   const openSearch = () => {
     anzhiyu.animateIn($searchMask, "to_show 0.5s");
@@ -28,11 +31,17 @@ window.addEventListener("load", () => {
         console.info(selectTextNow);
         if (selectTextNow) {
           openSearch();
-          const t = document.querySelector("#algolia-search-input > div > form > input");
+          const t = document.querySelector(
+            "#algolia-search-input > div > form > input",
+          );
           t.value = selectTextNow;
           t.dispatchEvent(new Event("input"));
           setTimeout(() => {
-            document.querySelector("#algolia-search-input > div > form > button.ais-SearchBox-submit").click();
+            document
+              .querySelector(
+                "#algolia-search-input > div > form > button.ais-SearchBox-submit",
+              )
+              .click();
           }, 64);
         } else {
           openSearch();
@@ -52,17 +61,26 @@ window.addEventListener("load", () => {
   // fix safari
   const fixSafariHeight = () => {
     if (window.innerWidth < 768) {
-      $searchDialog.style.setProperty("--search-height", window.innerHeight + "px");
+      $searchDialog.style.setProperty(
+        "--search-height",
+        window.innerHeight + "px",
+      );
     }
   };
 
   const searchClickFn = () => {
-    anzhiyu.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
+    anzhiyu.addEventListenerPjax(
+      document.querySelector("#search-button > .search"),
+      "click",
+      openSearch,
+    );
   };
 
   const searchFnOnce = () => {
     $searchMask.addEventListener("click", closeSearch);
-    document.querySelector("#algolia-search .search-close-button").addEventListener("click", closeSearch);
+    document
+      .querySelector("#algolia-search .search-close-button")
+      .addEventListener("click", closeSearch);
   };
 
   const algolia = GLOBAL_CONFIG.algolia;
@@ -71,14 +89,25 @@ window.addEventListener("load", () => {
     return console.error("Algolia setting is invalid!");
   }
 
+  if (typeof algoliasearch === "undefined") {
+    return console.error("algoliasearch library is not loaded!");
+  }
+
+  if (typeof instantsearch === "undefined") {
+    return console.error("instantsearch library is not loaded!");
+  }
+
   const search = instantsearch({
     indexName: algolia.indexName,
     /* global algoliasearch */
     searchClient: algoliasearch(algolia.appId, algolia.apiKey),
     searchFunction(helper) {
       if (helper.state.query) {
-        let innerLoading = '<i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i>';
-        document.getElementById("algolia-hits").innerHTML = innerLoading;
+        const hitsEl = document.getElementById("algolia-hits");
+        hitsEl.textContent = "";
+        const spinIcon = document.createElement("i");
+        spinIcon.className = "anzhiyufont anzhiyu-icon-spinner anzhiyu-spin";
+        hitsEl.appendChild(spinIcon);
         helper.search();
       }
     },
@@ -102,14 +131,20 @@ window.addEventListener("load", () => {
     container: "#algolia-hits",
     templates: {
       item(data) {
-        const link = data.permalink ? data.permalink : GLOBAL_CONFIG.root + data.path;
+        const link = data.permalink
+          ? data.permalink
+          : GLOBAL_CONFIG.root + data.path;
         const result = data._highlightResult;
-        const loadingLogo = document.querySelector("#algolia-hits .anzhiyu-spin");
+        const loadingLogo = document.querySelector(
+          "#algolia-hits .anzhiyu-spin",
+        );
         if (loadingLogo) {
           loadingLogo.style.display = "none";
         }
         setTimeout(() => {
-          document.querySelector("#algolia-search .ais-SearchBox-input").focus();
+          document
+            .querySelector("#algolia-search .ais-SearchBox-input")
+            .focus();
         }, 200);
         return `
           <a href="${link}" class="algolia-hit-item-link">
@@ -117,17 +152,24 @@ window.addEventListener("load", () => {
           </a>`;
       },
       empty: function (data) {
-        const loadingLogo = document.querySelector("#algolia-hits .anzhiyu-spin");
+        const loadingLogo = document.querySelector(
+          "#algolia-hits .anzhiyu-spin",
+        );
         console.info(loadingLogo);
         if (loadingLogo) {
           loadingLogo.style.display = "none";
         }
         setTimeout(() => {
-          document.querySelector("#algolia-search .ais-SearchBox-input").focus();
+          document
+            .querySelector("#algolia-search .ais-SearchBox-input")
+            .focus();
         }, 200);
         return (
           '<div id="algolia-hits-empty">' +
-          GLOBAL_CONFIG.algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
+          GLOBAL_CONFIG.algolia.languages.hits_empty.replace(
+            /\$\{query}/,
+            data.query,
+          ) +
           "</div>"
         );
       },
@@ -189,4 +231,4 @@ window.addEventListener("load", () => {
     search.on("render", () => {
       window.pjax.refresh(document.getElementById("algolia-hits"));
     });
-});
+})();

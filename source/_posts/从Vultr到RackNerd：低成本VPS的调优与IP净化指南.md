@@ -10,6 +10,7 @@ tags:
 slug: vultr-to-racknerd-vps
 alias:
   - '/2026/01/11/从Vultr到RackNerd：低成本VPS的调优与IP净化指南/'
+description: "对于许多开发者而言，Vultr 曾是 VPS 的首选，其按小时计费的灵活性和优秀的网络质量令人称道。然而，每月最低 5美元（年费约 70 美元）的成本，对于仅用于特定网络需求的用户来说，性价比逐渐降低。"
 ---
 
 # 从 Vultr 到 RackNerd：打造高性价比、IPv6 免流与 AI 解锁的全能 VPS 指南

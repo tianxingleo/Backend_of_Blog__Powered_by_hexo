@@ -10,6 +10,7 @@ tags:
 slug: cpu-server-llm
 alias:
   - '/2026/01/30/CPU服务器跑LLM实录/'
+description: "无显卡、384GB 内存的企业级服务器，如何跑起大参数量化模型。"
 ---
 
 ## 1. 硬件配置概况

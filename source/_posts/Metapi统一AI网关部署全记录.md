@@ -10,6 +10,7 @@ tags:
   - cloudflare
   - ai
 slug: metapi-deployment-guide
+description: "在 WSL2 上部署 Metapi 统一 AI 网关，经 Cloudflare Tunnel 发布，附 DeepSeek 兼容踩坑实录。"
 ---
 
 # Metapi 统一 AI 网关部署全记录：从 WSL2 到 Cloudflare Tunnel 的完整配置与踩坑

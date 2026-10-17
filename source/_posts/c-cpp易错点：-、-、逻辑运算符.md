@@ -14,6 +14,7 @@ tags:
 slug: cpp-common-mistakes
 alias:
   - '/2025/11/19/c-cpp易错点：-、-、逻辑运算符/'
+description: "搞懂自增自减与逻辑运算符：运算顺序三大基石，一次讲透复杂表达式求值。"
 ---
 
 

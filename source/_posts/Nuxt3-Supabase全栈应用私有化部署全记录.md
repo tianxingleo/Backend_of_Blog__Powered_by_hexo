@@ -10,6 +10,7 @@ tags:
 slug: nuxt3-supabase-self-host
 alias:
   - '/2026/02/10/Nuxt3-Supabase全栈应用私有化部署全记录/'
+description: "第一部分：理想之路 —— 标准化部署 SOP"
 ---
 
 # Nuxt3 + Supabase 全栈应用私有化部署全记录

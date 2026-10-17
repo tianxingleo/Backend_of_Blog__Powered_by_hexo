@@ -20,7 +20,7 @@
 
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
-meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+meta(name="viewport" content="width=device-width, initial-scale=1")
 title= tabTitle
 if pageKeywords
   meta(name="keywords" content=pageKeywords)
@@ -49,6 +49,15 @@ link(rel="canonical" href=urlNoIndex())
 //- 預解析
 !=partial('includes/head/preconnect', {}, {cache: true})
 
+//- LCP 预加载：首页顶图经由 CSS background 加载，浏览器无法提前发现，首页单独预加载
+if is_home() && theme.index_img
+  - var _lcpMatch = theme.index_img.match(/url\(([^)]+)\)/)
+  if _lcpMatch
+    link(rel="preload" as="image" href=_lcpMatch[1].replace(/['"]/g, '') fetchpriority="high")
+
+//- 本地图标字体预加载（与 ali_iconfont_css.css 中的相对路径对应），减少图标闪烁
+link(rel="preload" as="font" type="font/woff2" crossorigin href=url_for('/font-local/anzhiyu/font_2508400_fpn9ui60u6q.woff2'))
+
 //- 網站驗證
 !=partial('includes/head/site_verification', {}, {cache: true})
 
@@ -63,6 +72,10 @@ if (theme.icons && theme.icons.fontawesome_animation_css)
 
 //- main css
 link(rel='stylesheet', href=url_for(theme.asset.main_css))
+//- 页面级样式（关于/友链/音乐等低频页面 + 未启用功能样式），非阻塞加载，不影响首屏
+link(rel='stylesheet', href=url_for('css/extras.css') media="print" onload="this.media='all'")
+//- 本地图标字体样式（原在 body 尾部，移入 head 以尽早渲染图标）
+link(rel="stylesheet" href=url_for(theme.asset.ali_iconfont_css))
 if (theme.icons && theme.icons.fontawesome)
   link(rel='stylesheet', href=url_for(theme.asset.fontawesome) media="print" onload="this.media='all'")
 
@@ -100,3 +113,8 @@ if theme.katex.enable
   link(rel="stylesheet" href=theme.katex.cdn.css)
   script(defer src=theme.katex.cdn.js)
   script(defer src=theme.katex.cdn.mhchem)
+
+//- KaTeX 样式按需加载：仅含服务端渲染公式的文章/页面引入（由 mark_katex.js 标记 page.katex）
+//- 版本与 hexo-filter-katex 默认一致（0.16.9），改用已预连接的 jsdelivr
+if page.katex
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css")
