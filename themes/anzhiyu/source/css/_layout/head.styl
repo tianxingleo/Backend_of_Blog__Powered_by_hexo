@@ -365,6 +365,11 @@
           transform: translateY(0px)
           will-change: transform
 
+// 首屏顶图深色模式兜底：浅色底在深色模式加载过渡期会闪白，用深蓝灰覆盖。
+// !important 才能压过 header 内联样式的颜色层；图片层不受影响，加载完成后正常盖住底色。
+[data-theme='dark'] #page-header.full_page
+  background-color: #2c3644 !important
+
 #page
   h1.page-title
     margin: 8px 0 20px

@@ -11,34 +11,32 @@
  * 4 秒兜底：网络再慢也不让遮罩一直盖着。
  */
 (() => {
-  
-
-  var header = document.getElementById('page-header');
-  if (!header || !header.classList.contains('full_page')) return;
+  var header = document.getElementById("page-header");
+  if (!header || !header.classList.contains("full_page")) return;
 
   var finished = false;
   function ready() {
     if (finished) return;
     finished = true;
-    header.classList.add('hero-ready');
+    header.classList.add("hero-ready");
   }
 
-  var url = '';
+  var url = "";
   var preload = document.querySelector('link[rel="preload"][as="image"]');
   if (preload && preload.href) {
     url = preload.href;
   } else {
     try {
-      var bg = window.getComputedStyle(header).backgroundImage || '';
+      var bg = window.getComputedStyle(header).backgroundImage || "";
       var m = bg.match(/url\(["']?([^"')]+)["']?\)/);
       if (m) url = m[1];
     } catch (e) {
-      url = '';
+      url = "";
     }
   }
 
   // 无背景图（纯色横幅）：直接就绪
-  if (!url || url === 'none') {
+  if (!url || url === "none") {
     ready();
     return;
   }

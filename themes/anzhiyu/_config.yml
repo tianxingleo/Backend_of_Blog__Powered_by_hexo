@@ -157,12 +157,12 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-# 性能优化 2026-10：首屏顶图本地化（图床域名 img.* 未命中 CDN 缓存，DYNAMIC 回源极慢；主站静态资源已验证 HIT）。
+# 性能优化 2026-10：顶图为压缩版（原图 249KB→111KB）托管于 R2；R2 图片 GET 请求已验证可被边缘缓存（注意用 GET 验证，HEAD 在 R2 链路上恒返回 DYNAMIC）。
 # 内联样式里带兜底底色 #8ba9c4（取自顶图天空蓝），图片加载前/失败后不再透出纯黑背景。
-index_img: "background: #8ba9c4 url(/images/hero-home.webp) top / cover no-repeat"
+index_img: "background: #8ba9c4 url(https://img.tianxingleo.top/hero-home.webp) top / cover no-repeat"
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: "/images/miku-banner.webp"
+default_top_img: "https://img.tianxingleo.top/miku-banner.webp"
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -1085,7 +1085,7 @@ home_top:
   banner:
     tips: github.com/tianxingleo
     title: 我的github主页
-    image: /images/miku-banner.webp
+    image: https://img.tianxingleo.top/miku-banner.webp
     link: https://github.com/tianxingleo
 
 # 朋友圈配置
