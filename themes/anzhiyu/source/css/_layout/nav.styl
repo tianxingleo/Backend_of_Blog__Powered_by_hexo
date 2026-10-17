@@ -725,6 +725,23 @@
 @media screen and (max-width: 768px)
   .mask-name-container
     display none
+  /* 移动端顶栏初始态：纯 CSS 实现菜单折叠，不依赖 JS 的 hide-menu 类
+     否则整页切换时在 JS 执行前会闪现桌面端菜单文字并与标题重叠 */
+  #nav .menus_items
+    display none
+  #nav #toggle-menu
+    display inline-block !important
+    .site-page
+      font-size inherit
+      width 30px
+      height 30px
+      display flex
+      align-items center
+      justify-content center
+      i
+        font-size 1.35rem
+  #nav #search-button span
+    display none
   #menus
     padding 20px
   #page-header.not-top-img
