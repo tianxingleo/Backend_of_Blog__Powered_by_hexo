@@ -50,7 +50,7 @@
   document.getElementById("go-tianli-blog").addEventListener("click", () => {
     window.open(btnLink, "_blank");
   });
-  aiReadAloudIcon.addEventListener("click", readAloud);
+  if (aiReadAloudIcon && mode === "tianli") aiReadAloudIcon.addEventListener("click", readAloud);
 
   async function readAloud() {
     if (!summaryID) {
@@ -134,7 +134,7 @@
               indexJ = 0;
             }
             if (indexI === 0) {
-              explanation.innerHTML = aiStr.charAt(0);
+              explanation.textContent = aiStr.charAt(0);
             }
             requestAnimationFrame(animate);
           }, delayInit);
@@ -158,7 +158,7 @@
         if (explanation.firstElementChild) {
           explanation.removeChild(explanation.firstElementChild);
         }
-        explanation.innerHTML += char;
+        explanation.appendChild(document.createTextNode(char));
         let div = document.createElement("div");
         div.className = "ai-cursor";
         explanation.appendChild(div);
@@ -282,20 +282,25 @@
   }
 
   function aiAbstractLocal() {
-    const strArr = postAI.split(",").map(item => item.trim());
-    if (strArr.length !== 1) {
-      let randomIndex = Math.floor(Math.random() * strArr.length);
-      while (randomIndex === lastAiRandomIndex) {
-        randomIndex = Math.floor(Math.random() * strArr.length);
+    // Static summaries are embedded in generated HTML. No browser API key or
+    // model request is needed to read or replay the existing typewriter effect.
+    const generated = post_ai.dataset.aiSummary;
+    if (generated) {
+      startAI(generated);
+    } else if (postAI && !["true", "false", "undefined"].includes(postAI)) {
+      const items = postAI.split(",").map(item => item.trim()).filter(Boolean);
+      if (items.length > 1) {
+        let randomIndex = Math.floor(Math.random() * items.length);
+        if (randomIndex === lastAiRandomIndex) randomIndex = (randomIndex + 1) % items.length;
+        lastAiRandomIndex = randomIndex;
+        startAI(items[randomIndex]);
+      } else {
+        startAI(items[0] || "文章导读尚未生成。");
       }
-      lastAiRandomIndex = randomIndex;
-      startAI(strArr[randomIndex]);
     } else {
-      startAI(strArr[0]);
+      startAI("文章导读尚未生成，请在构建时运行 npm run ai:generate。");
     }
-    setTimeout(() => {
-      aiTitleRefreshIcon.style.opacity = "1";
-    }, 600);
+    setTimeout(() => { aiTitleRefreshIcon.style.opacity = "1"; }, 600);
   }
 
   function aiRecommend() {
@@ -362,7 +367,7 @@
     if (mode == "tianli") {
       startAI("我是文章辅助AI: TianliGPT，点击下方的按钮，让我生成本文简介、推荐相关文章等。");
     } else {
-      startAI(`我是文章辅助AI: ${gptName} GPT，点击下方的按钮，让我生成本文简介、推荐相关文章等。`);
+      startAI("我是本站的静态阅读助手，摘要在网站构建时准备好。点击按钮可查看摘要、推荐文章，不会进行实时 AI 调用。");
     }
   }
 
@@ -381,7 +386,7 @@
       post_ai.querySelectorAll(".ai-btn-item").forEach(item => (item.style.display = "block"));
       document.getElementById("go-tianli-blog").style.display = "none";
       startAI(
-        `你好，我是本站摘要生成助理${gptName} GPT，是一个基于GPT-4的生成式AI。我在这里只负责摘要的预生成和显示，你无法与我直接沟通。`
+        "你好，我是本站的静态阅读助手。AI 摘要在发布前预生成并缓存，浏览文章时不会请求外部模型；也不支持自由对话。"
       );
     }
   }
@@ -423,7 +428,7 @@
         document.querySelectorAll(".ai-btn-item").forEach(item => (item.style.display = "block"));
         document.getElementById("go-tianli-blog").style.display = "none";
       }
-      document.getElementById("ai-tag").innerHTML = gptName + " GPT";
+      document.getElementById("ai-tag").textContent = post_ai.dataset.aiSource === "model" ? "AI · 预生成" : "静态导读";
     }
     aiAbstract();
   }
