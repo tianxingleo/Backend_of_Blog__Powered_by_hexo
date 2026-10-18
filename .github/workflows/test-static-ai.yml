@@ -25,8 +25,16 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - name: Generate AI cache without API key and build static pages
-        run: npm run build
+        run: |
+          npm run build 2>&1 | tee /tmp/hexo-build.log
+          if grep -q 'Script load failed' /tmp/hexo-build.log; then
+            echo 'Hexo attempted to auto-load the AI CLI as a plugin'
+            exit 1
+          fi
       - name: Verify cache and rendered posts
         run: |
           node -e "const d=require('./source/_data/ai_summaries.json'); if(Object.keys(d.entries).length < 1) process.exit(1); console.log('AI cache entries:', Object.keys(d.entries).length)"
           test -d public/posts
+          sha256sum source/_data/ai_summaries.json > /tmp/ai-cache.sha256
+          npm run ai:generate
+          sha256sum -c /tmp/ai-cache.sha256
