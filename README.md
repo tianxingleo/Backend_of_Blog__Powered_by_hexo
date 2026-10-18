@@ -25,6 +25,8 @@ npm run build
 npm run deploy
 ```
 
+生成器源码位于 `tools/generate-ai-summaries.js`，不会被 Hexo 当作主题插件重复执行。
+
 或者直接执行本仓库原有的 `npm run d` 流程，它现在也会先生成增量缓存。未设置密钥时，同样能够生成静态导读；需要以后补齐真正的 AI 摘要，只需配置密钥再构建即可。
 
 也可以运行 `npm run ai:generate` 单独更新缓存。想重做全部文章可设置 `AI_FORCE_REBUILD=1`，但会增加请求成本。可通过 `DEEPSEEK_MODEL` 指定兼容模型。
