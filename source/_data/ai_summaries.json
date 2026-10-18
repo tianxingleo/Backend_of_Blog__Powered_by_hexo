@@ -1,0 +1,2137 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-18T12:57:03.140Z",
+  "entries": {
+    "_posts/2025学年大一上程序设计基础期末上机考试复习提纲.md": {
+      "sourceHash": "c33f258422486ac25584497460673e12555edaaf73155a876750e0df42722b03",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "deepseek:deepseek-flash",
+      "status": "ok",
+      "summary": "本文是2025学年大一上程序设计基础期末上机考试的复习提纲，系统整理了C语言的核心基础知识。内容涵盖printf与scanf格式控制符及长度修饰符对照、常用头文件功能、随机数生成、四舍五入的自动截断与手动实现方法，以及冒泡排序、选择排序、线性搜索、二分查找、switch语句、二维数组传参和利用指针交换变量等常见考点，并配有代码示例与易错点说明。",
+      "highlights": [
+        "对照表区分printf与scanf格式符用法",
+        "梳理stdio、stdlib、string等常用头文件",
+        "讲解四舍五入与强制截断的区别",
+        "附排序、查找、指针交换代码示例"
+      ],
+      "qa": [
+        {
+          "q": "scanf读取double类型时应该用什么格式符？",
+          "a": "scanf必须用%lf；printf用%f或%lf都可以，因为输出时float会自动提升为double。"
+        },
+        {
+          "q": "使用二分查找有什么前提条件？",
+          "a": "数组必须已经排好序（升序或降序），这是硬性要求；它每次砍掉一半，时间复杂度为O(log N)。"
+        },
+        {
+          "q": "C语言中如何手动实现四舍五入？",
+          "a": "可用经典公式(int)(x + 0.5)，负数则微调为(int)(x - 0.5)；也可用math.h中的round()函数再强转回int。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:50:31.238Z",
+      "attemptedHash": "c33f258422486ac25584497460673e12555edaaf73155a876750e0df42722b03",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6561,
+        "completion_tokens": 311,
+        "total_tokens": 6872
+      }
+    },
+    "_posts/2025学年高数上期中考试复习提纲.md": {
+      "sourceHash": "8319b76e0001d3cfd82215eef7625022d0f0a8005c6efe5ebfa2a8c4694a52c2",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "deepseek:deepseek-flash",
+      "status": "ok",
+      "summary": "本文是一份2025学年高等数学上册期中、期末复习提纲，系统整理了极限与连续、导数与微分两章的核心内容。主要包括三角函数公式与化简技巧、间断点分类、极限计算与等价无穷小、递推数列极限的单调有界准则和压缩映射原理、导数定义辨析、高阶导数公式、泰勒公式、微分中值定理，以及驻点、极值点、拐点等概念辨析和曲率计算，并附有介值定理证明例题。",
+      "highlights": [
+        "整理三角函数公式与降幂、积化和差等化简技巧",
+        "讲解两类间断点及极限、等价无穷小求法",
+        "归纳递推数列极限的单调有界与压缩映射方法",
+        "梳理高阶导数、泰勒公式与中值定理体系"
+      ],
+      "qa": [
+        {
+          "q": "如何判断函数在某点的间断点类型？",
+          "a": "先算出该点的左极限和右极限。若左右极限都存在，则为第一类间断点，其中左右极限相等是可去间断点，不相等是跳跃间断点；若至少有一个极限不存在（包括无穷大或振荡），则为第二类间断点，如无穷间断点和振荡间断点。"
+        },
+        {
+          "q": "求解递推数列极限有哪些方法？",
+          "a": "文章给出两种方法：一是单调有界准则，先证有界性和单调性（可用导数判别），再设极限为A代入递推式解方程；二是压缩映射原理，适用于数列不单调或|f'(x)|<1的情况，先令n趋于无穷解出候选极限a，再用拉格朗日中值定理证明|x_n-a|趋于0。"
+        },
+        {
+          "q": "拐点和极值点在答题格式上有什么区别？",
+          "a": "拐点必须写成坐标形式(x₀, f(x₀))，只写x=x₀通常不得分；而驻点、极值点、间断点、不可导点在数学定义上指横坐标位置，回答时只写x=x₀，其中问“极值”答y值，问“极值点”答x值。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:50:31.507Z",
+      "attemptedHash": "8319b76e0001d3cfd82215eef7625022d0f0a8005c6efe5ebfa2a8c4694a52c2",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 8079,
+        "completion_tokens": 452,
+        "total_tokens": 8531
+      }
+    },
+    "_posts/2w-的3D打印机拓竹H2D上手体验.md": {
+      "sourceHash": "2477e6d5d1d9cb092c9fb8357bc09181db3790114e1f7b0388471629653b4f04",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "作者分享了几周使用拓竹H2D顶配3D打印机的上手体验。到手时遇到刀切模组未校准、TPU材料卡在AMS等问题，拆开AMS取出卡料后修复。打印速度方面表现不错，狂暴模式打印小船仅需几分钟；多色打印12个奶龙约6小时。高精度打印石狮子3小时，质量不错但轻微拉丝。刀切模组用A4纸容易掉渣，画笔太粗不适合细节绘画。悟空手办头冠两次打印失败，高模型存在精度劣化和毛须问题，怀疑与材料受潮有关。TPU for AMS硬度偏高不太适合羽毛球模型。激光模块因缺少通气管未尝试。",
+      "highlights": [
+        "修复AMS卡料后恢复正常打印",
+        "狂暴模式速度快，高精度打印质量不错",
+        "刀切模组纸薄易掉渣，画笔细节不足",
+        "悟空手办打印失败，疑与材料受潮有关"
+      ],
+      "qa": [
+        {
+          "q": "拓竹H2D的打印速度真的很快吗？",
+          "a": "文章提到作者开启狂暴模式166%速度时，打印小船模型只需几分钟，打印小夹子质量也不错。但打印12个奶龙时开了狂暴模式大约花了6小时，作者感觉和普通模式速度区别不大。"
+        },
+        {
+          "q": "刀切模组使用效果如何？",
+          "a": "作者用标准A4打印纸尝试官方demo生日贺卡，纸太薄容易掉渣，在粘性面板上不好清理，留渣会导致面板粘性下降和不平。配合画笔时，自带笔太粗，写字可以，画画细节基本丢失。"
+        },
+        {
+          "q": "打印悟空手办遇到了什么问题？",
+          "a": "头冠打印两次都没成功，第一次直接打印断了，第二次用PETG作为接触面混合打印时进料出现问题。其他完成的模型也存在高层精度劣化、毛须等现象，作者推测可能与材料不够干燥有关。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:01.960Z",
+      "attemptedHash": "2477e6d5d1d9cb092c9fb8357bc09181db3790114e1f7b0388471629653b4f04",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1727,
+        "completion_tokens": 423,
+        "total_tokens": 2150
+      }
+    },
+    "_posts/2025年度总结.md": {
+      "sourceHash": "c47044c4cf388d9e992fb76f3f42074ea15f7c150b39843eafcfaf32fc8e5764",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是作者的2025年度总结，以18岁为界，将人生分为上下两卷。上卷是高考前充满战友情的“战壕”；下卷是离家三千公里到东北上大学的“远征”，关键词是诸多“第一次”：独立生活、见雪、做项目、读论文。两卷之间是一个难忘的夏天：摄影、会师友、组装电脑、改装吉他、学做菜、多地旅行，还去了日本。作者回望成长痛，庆幸留下文字与视频作为锚点，并相信一切选择都是最好的选择。",
+      "highlights": [
+        "18岁被高考分为人生上下两卷",
+        "上大学后迎来诸多“第一次”",
+        "夏天旅行、摄影、组装电脑、去日本",
+        "用文字与视频为时间留下锚点"
+      ],
+      "qa": [
+        {
+          "q": "作者为什么说18岁是生命的中点？",
+          "a": "文章开头写道：“在对数尺度下，18岁或许已是生命的中点。”作者以此引出2025年6月将18岁一分为二，人生划分为上下两卷。"
+        },
+        {
+          "q": "作者的大学生活有哪些“第一次”？",
+          "a": "文中列举了：第一次独立生活，第一次来到东北，第一次见到下雪，第一次自己动手做项目，第一次自己组织规划，第一次逐字逐句读完一整篇最新的论文。"
+        },
+        {
+          "q": "作者在这个夏天做了哪些事？",
+          "a": "作者用胶片定格时光，横跨从小学到高中见到多年未见的师友，亲手组装电脑，改装电吉他，从番茄炒鸡蛋进阶到上汤焗龙虾，还去了深圳、惠州、成都、湖南郴州以及日本多地旅行。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:02.056Z",
+      "attemptedHash": "c47044c4cf388d9e992fb76f3f42074ea15f7c150b39843eafcfaf32fc8e5764",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 895,
+        "completion_tokens": 360,
+        "total_tokens": 1255
+      }
+    },
+    "_posts/3DGS-进阶：如何彻底消除伪影与背景漂浮物——基于-Nerfstudio-的对象级重建最佳实践.md": {
+      "sourceHash": "61c5ce2bb5ebeb40ace8ff7ca01923013bb594351b80875e4d48e2b2efbf2eea",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章介绍在 Nerfstudio 中进行对象级 3DGS 重建时消除背景漂浮物与边缘伪影的完整流程。核心思路是反直觉的：不向 transforms.json 写入 mask_path，只提供预乘 Alpha 的 RGBA 图片，并启用随机背景颜色训练；这样背景区域的高斯球会因遮挡随机背景产生 Loss，被迫将不透明度优化为 0。文章还给出 Mask 净化方法（最大连通域、实心度检查、边缘腐蚀）及踩坑复盘，包括 YOLO 检测异常、OpenCV 纹理陷阱、通道数据类型不一致和图片列表重复等。",
+      "highlights": [
+        "禁用 mask_path，避免背景不参与 Loss 的“保护伞效应”",
+        "构建预乘 Alpha 的 RGBA 图片，平滑物体边缘过渡",
+        "启用随机背景颜色，迫使背景高斯球透明度收敛为 0",
+        "Mask 净化：最大连通域、实心度过滤与边缘腐蚀"
+      ],
+      "qa": [
+        {
+          "q": "为什么传入 mask_path 反而会留下背景漂浮物？",
+          "a": "因为 Nerfstudio 在收到 mask_path 后会强制忽略蒙版外部区域的 Loss 计算，背景区域生成的高斯球不会因遮挡背景而受到惩罚，从而作为“垃圾数据”残留下来。"
+        },
+        {
+          "q": "如何让背景区域的高斯球透明度降为 0？",
+          "a": "不写入 mask_path，仅提供带 Alpha 通道的 RGBA 图片，并在训练时启用随机背景颜色（--pipeline.model.background-color random）。背景颜色不断变化时，残留高斯球会产生巨大 Loss，模型为降低 Loss 被迫将其不透明度优化为 0。"
+        },
+        {
+          "q": "Mask 为什么要进行边缘腐蚀和实心度检查？",
+          "a": "物体边缘常带桌面反光或环境阴影，腐蚀可切断背景像素粘连，防止模型学到错误边缘颜色；实心度检查通过轮廓面积与凸包面积的比值识别粘连了不规则阴影或背景的脏数据，实心度显著偏低（如低于 0.85）时应直接剔除。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:02.462Z",
+      "attemptedHash": "61c5ce2bb5ebeb40ace8ff7ca01923013bb594351b80875e4d48e2b2efbf2eea",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 3449,
+        "completion_tokens": 454,
+        "total_tokens": 3903
+      }
+    },
+    "_posts/CPU服务器跑LLM实录.md": {
+      "sourceHash": "2ed379fb48fe8be013cb3861082c9c8f61378bcf4e2302638b827b92e2671317",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录在一台无独立显卡、配双路 Intel Xeon Gold 6231（64 逻辑核心）与约 384GB 内存的企业级服务器上运行大语言模型的过程。作者用 Ollama 搭建环境，通过 Hysteria2 代理解决国内下载难题，并利用大内存作为“显存”跑量化模型。文章重点提醒系统盘仅 238GB 容易被大模型撑爆，建议提前把模型存储路径迁到大容量机械盘并注意权限，还说明了半成品文件的断点续传方法。实测中 Qwen3-Next:80b 生成速度约 2.42 tokens/s，DeepSeek-R1-70B 稳定，Llama 3.1 405B 量化版虽不到 1 token/s 也能跑起来。",
+      "highlights": [
+        "无显卡服务器借 384GB 内存当显存跑量化模型",
+        "国内装 Ollama 需配合代理与手动指定环境变量",
+        "系统盘仅 238GB 易被大模型撑爆，应提前迁移路径",
+        "Qwen3-Next:80b 实测约 2.42 tokens/s"
+      ],
+      "qa": [
+        {
+          "q": "这台服务器没有显卡，怎么跑大模型？",
+          "a": "文章的核心思路是利用 384GB 的超大内存作为“显存”，运行大参数量的量化模型，并通过 Ollama 来部署。"
+        },
+        {
+          "q": "为什么下载大模型时系统会卡死？",
+          "a": "因为系统盘只有 238GB，下载 llama3.1:405b（约 240GB）到 88% 时提示 no space left on device，系统直接卡死，Ollama 服务崩溃。建议下载前把存储路径改到大容量机械硬盘阵列上。"
+        },
+        {
+          "q": "如果模型下载了一半才发现空间不足，只能重新下载吗？",
+          "a": "不必。可以把 /usr/share/ollama/.ollama/models/blobs 里的 -partial 后缀文件手动 mv 到新路径，改好配置重启服务，Ollama 可以实现断点续传，省去几百GB的流量。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:02.632Z",
+      "attemptedHash": "2ed379fb48fe8be013cb3861082c9c8f61378bcf4e2302638b827b92e2671317",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1229,
+        "completion_tokens": 461,
+        "total_tokens": 1690
+      }
+    },
+    "_posts/2025学年高数上期末考试复习提纲.md": {
+      "sourceHash": "54247f61a8a71a586e0c648713512271b10dd1a7c7c80400ea059cd0bbeef3a3",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一份 2025 学年高数上期末考试复习提纲，主要整理积分公式与分部积分法。文章先列出“滚瓜烂熟”的基础积分表，包括基础函数、三角函数以及容易忘记的对数形式积分，并提醒不定积分别忘 +C。接着给出进阶必背公式，如 tan、cot 的积分，含参数 a 的 arctan、arcsin 推广式，以及“长对数”和平方差分式积分，并总结系数 1/a 的规律。最后讲解分部积分公式及“反对幂指三”的选 u 口诀。",
+      "highlights": [
+        "整理基础与进阶积分公式表",
+        "指出含参数 a 公式的系数易错点",
+        "分部积分口诀：反对幂指三",
+        "提醒不定积分别忘 +C"
+      ],
+      "qa": [
+        {
+          "q": "分部积分法中如何选择 u 和 dv？",
+          "a": "按“反对幂指三”的优先级选 u：反三角函数、对数函数优先当 u，幂函数其次，指数函数和三角函数通常凑进 d 后当 v。排在前面的优先当 u，留在 d 前面求导；排在后面的塞进 d 后面积分。"
+        },
+        {
+          "q": "含参数 a 的积分公式里，哪些前面有系数 1/a？",
+          "a": "生成 arctan 和 ln（有理分式）的公式前面有 1/a 或 1/(2a)，即 ∫dx/(x²+a²) 和 ∫1/(a²-x²)dx；生成 arcsin 和 ln（长对数）的公式前面没有 1/a，即 ∫dx/√(a²-x²) 和 ∫dx/√(x²±a²)。"
+        },
+        {
+          "q": "文章提醒了哪些容易忽略的细节？",
+          "a": "不定积分千万别忘了 +C；∫(1/x)dx = ln|x|+C 要注意绝对值；∫dx/(x²+a²) 的结果容易忘记前面的 1/a 系数。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:04.493Z",
+      "attemptedHash": "54247f61a8a71a586e0c648713512271b10dd1a7c7c80400ea059cd0bbeef3a3",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1928,
+        "completion_tokens": 439,
+        "total_tokens": 2367
+      }
+    },
+    "_posts/C语言中常见的输入函数.md": {
+      "sourceHash": "55ecb1a3e42ab33f7b0b34f61aee26fef321f3851c87dea9fb99dac54e42b0be",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文介绍了 C 语言中常见的输入函数，包括 getchar()、getc()、gets()、fgets() 以及 scanf()。文章分别说明了各函数的头文件、函数原型、返回值、读取方式与特点，并给出用法示例。其中特别指出 gets() 因不检查数组大小存在缓冲区溢出风险，已在 C99 废弃、C11 移除，推荐使用带 size 限制的 fgets() 替代。文末用表格对比各函数在功能、流、读取数量、换行符处理和溢出风险等方面的差异。",
+      "highlights": [
+        "getchar() 读取一个字符并返回其 ASCII 码",
+        "gets() 不检查数组大小，已废弃不推荐使用",
+        "fgets() 通过 size 参数限制读取，更安全",
+        "scanf 的 %c 会读取包括换行符在内的字符"
+      ],
+      "qa": [
+        {
+          "q": "为什么不推荐使用 gets() 函数？",
+          "a": "因为 gets() 不会检查目标数组的大小，如果用户输入的字符串长度超过数组容量，就会导致缓冲区溢出，这是非常危险的安全漏洞。C 语言标准已在 C99 中将其废弃，并在 C11 中将其移除。"
+        },
+        {
+          "q": "fgets() 和 gets() 在处理换行符上有什么区别？",
+          "a": "gets() 会丢弃换行符；而 fgets() 如果读取到换行符，会将换行符也存储到字符串中，位于空字符 \\0 之前。"
+        },
+        {
+          "q": "scanf 使用 %c 和 %s 读取时有什么不同？",
+          "a": "scanf 的 %c 会读取输入中的下一个字符，包括空格、制表符和换行符；而 %s 会读取非空白字符的序列，直到遇到下一个空白字符（空格、换行或制表符）为止，不会将结束的空白字符存入字符串。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:05.911Z",
+      "attemptedHash": "55ecb1a3e42ab33f7b0b34f61aee26fef321f3851c87dea9fb99dac54e42b0be",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1945,
+        "completion_tokens": 411,
+        "total_tokens": 2356
+      }
+    },
+    "_posts/DUT开发区cpc组第三次例会笔记（2025秋）.md": {
+      "sourceHash": "1e03431efbc30fa6c3efd59d86d86a5892bc1897f6fff1bdb36e81166a210096",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是 DUT 开发区 CPC 组第三次例会笔记，主题围绕递归、分治、DFS 与 BFS。文章先解释 BFS 是地毯式逐层扩展、使用队列、适合非加权图最短路径，再说明 DFS 是一路走到底再回溯、使用栈或递归、适合组合与回溯问题，并用表格对比两者差异。随后给出 C++ 实现的 BFS 模板及四步套路：初始化队列与 visited、起点入队、循环取出并处理节点、未访问邻居入队。",
+      "highlights": [
+        "BFS 逐层扩展，队列实现，可求非加权最短路径",
+        "DFS 走到底再回溯，用栈或递归，不保证最短路",
+        "给出 C++ BFS 模板与四步套路总结",
+        "选 k 个数求和等问题适合 DFS 回溯"
+      ],
+      "qa": [
+        {
+          "q": "BFS 和 DFS 的核心区别是什么？",
+          "a": "BFS 一层层向外扩展，通常用队列实现，能找到非加权图中的最短路径，但需要更多内存；DFS 一条路走到尽头再回溯，通常用栈或递归实现，占用内存少，但不能保证找到最短路径。"
+        },
+        {
+          "q": "BFS 适合解决什么问题？",
+          "a": "文章指出 BFS 主要用于寻找非加权图中的最短路径，也用于连通性判断、社交网络关系查找等场景。"
+        },
+        {
+          "q": "“从 n 个数中选 k 个数求和”应该用哪种搜索？",
+          "a": "文章说明该题需要找到所有可能的 k 个数组合，因此 DFS（回溯）是解决这类问题的标准算法。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:06.007Z",
+      "attemptedHash": "1e03431efbc30fa6c3efd59d86d86a5892bc1897f6fff1bdb36e81166a210096",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2052,
+        "completion_tokens": 355,
+        "total_tokens": 2407
+      }
+    },
+    "_posts/DUT开发区cpc组第二次例会笔记（2025秋）.md": {
+      "sourceHash": "b4069f377633381d8e8f9af7e63272d995705db47fedd9a798f5fc870987623e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是 DUT 开发区 CPC 组第二次例会笔记，主要讲解两个算法基础知识点。第一部分介绍 C++ STL 迭代器，说明其作为智能指针访问容器元素，并详细对比 lower_bound 与 upper_bound 在有序序列中的二分查找语义、返回值情况及实际应用技巧，如判断元素存在和统计元素个数。第二部分介绍互质判断算法，基于欧几里得（辗转相除）算法计算最大公约数，若结果为 1 则两数互质，并给出完整 C++ 实现和示例。",
+      "highlights": [
+        "迭代器是 STL 容器与算法之间的胶水",
+        "lower_bound 找第一个不小于 val 的位置",
+        "upper_bound 找第一个大于 val 的位置",
+        "互质判断用欧几里得算法求 GCD 是否为 1"
+      ],
+      "qa": [
+        {
+          "q": "lower_bound 和 upper_bound 对数据有什么要求？",
+          "a": "两者都要求所操作的区间 [first, last) 必须是已排序的（非递减顺序）。如果数据未排序，结果将是错误的。"
+        },
+        {
+          "q": "如何用 lower_bound 和 upper_bound 统计等于 val 的元素个数？",
+          "a": "分别调用 std::lower_bound 和 std::upper_bound 得到 lower 和 upper 两个迭代器，然后用 std::distance(lower, upper) 计算它们之间的距离，即为 val 的个数。"
+        },
+        {
+          "q": "在 set 和 map 中应该用哪个 lower_bound？",
+          "a": "std::set 和 std::map 本身就自带 lower_bound 和 upper_bound 成员函数，文章强烈推荐使用它们自带的成员函数，因为比使用全局的 std::lower_bound 更快。"
+        },
+        {
+          "q": "如何判断两个数是否互质？",
+          "a": "使用欧几里得算法（辗转相除法）计算两个数的最大公约数，如果最大公约数是 1，那么它们就是互质的。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:08.529Z",
+      "attemptedHash": "b4069f377633381d8e8f9af7e63272d995705db47fedd9a798f5fc870987623e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2556,
+        "completion_tokens": 419,
+        "total_tokens": 2975
+      }
+    },
+    "_posts/DUT开发区cpc组第一次例会笔记（2025秋）.md": {
+      "sourceHash": "7d55310436c78a78e5675ff4aaf0dba3093b4b86fcda140f15f543ea9013939a",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一篇 DUT 开发区 CPC 组第一次例会的学习笔记，围绕 C++ 编程与竞赛中的常见基础问题展开。文章依次介绍了整数除法向上取整的公式 (a + b - 1) / b 及其原理、long long 常量后缀 1LL 对避免溢出的必要性、memset() 只能安全初始化 0 或 -1 的限制及 C++ 替代方案、.size() 与 strlen() 在适用对象和效率上的区别、std::round() 等四舍五入方法、三目运算符的语法与使用建议，以及 %02d 等格式化输出说明符的含义。",
+      "highlights": [
+        "向上取整用 (a+b-1)/b",
+        "long long 常量应加 1LL 后缀",
+        "memset 只能安全置 0 或 -1",
+        "std::string 用 .size() 而非 strlen"
+      ],
+      "qa": [
+        {
+          "q": "为什么对 long long 变量赋值时要写 1LL？",
+          "a": "因为不加后缀的整数常量默认是 int 类型，像 3000000000 这样的值会在赋给 long long 之前先以 int 身份计算或存储，从而导致溢出；写成 1LL 或 3000000000LL 则明确告诉编译器该常量是 long long 类型，避免隐式类型转换和溢出导致的 bug。"
+        },
+        {
+          "q": "memset() 可以把数组初始化为任意值吗？",
+          "a": "不可以。memset() 是按字节填充的，只能安全地把数组初始化为 0 或 -1。对 1、100、3.14 等其他值使用 memset() 是错误的，因为每个 int 的所有字节都会被设为同一个值。C++ 中初始化其他值应使用花括号初始化、std::fill 或 std::vector。"
+        },
+        {
+          "q": "std::string 的长度应该用 .size() 还是 strlen()？",
+          "a": "处理 std::string 时应优先使用 .size() 或 .length()，它是 O(1) 且相对安全；strlen() 主要用于以 \\0 结尾的 C 风格字符串，需要逐个字符计数，复杂度为 O(n)，且如果字符数组没有正确以 \\0 结尾会一直读下去，导致未定义行为。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:09.040Z",
+      "attemptedHash": "7d55310436c78a78e5675ff4aaf0dba3093b4b86fcda140f15f543ea9013939a",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6856,
+        "completion_tokens": 499,
+        "total_tokens": 7355
+      }
+    },
+    "_posts/CV最新论文精读笔记——SDFoam-Signed-Distance-Foam-for-explicit-surface-reconstruction-Submitted-on-18-Dec-2025.md": {
+      "sourceHash": "9ee21e0ee3ed274910a9a69aefe14d844dc045c42055b14cb0cb82eca02687c9",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一篇关于 CV 新论文 SDFoam 的精读笔记。文章先梳理现有三大技术路线的痛点：NeRF/3DGS 存在几何模糊性，NeuS 等隐式方法推理慢且依赖 Marching Cubes 后处理，RadiantFoam 的 Voronoi 单元间缺乏几何相干性。接着介绍 SDFoam 的混合架构：让每个 Voronoi 单元存储局部 SDF，通过程函方程正则化形成连续距离场，并用 SDF 零交叉直接筛选 Voronoi 面片提取网格，速度提升 5 倍。最后给出定性与定量实验结果、指标数据以及水密性等局限。",
+      "highlights": [
+        "融合显式 Voronoi 结构与隐式 SDF 场",
+        "程函损失约束几何，提升表面一致性",
+        "零交叉筛面替代 Marching Cubes，快 5 倍",
+        "倒角距离由 4.33 降至 1.74，PSNR 基本持平"
+      ],
+      "qa": [
+        {
+          "q": "SDFoam 主要解决了什么问题？",
+          "a": "文章指出，神经渲染与三维重建领域长期存在光度保真度、几何精确度与计算效率难以兼得的权衡问题。SDFoam 针对三类现有方法的结构性缺陷提出混合架构，试图融合 RadiantFoam 的显式速度与 NeuS 的隐式几何质量。"
+        },
+        {
+          "q": "SDFoam 的网格提取为什么比传统方法快？",
+          "a": "传统 SDF 方法依赖 Marching Cubes，需要在高分辨率体素网格上密集采样并线性插值，速度慢且存在数值误差。SDFoam 利用 Voronoi 图天然存在的多边形面，通过检查面两端种子点的 SDF 符号是否一负一正来直接保留表面面片，无需插值，提取速度提升 5 倍。"
+        },
+        {
+          "q": "SDFoam 的效果如何？",
+          "a": "定性上，相比 RadiantFoam，SDFoam 的网格孔洞和漂浮物更少，表面更连续平滑，且提取的是仅含表面的空心网格。定量上，在 DTU 数据集上倒角距离从 RadiantFoam 的 4.33 降到 1.74，PSNR 为 31.18dB，与 RadiantFoam 的 32.04dB 基本持平。不过文章也指出其基于面片筛选的挑选法可能存在水密性问题。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:09.576Z",
+      "attemptedHash": "9ee21e0ee3ed274910a9a69aefe14d844dc045c42055b14cb0cb82eca02687c9",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7500,
+        "completion_tokens": 549,
+        "total_tokens": 8049
+      }
+    },
+    "_posts/DUT开发区cpc组第四次例会笔记（2025秋）.md": {
+      "sourceHash": "dc67964fead3675640ad39cd219a6e15de009bfc39e5f4dd5a7798e008c18f8c",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是DUT开发区cpc组第四次例会笔记，介绍了四种常用算法技巧。前缀和用于O(1)快速求子数组和，差分数组将区间更新优化为O(1)点操作，sort()部分演示了复杂对象的多关键字排序，离散化则解决大值域统计问题——将稀疏大数值压缩为连续排名以便作为数组下标。文中均配有C++代码示例和具体数值演算，并简要提及哈希表原理及其与离散化方案的对比。",
+      "highlights": [
+        "前缀和以空间换时间，子数组求和降至O(1)",
+        "差分数组将区间更新优化为O(1)点操作",
+        "sort()可用lambda实现分数降序、姓名升序",
+        "离散化把大值域压缩为紧凑排名便于计数"
+      ],
+      "qa": [
+        {
+          "q": "前缀和如何快速计算子数组A[i..j]的和？",
+          "a": "使用带0的前缀和数组S，子数组和等于S[j+1]-S[i]。例如A=[3,1,4,1,5]，S=[0,3,4,8,9,14]，A[2..4]的和为S[5]-S[2]=14-4=10。"
+        },
+        {
+          "q": "差分数组对区间A[i..j]加上C时怎么操作？",
+          "a": "只需两步：D[i]加上C，若j不是数组末尾则D[j+1]减去C。之后对D求前缀和即可还原更新后的数组。若j是最后一个索引，则只做第一步。"
+        },
+        {
+          "q": "为什么要使用离散化来统计出现次数？",
+          "a": "当数据量N≤10^5但值域V≤10^9时，直接用原值作数组下标会内存过大。离散化将原值替换为其排序去重后的排名，压缩到[1,N]范围，从而可以高效地用数组计数。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:10.333Z",
+      "attemptedHash": "dc67964fead3675640ad39cd219a6e15de009bfc39e5f4dd5a7798e008c18f8c",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7005,
+        "completion_tokens": 418,
+        "total_tokens": 7423
+      }
+    },
+    "_posts/GAMES101-Lecture-01-Overview-of-Computer-Graphics-笔记.md": {
+      "sourceHash": "ef65dd0a03eb94e99fefbbc084cb577b692b24c72f9fe7e72738955bc08aaa7e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是 GAMES101 前四讲的笔记，内容涵盖课程概览、线性代数复习与变换。Lecture 01 介绍图形学的定义、应用领域（游戏、电影、动画、设计、VR/AR 等）以及课程四大部分：光栅化、几何、光线追踪、动画与模拟。Lecture 02 复习向量点乘、叉乘与矩阵运算。Lecture 03 讲解二维缩放、切变、旋转等线性变换，并引入齐次坐标，用 3×3 矩阵统一表示平移，使变换可通过矩阵级联组合。Lecture 04 补充旋转矩阵正交性质、三维仿射变换、欧拉角、罗德里格斯旋转公式，以及正交投影与透视投影。",
+      "highlights": [
+        "齐次坐标统一表示平移、旋转、缩放",
+        "旋转矩阵是正交矩阵，逆等于转置",
+        "三维旋转可用欧拉角与罗德里格斯公式",
+        "透视投影通过挤压视锥体实现"
+      ],
+      "qa": [
+        {
+          "q": "为什么要在图形学中引入齐次坐标？",
+          "a": "因为传统 2×2 矩阵无法用矩阵乘法表示平移，只能写成 P'=MP+T。引入第三个 w 坐标后，平移可以写成 3×3 矩阵乘法，从而平移、旋转、缩放都能统一为矩阵乘法，多个变换可通过矩阵级联合并成一个矩阵，提高计算效率。"
+        },
+        {
+          "q": "齐次坐标中 w 分量为 0 和 1 分别代表什么？",
+          "a": "在二维中，点表示为 (x, y, 1)^T，向量表示为 (x, y, 0)^T。w 为 1 表示位置（点），为 0 表示方向（向量）。这样设计使向量具有平移不变性：加上平移量后 w 依旧为 0，向量坐标不变。"
+        },
+        {
+          "q": "正交投影和透视投影有什么区别？",
+          "a": "正交投影保持平行线，没有“近大远小”的效果；透视投影符合人类视觉，存在“近大远小”的消失点，平行线会相交于一点。透视投影的实现思路是先将视锥体挤压成长方体，再应用正交投影矩阵。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:10.816Z",
+      "attemptedHash": "ef65dd0a03eb94e99fefbbc084cb577b692b24c72f9fe7e72738955bc08aaa7e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6436,
+        "completion_tokens": 480,
+        "total_tokens": 6916
+      }
+    },
+    "_posts/HTML-CSS-TIC2025秋第三次例会笔记.md": {
+      "sourceHash": "c5e295e871b3ba0ee5ca0c828bf46403768b57e2063ba319dbf77f43002ff732",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是 HTML/CSS-TIC2025 秋第三次例会的笔记，主题是 HTML 中的编写效率技巧。文章指出 VS Code 内置了对 Emmet 的支持，并将其称为编写 HTML 和 CSS 最强大的“语法糖”。核心用法是输入类似 CSS 选择器的缩写后按 Tab 键（或 Enter 键）即可展开为完整 HTML 结构。文中给出了四类示例：用 `!` 或 `html:5` 生成 HTML5 骨架、用 `div.container` 生成带类名的 div、用 `ul>li*5>a` 生成嵌套结构、用 `p#intro` 生成带 ID 的元素。",
+      "highlights": [
+        "VS Code 内置 Emmet 支持",
+        "输入缩写按 Tab 或 Enter 展开",
+        "`!` 或 `html:5` 生成 HTML5 骨架",
+        "`ul>li*5>a` 可生成嵌套结构"
+      ],
+      "qa": [
+        {
+          "q": "Emmet 需要在 VS Code 中额外安装吗？",
+          "a": "不需要，文章明确说明 VS Code 内置了对 Emmet 的支持。"
+        },
+        {
+          "q": "Emmet 缩写怎么展开成完整 HTML 结构？",
+          "a": "输入一个类似 CSS 选择器的缩写，然后按 Tab 键（或 Enter 键）即可快速展开。"
+        },
+        {
+          "q": "怎样用 Emmet 生成带类的 div 和带 ID 的段落？",
+          "a": "输入 `div.container` 按 Tab 可展开为 `<div class=\"container\"></div>`；输入 `p#intro` 按 Tab 可展开为 `<p id=\"intro\"></p>`。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:12.095Z",
+      "attemptedHash": "c5e295e871b3ba0ee5ca0c828bf46403768b57e2063ba319dbf77f43002ff732",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 613,
+        "completion_tokens": 368,
+        "total_tokens": 981
+      }
+    },
+    "_posts/NAOSI留学讲座笔记.md": {
+      "sourceHash": "cf895d25d2e5cdda40d1aca0eccb6ff6b4420eca6c70fc107d118357ae2ac6a5",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是 NAOSI 留学讲座的笔记，面向计划留学的学生。文章先用流程图梳理留学准备过程，随后以硕士为例介绍美国、加拿大、英国、日本、欧洲、香港和新加坡等国家地区的特点与预估年花费，并讲解博士申请核心与策略。文章还给出大一至大四的留学时间线，以及搜集信息、学雅思托福、是否找中介等 Tips。香港与新加坡部分详细说明优势、申请时间线、花销、签证与录取背景参考，最后列出申请材料清单、文书术语和留学趋势分析。",
+      "highlights": [
+        "博士申请重科研成果，多需套磁",
+        "大一到大四各有留学准备重点",
+        "建议有时间精力者选择 DIY 申请",
+        "香港滚动录取，先到先得"
+      ],
+      "qa": [
+        {
+          "q": "博士申请最看重什么？",
+          "a": "博士 PhD 申请（尤其是直博）的重点在于申请人的科研成果和研究经历。博士大多有全奖支持，奖学金能够覆盖日常开销，因此对家庭经济条件的要求较低。"
+        },
+        {
+          "q": "香港录取有什么特点？",
+          "a": "香港录取特点是滚动录取、多批发放、先到先得。不接受不带雅思/托福/六级的申请，即不接受语言后补，同时也不接受雅思单科重考。"
+        },
+        {
+          "q": "中介推荐暑研、卖科研项目或论文有用吗？",
+          "a": "文章指出，多数和专业不相符的科研和水论文不会增加申请成功率；此类项目容易出现学术造假、学术不端等严重问题。建议多看多问教授和前辈，擦亮眼睛，不要过分焦虑。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:13.639Z",
+      "attemptedHash": "cf895d25d2e5cdda40d1aca0eccb6ff6b4420eca6c70fc107d118357ae2ac6a5",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 3596,
+        "completion_tokens": 351,
+        "total_tokens": 3947
+      }
+    },
+    "_posts/Metapi统一AI网关部署全记录.md": {
+      "sourceHash": "25e95f8bd0794d6409918a89882e6438d0990fca9c352894023187e2776bb8e1",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录在 Windows WSL2 环境下用 Docker 部署 Metapi 统一 AI 网关，并通过 Cloudflare Tunnel 对外发布，接入 GLM Coding Plan、Mimo、DeepSeek 和 Codex OAuth 等上游。作者重点复盘了把 DeepSeek 作为备用通道时遇到的系列兼容问题，包括 400 报错被误判为 Key 过期、count_tokens 缺少 max_tokens、跨模型 thinking block 与 beta header 冲突，以及 Codex OAuth 的 previous_response_id 限制，并给出通过 patch.cjs 持久化补丁的修复方案。",
+      "highlights": [
+        "WSL2 + Docker + Cloudflare Tunnel 部署 Metapi",
+        "接入 GLM、Mimo、DeepSeek、Codex OAuth 上游",
+        "DeepSeek 报 400 被误判为 Key 过期",
+        "用 patch.cjs 持久化源码补丁"
+      ],
+      "qa": [
+        {
+          "q": "为什么 DeepSeek 的 Key 会被 Metapi 误判为过期？",
+          "a": "因为错误信息里同时包含 max_tokens 中的 token 和 invalid_request_error 中的 invalid，命中了源码 alertRules.ts 中“token 相关词 + invalid/无效”的判断，导致 400 参数错误被误判为 Key 过期。修复方式是排除 max_tokens 干扰，并把条件改为 safeTokenPhrase && hasExpired。"
+        },
+        {
+          "q": "跨模型切换时 DeepSeek 报 thinking 相关 400，最终是怎么解决的？",
+          "a": "排查发现 Claude Code 会把 interleaved-thinking、redact-thinking、effort、claude-code 等 Claude 专有 beta header 透传给 DeepSeek，DeepSeek 不认识这些 beta。最终方案是保留 body 中的 thinking blocks 和 thinking config、确保 max_tokens 存在，只在 beta header 中过滤掉 DeepSeek 不支持的 Claude 专有 beta。"
+        },
+        {
+          "q": "为什么 Codex CLI 路由到 Codex OAuth 上游会报 Unsupported parameter: previous_response_id？",
+          "a": "因为 Codex OAuth 上游不支持 previous_response_id 参数，而 stripCodexUnsupportedResponsesFields 原本没有删除该字段，续传对话时就会返回 400。解决方法是补丁中增加 delete next.previous_response_id，并将支持该参数的 ikun-codex 中转站作为对话续传的备用路由。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:13.880Z",
+      "attemptedHash": "25e95f8bd0794d6409918a89882e6438d0990fca9c352894023187e2776bb8e1",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5410,
+        "completion_tokens": 528,
+        "total_tokens": 5938
+      }
+    },
+    "_posts/TIC第二节例会-1小时0代码做出你的个人博客静态网站.md": {
+      "sourceHash": "f323deed80893c605bee1570c0870c087bbff7df478103f6220501930949d48a",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是 TIC 第二节例会的实操文档，主题是「1小时、0代码，做出你的个人博客静态网站」。文章先介绍个人博客是什么、为何用 Hexo + GitHub Pages 而非商业平台，再按阶段给出完整流程：课前准备（Watt Toolkit、GitHub 账号、Node.js / Git / VS Code），命令行入门与配置 npmmirror 国内镜像源、安装 hexo-cli，用 hexo init 初始化仓库并在 localhost:4000 本地预览，最后用 VS Code 写 Markdown 文章并部署到 GitHub Pages，同时讲解项目文件结构与 YAML 格式要求。",
+      "highlights": [
+        "介绍博客概念与 Hexo + GitHub Pages 方案",
+        "准备 Watt Toolkit、GitHub 账号与三大开发软件",
+        "命令行配置镜像源、安装并运行 Hexo",
+        "在 localhost:4000 预览并写 Markdown 文章"
+      ],
+      "qa": [
+        {
+          "q": "零基础真的能在一小时内做出个人博客吗？",
+          "a": "文章表示完全可以，只要跟着步骤一步步敲，1 小时后就能拥有同款个人网站，遇到报错可以随时举手呼叫身边的学长学姐。"
+        },
+        {
+          "q": "为什么不用 CSDN、知乎这类平台，而要自己搭博客？",
+          "a": "文章对比后指出，自建博客 0 广告、加载快，源码 100% 掌握在自己手里，网址写进简历能体现动手能力，还能通过友链与其他开发者互换名片。"
+        },
+        {
+          "q": "下载 Hexo 很慢或者卡住怎么办？",
+          "a": "文章建议先把 npm 下载源切换到国内镜像，执行 npm config set registry https://registry.npmmirror.com，再用带 --registry 后缀的命令安装 hexo-cli，即可走阿里云/淘宝维护的高速通道。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:15.043Z",
+      "attemptedHash": "f323deed80893c605bee1570c0870c087bbff7df478103f6220501930949d48a",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7303,
+        "completion_tokens": 393,
+        "total_tokens": 7696
+      }
+    },
+    "_posts/Nuxt3-Supabase全栈应用私有化部署全记录.md": {
+      "sourceHash": "97bbc95e5d830f910fc1e3a2350c4eff60f21f318a7d95f9e556d0a9ba956245",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录了在 Ubuntu 22.04 服务器上私有化部署 Nuxt3 + Supabase 全栈应用的完整过程，分为两部分。第一部分给出理想部署的标准化流程：服务器选型与安全组配置、Swap 设置、Docker 与 Supabase 安装、数据库结构迁移、Nuxt3 容器化、GitHub Actions 自动化部署以及 Nginx 反向代理与 SSL 配置。第二部分按时间线还原了八个真实踩坑案例，包括 Docker 安装失败、磁盘扩容、数据库密码特殊字符与卷持久化导致的密码不一致、构建 OOM、SSR 下 Pinia 崩溃、无效 API Key 及 Certbot 环境冲突，并给出相应解决方案与经验总结。",
+      "highlights": [
+        "标准化 SOP：Docker Compose 部署 Supabase + Nuxt3",
+        "内存不足需配置 Swap 并优化 Nuxt 构建配置",
+        "数据库密码避免特殊字符，JWT_SECRET 必须固定",
+        "实战记录八个典型报错及其解决方案"
+      ],
+      "qa": [
+        {
+          "q": "为什么小内存服务器构建 Nuxt3 时容易失败，如何解决？",
+          "a": "Nuxt3 的 Nitro 服务器构建是内存密集型任务，峰值内存约 3GB 以上，在 2GB 内存服务器上直接构建极易触发 OOM 错误，导致服务器卡死甚至 SSH 断开。文章给出的解决方法是创建 4GB Swap 虚拟内存，并在 nuxt.config.ts 中关闭 sourcemap、限制预渲染并发为 1，从而降低构建内存压力。"
+        },
+        {
+          "q": "修改了 .env 中的数据库密码，为什么 Supabase 还是连不上？",
+          "a": "因为 Docker 的卷持久化机制保存了旧的数据库配置，即使修改了 .env 文件，已存在的数据库数据仍使用旧密码。文章给出的解决方案是进入数据库容器，先将 pg_hba.conf 改为 trust 模式，然后无密码连接并重置 postgres、supabase_auth_admin、supabase_storage_admin 等系统账号的密码。"
+        },
+        {
+          "q": "为什么 Supabase 的 API Key 会报 Invalid signature 错误？",
+          "a": "这通常是因为 JWT_SECRET 被自动生成或被更改，导致生成的 API 令牌无法通过验证。文章建议手动生成并固定 JWT_SECRET（至少 32 字符随机字符串），然后使用 SQL 语句重新生成 anon_key 等 API Keys，即可解决 401 Invalid signature 问题。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:15.944Z",
+      "attemptedHash": "97bbc95e5d830f910fc1e3a2350c4eff60f21f318a7d95f9e556d0a9ba956245",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4896,
+        "completion_tokens": 532,
+        "total_tokens": 5428
+      }
+    },
+    "_posts/VSCode远程开发指南：使用FRP自建公网穿透与内网直连方案.md": {
+      "sourceHash": "2abf3653a6a008e0661a1e08d08aa15291abd93ab833cb45f7d8c0d4250e610b",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文针对 VS Code 自带 Tunnel 在跨国网络下延迟高、连接不稳、保存卡顿的问题，介绍利用公网 VPS 和开源工具 FRP 自建私有穿透隧道的方法。文章分为四部分：在 CentOS 9 的 VPS 上安装配置 frps 并放行防火墙端口；在 Windows WSL 中配置 SSH 服务与 frpc 客户端；通过 SSH Config 让 VS Code 经 VPS 映射端口连接 WSL；以及在同一局域网时通过 Windows 端口转发实现内网直连，并给出自动更新 WSL IP 转发规则的脚本。",
+      "highlights": [
+        "用 VPS + FRP 自建穿透，替代 VS Code 官方 Tunnel",
+        "VPS 需放行 7000 通信端口与 6000 映射端口",
+        "SSH 登录使用 WSL 用户名和密码，而非 VPS 的",
+        "局域网可用 netsh 端口转发实现直连，省 VPS 流量"
+      ],
+      "qa": [
+        {
+          "q": "连接 VPS 映射端口时应该输入哪个密码？",
+          "a": "应输入 WSL 的用户密码，而不是 VPS 的 root 密码，SSH Config 中的 User 也要填 WSL 的用户名。"
+        },
+        {
+          "q": "为什么要在 VPS 上放行 7000 和 6000 端口？",
+          "a": "7000 用于 FRP 服务端与客户端通信，6000 是后续暴露 SSH 的自定义端口，CentOS 9 默认开启 Firewalld，必须放行。"
+        },
+        {
+          "q": "WSL 重启后内网直连失效怎么办？",
+          "a": "因为 WSL 重启后 IP 会变动，可创建一个 PowerShell 脚本，开机运行时先删除旧的端口转发规则，再根据 wsl hostname -I 获取的新 IP 重新添加转发规则。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:16.613Z",
+      "attemptedHash": "2abf3653a6a008e0661a1e08d08aa15291abd93ab833cb45f7d8c0d4250e610b",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1994,
+        "completion_tokens": 411,
+        "total_tokens": 2405
+      }
+    },
+    "_posts/c-cpp易错点：-、-、逻辑运算符.md": {
+      "sourceHash": "d3cd4bd534df27a3492196676ebb96334b09a414027541400cea7852b070410b",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文系统讲解了 C/C++ 中容易出错的运算顺序问题，围绕优先级、结合性与求值顺序三大核心概念展开。通过 `*p++`、`(*p)++`、`*++p`、`++*p` 等典型指针表达式，逐步分解其执行逻辑与结果差异；同时解析了结构体中 `->` 与 `.` 的结合方式，以及 `p->next++` 的常见误区。文章还介绍了逻辑运算符的短路求值在链表安全遍历中的应用，并给出增强版优先级速查表和未定义行为的避坑提示。",
+      "highlights": [
+        "优先级、结合性、求值顺序是理解复杂表达式的三大基石",
+        "`*p++` 取旧值再移动指针，`(*p)++` 则只改变所指的值",
+        "`->` 优先级极高，`*p.val` 必须写成 `(*p).val` 才正确",
+        "逻辑运算 && 和 || 保证短路，可用于链表安全遍历"
+      ],
+      "qa": [
+        {
+          "q": "`*p++` 和 `(*p)++` 有什么区别？",
+          "a": "`*p++` 先记录 p 的当前指向，再将 p 自增指向下一个元素，最后对旧的 p 解引用，结果为原值而指针后移；`(*p)++` 先解引用 p 得到当前元素，再对该元素的值做后缀自增，结果是值加 1 而指针不变。"
+        },
+        {
+          "q": "`p->next++` 是移动指针到下一个节点吗？",
+          "a": "不是。它等价于 `(p->next)++`，取出 p 的 next 指针的值作为表达式结果，然后让 next 指针本身自增（指向内存中下一个 Node 指针位置，通常无意义），并不会移动 p 指针到下一个节点。移动指针应写 `p = p->next;`。"
+        },
+        {
+          "q": "逻辑运算符的短路求值有什么实际用途？",
+          "a": "`&&` 在左侧为 false 时不执行右侧，`||` 在左侧为 true 时不执行右侧。可用于链表安全遍历，如写成 `if (p && p->next)`，先检查 p 存在再访问 p->next，避免空指针崩溃；也可用于带副作用的条件，如 `if (x == 10 || (x += 5) > 10)` 中右侧不会执行。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:19.228Z",
+      "attemptedHash": "d3cd4bd534df27a3492196676ebb96334b09a414027541400cea7852b070410b",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2802,
+        "completion_tokens": 531,
+        "total_tokens": 3333
+      }
+    },
+    "_posts/c-cpp函数与指针学习笔记.md": {
+      "sourceHash": "6d1a2ca3c8f191ce305a84bde3d03b4b95489bef18cc29294d41db7e9d379e66",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一篇关于 C 与 C++ 函数与指针的学习笔记。文章先对比二者在默认参数、函数重载、引用、内联、链接规则上的区别，并详解值传递、地址传递与引用传递的差异；随后介绍函数重载与运算符重载，说明函数不能直接返回局部数组，以及 C++ 可借助移动语义和 RVO 直接返回容器；最后讲解指针基础、指针类型与步长、指针算术及常见陷阱。",
+      "highlights": [
+        "对比 C 与 C++ 函数机制差异",
+        "区分值传递、地址传递与引用传递",
+        "函数不可直接返回局部数组",
+        "指针算术步长由类型大小决定"
+      ],
+      "qa": [
+        {
+          "q": "C++ 和 C 在函数方面有哪些关键区别？",
+          "a": "C++ 支持默认参数、函数重载、引用参数和 inline 内联函数，C 不支持这些；C 通常用宏实现类似内联的效果。C++ 调用 C 函数或反之需要 extern \"C\" 保证兼容。"
+        },
+        {
+          "q": "为什么函数不能直接返回局部数组？",
+          "a": "函数执行完毕后局部变量包括局部数组占用的栈内存会被释放，直接返回会得到指向已释放内存的悬空指针，导致未定义行为。可返回堆内存指针、通过参数传入指针修改，或在 C++ 中返回 std::vector、std::array。"
+        },
+        {
+          "q": "指针的算术运算为什么不是简单加 1 个字节？",
+          "a": "指针加减 N 时实际移动的字节数是 N×sizeof(指向的数据类型)。例如 int* 加 1 移动 4 字节，double* 加 1 移动 8 字节。void* 在 C++ 中不允许进行算术运算，因为它的大小未知。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:19.890Z",
+      "attemptedHash": "6d1a2ca3c8f191ce305a84bde3d03b4b95489bef18cc29294d41db7e9d379e66",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6953,
+        "completion_tokens": 397,
+        "total_tokens": 7350
+      }
+    },
+    "_posts/cpp字符串操作中遇到的坑（2025-10-31）.md": {
+      "sourceHash": "90b6eb4eafc8308c585f7fb7f6a2e7a396b3bd278c5401c4cc0c2969ac1d1989",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文整理了 C++ 字符串操作与输入处理中常见的坑。首先解释 std::string::npos 的含义、无符号类型本质及正确比较方式；接着介绍用 substr() 复制子串、用 replace() 修改子串，以及在指定范围内查找子串的两种方法；还给出大小写转换的 ASCII 原理与 cctype 函数、函数原型的写法。最后重点分析 OJ 输入与本地不同的原因：cin >> 后残留换行符导致 getline 读到空行，推荐用 cin.ignore 清空缓冲区。",
+      "highlights": [
+        "npos 是无符号最大值，表示未找到或直到末尾",
+        "substr 复制子串，replace 直接修改子串",
+        "查找可指定起始位置，或用 substr 限定范围",
+        "cin >> 后需 ignore 换行符，否则 getline 读到空行"
+      ],
+      "qa": [
+        {
+          "q": "std::string::npos 的值是什么，为什么不能直接和 -1 比较？",
+          "a": "npos 的定义是 static const size_type npos = -1;，由于 size_type 是无符号类型，-1 转换后变成该类型能表示的最大值，32 位下约为 2^32-1，64 位下约为 2^64-1。因此不应直接用 -1 或具体数字与查找返回值比较，而应始终使用 std::string::npos 以保证可移植性和可读性。"
+        },
+        {
+          "q": "怎样在字符串的指定范围内查找子串？",
+          "a": "有两种方法：一是使用 find(target, start_pos)，只限定起始位置，返回的仍是相对原字符串的全局索引；二是用 substr(pos, len) 提取子范围再调用 find()，若找到需把返回索引加上起始位置得到全局索引。若想避免复制字符串，则需自行循环调用 find 并检查是否超出结束界限。"
+        },
+        {
+          "q": "为什么同样的代码在本地运行正常，提交到 OJ 却出错？",
+          "a": "原因是输入缓冲区行为差异。cin >> 读取后可能残留换行符，本地终端输入时会被吃掉，但 OJ 从文件重定向读取时不一定丢弃，导致后续 getline() 读到空行，逻辑错位。解决方案是在 cin >> 之后使用 cin.ignore(numeric_limits<streamsize>::max(), '\\n'); 清空行末换行，也可简写为 cin.ignore(1024, '\\n');。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:20.322Z",
+      "attemptedHash": "90b6eb4eafc8308c585f7fb7f6a2e7a396b3bd278c5401c4cc0c2969ac1d1989",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5396,
+        "completion_tokens": 540,
+        "total_tokens": 5936
+      }
+    },
+    "_posts/【首发】在-RTX-5070-Blackwell-WSL2-上跑通最新模型-Meta-SAM-3D-的终极方案.md": {
+      "sourceHash": "cd410e7f36ed68a63a509d9748868470a5afa2b5746650233960672be3a40626",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文介绍在 RTX 5070（Blackwell 架构 sm_120）+ WSL2 环境下部署 Meta SAM 3D 模型的方案。作者先构建 WSL2 与 CUDA 12.8 的 PyTorch 稳定版环境，再源码编译 gsplat 以兼容新架构，用无依赖模式安装 SAM 3D 主体并下载权重。核心是提供 sam3d.py 脚本，通过 Runtime Mocking 伪造 kaolin 与 pytorch3d、拦截 torch.load 将权重加载到 CPU、手动分级调度显存、关闭 Mesh 生成，从而在 12GB 显存上跑通 3D Gaussian Splat 生成。",
+      "highlights": [
+        "RTX 5070 需 CUDA 12.8 版 PyTorch 支持 sm_120",
+        "gsplat 必须源码编译以兼容 Blackwell",
+        "用 Runtime Mocking 绕过 kaolin/pytorch3d",
+        "手动显存分级调度避免 12GB 显存溢出"
+      ],
+      "qa": [
+        {
+          "q": "为什么不能在 RTX 5070 上直接按官方流程运行 SAM 3D？",
+          "a": "文章指出三大挑战：RTX 5070 采用 Blackwell 架构（sm_120），旧版 PyTorch 无法识别；SAM 3D 依赖的 Kaolin 和 PyTorch3D 尚未适配 CUDA 12.8+，源码编译会失败；模型加载占用显存大，直接运行易导致 12GB 显存溢出。"
+        },
+        {
+          "q": "方案中用 Runtime Mocking 做什么？",
+          "a": "在内存中动态创建虚假的 kaolin 和 pytorch3d 模块，骗过 Python 的 import 检查，从而无需编译这些在 RTX 50 上难以构建的库。因为 SAM 3D 仅在数据加载和 Mesh 导出阶段依赖它们，核心推理只依赖 gsplat。"
+        },
+        {
+          "q": "12GB 显存是如何跑通模型的？",
+          "a": "脚本采用显存分级流水线：先拦截 torch.load 把权重加载到 CPU 内存防止初始化 OOM，再按 Stage 1（稀疏结构）和 Stage 2（Gaussian 生成）分别搬运到 GPU、用完即卸载并清缓存，同时通过 hook 复用 Stage 1 结果，避免重复计算。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:21.318Z",
+      "attemptedHash": "cd410e7f36ed68a63a509d9748868470a5afa2b5746650233960672be3a40626",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5154,
+        "completion_tokens": 515,
+        "total_tokens": 5669
+      }
+    },
+    "_posts/【新瓶旧酒】浅析《天使的心跳》（三千字长评）.md": {
+      "sourceHash": "d03a0642252a6d1ea3eac9f279132d509a7a587c14047f3b93d16b26984f849e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一篇写于2024年3月30日的《天使的心跳》长评，作者一年半后将其重新发布。文章从角色名字入手，分析“立华奏”象征声音的接续与“音无结弦”象征声音的停止，认为两人是“有”与“无”的互补，并以心跳与钢琴琴键音（标准音A4）相对应。文章还借ED《Brave Song》探讨生死，联系约翰·洛克关于“自我”即观念与思想的观点，指出Key社与麻枝准追求的是人生体验与幸福，并以麻枝准本人经历心脏手术的奇迹印证作品的羁绊，最后谈及纯爱、价值观导向及作品在感情渲染上“做减法”的独特手法。",
+      "highlights": [
+        "从名字解析奏与音无的互补关系",
+        "以钢琴标准音A4对应心跳与琴声",
+        "借洛克哲学探讨生死与自我",
+        "麻枝准亲历心脏手术的奇迹"
+      ],
+      "qa": [
+        {
+          "q": "文章如何解读“立华奏”和“音无结弦”这两个名字？",
+          "a": "文章认为“奏”是奏响声音、进行和接续音乐，是维持死后世界的人；“音无”是无音、停止奏乐、声音停止，是结束，是这个世界最后离开的人。奏是“有”，音无是“无”，二人是互补关系，正如现实中奏有心、音无心。"
+        },
+        {
+          "q": "文章如何看待《天使的心跳》中的人生意义？",
+          "a": "文章认为麻枝准作品传达的是人生意义在于经历：人应当来走一遭、获得幸福、经历一次。这个死后世界就是为了满足那些在现实中没有收获幸福校园生活的人而存在，让他们可以“走一遭”，经历幸福、完成体验后对转世就无悔了。"
+        },
+        {
+          "q": "文章提到麻枝准本人的经历与《天使的心跳》有什么关联？",
+          "a": "文章指出，立华奏与音无结弦因移植心脏产生羁绊，而这样的故事在AB诞生后发生在原作者麻枝准身上：他在完成AB五六年后和奏一样遇到心脏问题，参与了几乎没有胜算的手术，主治医生称他能被救回除了奇迹没有别的理由。文章因此认为麻枝准笔下的故事已经成为了自己的故事。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:22.854Z",
+      "attemptedHash": "d03a0642252a6d1ea3eac9f279132d509a7a587c14047f3b93d16b26984f849e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2399,
+        "completion_tokens": 502,
+        "total_tokens": 2901
+      }
+    },
+    "_posts/不定积分学习笔记.md": {
+      "sourceHash": "6c9309f5acdd0426edbff41d4195817f656e025158373bf5b9865df120e5a2d9",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一篇不定积分学习笔记，先列出基础函数、三角函数及含参数 a 的常用积分公式，再归纳三类解题技巧：有理分式用“抄分母，加一个减一个”的拆项法，如 1/[x⁴(x²+1)] 两次拆分化简；tan²x 借助 tan²x = sec²x − 1 的恒等变形积分；三角代换用 a sin t、a tan t、a sec t 消去根号，并强调 √(x²−a²) 开方后需讨论符号。最后以 ∫xe^x/(x+1)²dx 为例展示分部积分相互抵消的模型。",
+      "highlights": [
+        "分式拆项口诀：抄分母，加一个减一个",
+        "tan²x 用 sec²x−1 降维后逐项积分",
+        "三角代换消根号，注意绝对值符号讨论",
+        "e^x 乘复杂分式可分部积分互相抵消"
+      ],
+      "qa": [
+        {
+          "q": "“拆项（加一个减一个）”技巧适用于什么情况？",
+          "a": "适用于被积函数是有理分式、分子是常数（通常为 1）、且分母中两个因式只相差一个单项式的情形，例如 x² 与 1+x²。做法是在分子上构造出这些项的差，把 1 变成 (1+x²)−x²，从而拆分约分。"
+        },
+        {
+          "q": "∫tan²x dx 为什么不能用基本积分表直接算？",
+          "a": "因为基本积分表中没有直接针对 tan²x 的公式。需要先由 sin²x+cos²x=1 两边除以 cos²x 得到 tan²x=sec²x−1，再拆成 ∫sec²x dx − ∫1 dx，得到 tanx − x + C。"
+        },
+        {
+          "q": "三角代换中 √(x²−a²) 为什么容易出错？",
+          "a": "令 x=a sec t 后，√(a²sec²t−a²)=√(a²tan²t)=a|tan t|，开方出来是绝对值。当 t∈[0,π/2) 时 tan t>0，结果为 a tan t；当 t∈(π/2,π] 时 tan t<0，结果为 −a tan t，因此必须讨论符号。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:25.075Z",
+      "attemptedHash": "6c9309f5acdd0426edbff41d4195817f656e025158373bf5b9865df120e5a2d9",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 3665,
+        "completion_tokens": 520,
+        "total_tokens": 4185
+      }
+    },
+    "_posts/从Vultr到RackNerd：低成本VPS的调优与IP净化指南.md": {
+      "sourceHash": "b0698c649a89e0294822fbba428c46cf6f724b2f009150215f3a2ea0e167042e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录作者从月费至少 5 美元的 Vultr 迁移到年费约 10 美元的 RackNerd VPS，并围绕低成本场景做系统调优的完整过程。文章先讲向客服工单申请 IPv6 用于校园网免流，再介绍安装 3x-ui 面板、部署抗封锁的 VLESS-Reality 协议，随后通过 Cloudflare WARP 把原生脏 IP 换成 Cloudflare 出口以解锁 Gemini、ChatGPT 等 AI 服务，并配置 Xray 路由分流，让 Google、OpenAI 等域名走 WARP、其余流量直连。最后给出 v2rayN 客户端配置方法，并提醒网卡断流与长时间占满带宽被封的风险。",
+      "highlights": [
+        "RackNerd 年费约 10 美元，比 Vultr 省 80% 以上",
+        "需工单申请 IPv6 才能实现校园网免流",
+        "用 WARP 洗白 IP，配合 Xray 分流解锁 AI",
+        "避免长时间满载，防机房封禁或网卡断流"
+      ],
+      "qa": [
+        {
+          "q": "为什么 RackNerd 的原生 IP 访问 AI 服务会受限？",
+          "a": "文章指出，RackNerd 的 IP 多为数据中心性质，纯净度低，被 Google Search、Gemini、ChatGPT 等服务列为“不受支持的地区”或频繁弹出验证码。因此需要引入 Cloudflare WARP，让 VPS 出站流量走 Cloudflare IP，从而解锁 AI 服务。"
+        },
+        {
+          "q": "为什么要配置 Xray 路由分流，而不是让所有流量都走 WARP？",
+          "a": "因为 WARP 存在延迟瓶颈，所有流量都走 WARP 会导致速度变慢。文章的做法是只把匹配 google、openai、netflix、bing 等域名的请求送入 WARP 通道，其他流量（如下载、测速、普通网页）通过 VPS 原生网络直连，从而兼顾解锁与高速。"
+        },
+        {
+          "q": "使用 RackNerd 搭建这类服务有哪些稳定性风险？",
+          "a": "文章提醒两点：一是 RackNerd 服务器接口有时不稳定，可能出现 SSH 突然断开、面板无法访问，这不一定是被墙，可能是机房侧网卡挂起，可联系客服重置网络接口；二是长时间占用极高带宽（如 300Mbps+ 持续下载）可能触发票房滥用检测，导致网络被暂时切断（Null Route），建议对下载工具适当限速。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:25.870Z",
+      "attemptedHash": "b0698c649a89e0294822fbba428c46cf6f724b2f009150215f3a2ea0e167042e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2829,
+        "completion_tokens": 550,
+        "total_tokens": 3379
+      }
+    },
+    "_posts/从一晚上一米工位到2天68w人访问的网站，我做了什么.md": {
+      "sourceHash": "ee47f0a77e3e081289a12a5fc981107ea4e1b6be58b21417ea471b187dae07e4",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "作者复盘了从一晚上在工位起意、用 Vue3 + TypeScript 纯前端搭建 ACGTI（一个 ACG 相关 MBTI 测试网站）到三天累计 400w+ 浏览、117w+ 访问人数的经历。文章介绍了技术选型与部署在 Cloudflare 的决策、用 Gemini 3.1 Pro 复刻 UI、借助 AI 出题和生成插画的过程，以及把链接发到百人 QQ 群后被大主播直播带火的离奇推广经过。作者还反思了低估传播速度、未设计引流路径、未把流量变现三点失误。",
+      "highlights": [
+        "纯前端 Vue3 项目三天获 400w+ 浏览量",
+        "链接发到百人群后被大主播直播带火",
+        "反思三点失误：传播、引流、变现",
+        "AI 辅助 UI 复刻、出题与插画生成"
+      ],
+      "qa": [
+        {
+          "q": "ACGTI 是什么类型的项目，用了什么技术？",
+          "a": "它是一个 ACG 相关的 MBTI 测试网站，采用 Vue3 + TypeScript 的纯前端方式搭建，部署在 Cloudflare。作者表示选型是为了尽快完成开发，但这也决定了项目上限较低，无法做数据分析。"
+        },
+        {
+          "q": "网站是怎么火起来的？",
+          "a": "作者做完后先给舍友玩，又随手把链接转发到学校 100 人的邦邦 QQ 群，之后有同学发现 180w+ 粉丝的主播永雏塔菲在直播间玩这个网站，流量随之爆发；作者此后也发了社媒，但浏览量基本为零。"
+        },
+        {
+          "q": "作者复盘出的主要失误有哪些？",
+          "a": "三点：一是低估传播速度，没为突然爆火做准备；二是没提前设计引流路径，GitHub 链接放在页面小角落，后来放到显眼位置一天就有了约 150 Stars；三是没把 400w+ 流量转化为资产，若加 Google Ad 理论上可收入 1w+ RMB。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:26.370Z",
+      "attemptedHash": "ee47f0a77e3e081289a12a5fc981107ea4e1b6be58b21417ea471b187dae07e4",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1967,
+        "completion_tokens": 438,
+        "total_tokens": 2405
+      }
+    },
+    "_posts/【首发】针对-Windows-环境下-NVIDIA-RTX-50-系列图形处理单元的-Nerfstudio-3DGS-部署流程.md": {
+      "sourceHash": "ea40283ca290136437426961d824ec07c9caa943dcb00e28d04bcf0efc7221f9",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录了在 Windows 环境下为 NVIDIA RTX 50 系列显卡部署 Nerfstudio (3DGS) 的完整流程。作者先尝试 Windows 原生环境，因 COLMAP 配置困难、PyTorch 不支持 SM_120 架构、MSVC 编译冲突等问题失败，转而采用 WSL2 (Ubuntu) 方案。文中详述了 WSL2 与基础依赖安装、CUDA 12.8 版 PyTorch Nightly 安装、gsplat 源码编译、Nerfstudio 安装及 PyTorch 2.6+ 兼容补丁，并给出自动化流水线脚本与执行方法。",
+      "highlights": [
+        "Windows 原生无法跑通，须转 WSL2",
+        "必须用 PyTorch Nightly + CUDA 12.8",
+        "gsplat 需源码编译适配显卡",
+        "COLMAP 需 offscreen 模式并改用 CPU"
+      ],
+      "qa": [
+        {
+          "q": "为什么 RTX 50 系列显卡不能在 Windows 原生环境下运行 Nerfstudio？",
+          "a": "文章指出三个主要原因：RTX 50 系列采用 Blackwell 架构（SM_120），主流 PyTorch Stable 的二进制包不包含对应内核，会报 'no kernel image is available'；PyTorch Nightly 的 C++ 头文件与 Windows MSVC 编译器存在 'std' 命名空间冲突，导致 gsplat 编译失败；此外 Windows 上配置带 CUDA 且能被 Python 正确调用的 COLMAP 极其痛苦。因此作者结论是 Windows 原生此路不通，需转 WSL2。"
+        },
+        {
+          "q": "部署过程中 PyTorch 应该装哪个版本？文章提到的注意事项是什么？",
+          "a": "文章正文中的命令写的是 CUDA 12.6，但特别加注提醒：12.6 版本在 2025 年 12 月存在兼容性问题，例如识别不到 GPU 型号；13.0 版本能识别但后续也跑不通；只能使用 12.8 版本。作者建议不要直接复制文中命令，而应到 PyTorch 官网找到 12.8 版本 Linux x64 的安装命令来安装。"
+        },
+        {
+          "q": "COLMAP 在 WSL2 中报错无法连接 display、崩溃，文章是如何解决的？",
+          "a": "文章说明 WSL2 默认是无头模式，COLMAP 初始化时会通过 Qt 尝试连接显示器导致崩溃，解决方法是设置环境变量 QT_QPA_PLATFORM=offscreen。此外即使不显示界面，COLMAP 默认使用 SiftGPU 仍需 OpenGL 上下文，会出现 context_.create() 失败，因此要放弃 GPU 特征提取，在命令中加入 --SiftExtraction.use_gpu 0 和 --SiftMatching.use_gpu 0 强制使用 CPU，虽然慢但更稳定。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:26.654Z",
+      "attemptedHash": "ea40283ca290136437426961d824ec07c9caa943dcb00e28d04bcf0efc7221f9",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5959,
+        "completion_tokens": 630,
+        "total_tokens": 6589
+      }
+    },
+    "_posts/关于有限多项或可控的非负项之和的n次根，当n→∞时收敛到这些数的最大值.md": {
+      "sourceHash": "385ce00e5013bcc9e4ad7506380704a7cdadf2cb29263beb7409b30914ca3b54",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章讨论有限多项或可控的非负项之和的 n 次根在 n→∞ 时的极限。结论为有限项时该根式趋于这些数的最大值，并给出夹逼证明。对任意非负序列，文章指出其 limsup 等于上确界，附加条件（如最大值被某项取得）下极限存在且等于上确界。文中还举例说明，并提醒无界或和不收敛时需先保证每个 n 的和有限。",
+      "highlights": [
+        "有限项 n 次根趋于最大值",
+        "任意非负序列 limsup 等于上确界",
+        "最大值被某项取得时极限存在",
+        "用夹逼法证明核心结论"
+      ],
+      "qa": [
+        {
+          "q": "有限多项非负数的 n 次根，n 趋于无穷时极限是什么？",
+          "a": "极限是这些数的最大值。文章给出证明：设 M 为最大值，由 M^n ≤ 和 ≤ k·M^n，开 n 次方得 M ≤ S_n ≤ k^{1/n}M，而 k^{1/n}→1，故 S_n→M。"
+        },
+        {
+          "q": "如果考虑无限多个非负项，结论还成立吗？",
+          "a": "一般只保证 limsup S_n = M（M 为上确界）。若附加条件如存在某项等于 M，或只有有限多项接近 M 使得和可控，则极限存在且等于 M。"
+        },
+        {
+          "q": "文章中提到了哪些直观例子？",
+          "a": "例如 (1^n+2^n+3^n)^{1/n}→3，(0.5^n+0.8^n+0.9^n)^{1/n}→0.9，以及无限项 a_k=1-1/k 时 limsup 为 1，且这种序列极限也为 1。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:43.814Z",
+      "attemptedHash": "385ce00e5013bcc9e4ad7506380704a7cdadf2cb29263beb7409b30914ca3b54",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1352,
+        "completion_tokens": 391,
+        "total_tokens": 1743
+      }
+    },
+    "_posts/关于回文质数筛选的优化路径.md": {
+      "sourceHash": "552f2a9434f7d19cb760aaa2b09babb3278d54009dfb00d36527cb7eced652d9",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章记录了作者在洛谷 P1217 题（求 [a,b] 范围内的回文质数，b 最大一亿）上从超时到通过的优化过程。作者先用一亿位 bool 数组打质数表和回文表，在 C 语言下因数组过大报错，改用 vector，并用欧拉筛生成质数表、binary_search 查表，但仍有测试点 TLE。随后作者将质数查表改为直接访问 zhishu[i]，把回文判断由 to_string + reverse 改为纯数字反转，并用 ios::sync_with_stdio(false) 优化 cin/cout，最终通过。文末还附上了打表法的完整代码。",
+      "highlights": [
+        "洛谷 P1217 范围到一亿，暴力与查表均超时",
+        "大数组改用 vector，质数表用欧拉筛生成",
+        "回文判断改用数字反转，查表改为直接访问",
+        "文末给出打表法代码作为其他方法"
+      ],
+      "qa": [
+        {
+          "q": "为什么最初用 C 语言定义一亿位 bool 数组会报错？",
+          "a": "文章指出正常数组大小一般不超过几 MB，而一亿位 bool 类型数组有 100MB，运行会报错，因此需要改用 vector。"
+        },
+        {
+          "q": "作者做了哪些优化才让程序通过？",
+          "a": "三条优化：查质数表时直接判断 zhishu[i] 而不用 binary_search()；判断回文数时用纯数字方法交换而不创建字符串；对 cout 进行优化，如 ios::sync_with_stdio(false) 和 cin.tie(nullptr)。"
+        },
+        {
+          "q": "文章中提到的“邪修”方法是什么？",
+          "a": "是在洛谷上看到用户 Perfect_Youth 使用打表的方法，把所有回文质数预先写在数组里，用快读输入后直接遍历输出，作者评价其没有技术含量但很邪门。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:44.848Z",
+      "attemptedHash": "552f2a9434f7d19cb760aaa2b09babb3278d54009dfb00d36527cb7eced652d9",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6212,
+        "completion_tokens": 423,
+        "total_tokens": 6635
+      }
+    },
+    "_posts/关于在-Google-Colab-平台基于-Tesla-T4-加速器全流程部署三维高斯泼溅（3DGS）技术的实施协议（2025-12）.md": {
+      "sourceHash": "c1f1deb3ee85bc85621db47a723f6d312302c2d92931073da3ac567f504bd1b3",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文介绍在 Google Colab 免费版 Tesla T4 GPU 上全流程部署三维高斯泼溅（3DGS）的实施方案。文章给出可直接使用的 Colab Notebook，并分四阶段说明：创建实例并降级至 Python 3.7 与 CUDA 11.8 环境、导入视频并自动抽帧与 COLMAP 预处理、执行模型训练、下载 point_cloud.ply 并用 SuperSplat 可视化。文末还系统分析了硬件不兼容、Drive 挂载数据库锁定、内存溢出、无头环境图形依赖等七类技术障碍及应对策略。",
+      "highlights": [
+        "提供 Colab 一键 Notebook，四阶段完成 3DGS 部署",
+        "降级 Python 3.7 与 CUDA 11.8 以规避兼容问题",
+        "预处理须降采样并强制 CPU 运行 COLMAP",
+        "训练约 30-40 分钟，成果用 SuperSplat 查看"
+      ],
+      "qa": [
+        {
+          "q": "在 Google Colab 上部署 3DGS 为什么需要降级 Python 和 CUDA 环境？",
+          "a": "因为 Colab 默认运行时环境版本过高，不符合 3DGS 直接运行的要求。文章采用经官方验证的特定软件环境组合（Python 3.7 与 CUDA 11.8），以规避新版本环境可能引发的兼容性偏差。"
+        },
+        {
+          "q": "为什么在 Colab 中处理数据时要强制使用 CPU 运行 COLMAP，而不是用 GPU？",
+          "a": "COLMAP 默认利用 GPU 加速特征提取，但这依赖 OpenGL 上下文；Colab 的 Tesla T4 GPU 仅配置用于通用计算，没有图形渲染管线，无法创建有效的 OpenGL 上下文，会报 context_.create() 错误。因此强制 CPU 运算（--SiftExtraction.use_gpu 0、--SiftMatching.use_gpu 0）是当前环境下唯一可行的解决方案。"
+        },
+        {
+          "q": "训练完成后如何查看生成的三维模型？",
+          "a": "训练终止后，在 content/gaussian-splatting/output/my_model/point_cloud/iteration_30000/ 目录下找到 point_cloud.ply 文件并下载（体积约 100MB 至 500MB）。该文件不应使用常规图像浏览器打开，建议访问 SuperSplat 在线查看器（https://playcanvas.com/supersplat/editor），将文件拖拽至网页视窗内即可预览，并可用鼠标旋转视角、平移和缩放。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:46.199Z",
+      "attemptedHash": "c1f1deb3ee85bc85621db47a723f6d312302c2d92931073da3ac567f504bd1b3",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5093,
+        "completion_tokens": 550,
+        "total_tokens": 5643
+      }
+    },
+    "_posts/从神经隐式表示到显式网格中等值面提取问题.md": {
+      "sourceHash": "17a5df2ac8a40fb331bf74cd6da4a02c07a643f6817889945fd36fef82a92182",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文围绕神经隐式表示到显式网格转换中的等值面提取问题展开，先介绍经典行军立方体（Marching Cubes）算法的体素遍历流程及其计算冗余、细节丢失、插值误差等局限，再以 SDFoam 为例讲解基于 Voronoi 结构的显式面筛选思路：直接复用已有面片并通过 SDF 值判据筛选，从而无需插值。文章进一步讨论该方法在水密性与流形性上的风险，分析其为何比 NeuS+MC 快约 5 倍，并总结两类方法在效率与拓扑保证之间的工程权衡。",
+      "highlights": [
+        "行军立方体需遍历全部体素，复杂度 O(N³)",
+        "SDFoam 直接筛选 Voronoi 面，无需插值",
+        "筛选法效率高但可能产生孔洞与非流形",
+        "速度快 5 倍源于体积级转为表面级操作"
+      ],
+      "qa": [
+        {
+          "q": "行军立方体（Marching Cubes）的主要局限性是什么？",
+          "a": "文章指出三点：一是计算冗余，作为“盲搜索”算法必须以 O(N³) 复杂度遍历包围盒内所有体素，包括大量无效空气区域；二是细节丢失与混叠，受网格分辨率限制，具有低通滤波特性，倾向平滑锐利边缘，难以重建小于体素尺寸的细节；三是数值近似误差，线性插值假设 SDF 微观线性，在曲率极大区域会引入几何误差。"
+        },
+        {
+          "q": "SDFoam 的显式面筛选是如何提取网格的？",
+          "a": "在 SDFoam 中，空间已被 Voronoi 图划分为凸多面体集合，Voronoi 气泡的边界（面）本身就是数学定义精确的平面多边形，顶点和面已存在于拓扑结构中。网格提取退化为二分类问题：对每个连接气泡 i 和 j 的面 F_ij，检查关联种子点的 SDF 值，若气泡 i 在内部（SDF_i<0）且气泡 j 在外部（SDF_j>0），则该面属于表面；或直接保留所有顶点 SDF 值接近 0 的面。"
+        },
+        {
+          "q": "为什么 SDFoam 的提取速度比 NeuS/MC 快 5 倍？",
+          "a": "主要归功于算法复杂度的降维。NeuS+MC 是体积级操作，需在高分辨率网格（如 512³）上查询 MLP 网络，每次查询都需完整前向传播，计算量巨大；而 SDFoam 提取是表面级操作，只需遍历有限数量的 Voronoi 单元（数量级通常为 10³ 到 10⁴）。此外，SDFoam 训练中已维护 Voronoi 拓扑，提取从“生成”变为“选择”，省去了 MC 中昂贵的梯度计算与插值计算。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:46.449Z",
+      "attemptedHash": "17a5df2ac8a40fb331bf74cd6da4a02c07a643f6817889945fd36fef82a92182",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2137,
+        "completion_tokens": 628,
+        "total_tokens": 2765
+      }
+    },
+    "_posts/在-Linux-WSL-RTX-50-系列显卡上部署原生-GPU-加速-COLMAP-的指南.md": {
+      "sourceHash": "91b93cc19eca41f97053525ee38ae116019f4456317787cf9cd0c83f98a112e4",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文针对 Linux（含 WSL2）搭配 RTX 50 系列（Blackwell 架构）显卡的场景，说明官方 apt/conda 版 COLMAP 不含 CUDA 支持、且 NVCC 不识别 compute_120 导致编译失败。文章给出最优路径：退出 Conda 环境并安装完整依赖、安装 CUDA 工具包与 GCC-12、切换 COLMAP dev 分支，在 CMake 中强制指定算力架构 89 与 GCC-12 编译器，随后用 ninja 编译安装，并以 colmap -h 输出是否含 CUDA 验证。",
+      "highlights": [
+        "apt/conda 版 COLMAP 不含 CUDA，只能跑 CPU",
+        "NVCC 不识别 sm_120，报 compute_120 错误",
+        "降级至 GCC-12 并显式指定编译器路径",
+        "CMake 强制算力架构为 89 实现架构伪装"
+      ],
+      "qa": [
+        {
+          "q": "为什么不能直接用 apt 或 conda 安装的 COLMAP？",
+          "a": "官方仓库的预编译包通常默认移除 CUDA 模块以保证通用兼容性，conda 版本还常有环境路径冲突，导致仅能调用 CPU，特征提取与匹配效率极低。"
+        },
+        {
+          "q": "为什么要强制指定算力架构 89 而不是用 native？",
+          "a": "因为 NVCC 12.0 不认识 Blackwell 的 sm_120，会报 Unsupported gpu architecture 'compute_120'。指定 89（Ada Lovelace）可借助架构向下兼容，由驱动在运行时 JIT 编译为适配 sm_120 的微码。"
+        },
+        {
+          "q": "编译时遇到 unsupported GNU version 错误怎么解决？",
+          "a": "这是 Ubuntu 24.04 默认 GCC 13 与 CUDA 工具包不兼容所致。应安装 gcc-12、g++-12，并在 CMake 中通过 -DCMAKE_C_COMPILER、-DCMAKE_CXX_COMPILER 和 -DCMAKE_CUDA_HOST_COMPILER 显式指定 GCC-12。"
+        },
+        {
+          "q": "如何确认编译出的 COLMAP 已启用 GPU 加速？",
+          "a": "执行 /usr/local/bin/colmap -h | grep CUDA，若输出包含 (Commit ... with CUDA) 即表示成功；若显示 without CUDA 则失败。此外安装后应删除或替换 Conda 环境中的旧 colmap 二进制，避免路径冲突。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:46.814Z",
+      "attemptedHash": "91b93cc19eca41f97053525ee38ae116019f4456317787cf9cd0c83f98a112e4",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4250,
+        "completion_tokens": 552,
+        "total_tokens": 4802
+      }
+    },
+    "_posts/在最新Blackwell架构低显存消费级显卡上通过复现最新论文使用VGGT替代COLMAP加速3DGS训练.md": {
+      "sourceHash": "b144c8415fefb0d04f2fd6a99a581b1dedbd2019bbf5f1e477ed310bd3d249ab",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录了在 Windows 11 + WSL 2 环境下，使用 NVIDIA RTX 5070（12GB 显存）部署 Meta 的 VGGT 模型，替代 COLMAP 完成 3DGS 场景初始化，并接入 Nerfstudio/Splatfacto 训练流程的实践。文章给出了 Conda 环境、PyTorch（CUDA 12.4）、VGGT 安装与推理脚本要点，并汇总了显存溢出、distutils 冲突、脚本命名冲突、空点云、WSL 下 Zone.Identifier 文件等踩坑与解决方案。",
+      "highlights": [
+        "RTX 5070 + WSL 2 部署 VGGT 替代 COLMAP",
+        "推理后需及时释放中间变量以防显存溢出",
+        "置信度固定阈值易致空点云，改用动态 Top-K",
+        "接入 Nerfstudio 时使用 --skip-colmap 参数"
+      ],
+      "qa": [
+        {
+          "q": "为什么输入图片增多后程序会卡死而不是报错？",
+          "a": "VGGT 基于 Transformer，显存占用随 Token 数量（图片数 × 分辨率）平方级增长。在 Windows/WSL 下存在共享显存机制，12GB 显存耗尽后会调用系统内存作为显存，内存带宽远低于显存，导致速度断崖式下跌，表现为程序“卡死”、Ctrl+C 无法终止。"
+        },
+        {
+          "q": "如何解决 VGGT 生成点云为空导致 Nerfstudio 报错的问题？",
+          "a": "原因是 VGGT 默认置信度过滤阈值（conf > 5.0）对纹理较弱或图片较少的场景过于严苛，导致 points3D.bin 中无点。解决方案是弃用固定阈值，改用动态 Top-K 策略，强制保留每张图中置信度最高的 N 个点。"
+        },
+        {
+          "q": "针对 12GB 显存，文章建议如何调整推理参数？",
+          "a": "建议将输入分辨率 vggt_res 设为 518（图片少于 30 张），或设为 448/336（图片多于 30 张）；同时在 model.aggregator 推理结束后立即执行 del aggregated_tokens_list 和 torch.cuda.empty_cache() 释放显存。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:48.178Z",
+      "attemptedHash": "b144c8415fefb0d04f2fd6a99a581b1dedbd2019bbf5f1e477ed310bd3d249ab",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 3021,
+        "completion_tokens": 494,
+        "total_tokens": 3515
+      }
+    },
+    "_posts/城市级多模态混合神经重建：基于GIS几何先验与语义-几何场分解的真实三维重建调研报告.md": {
+      "sourceHash": "2c6b7e81dc6d3d886de13da7ccbbbf7d015e45fab93d676cf94868986e00f491",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一份城市级多模态神经重建调研报告，提出以“分而治之、混合输出”为核心的管线：利用GIS提供粗糙几何先验，图像提供语义信息将场景分解为静态几何场、体积场和动态场，分别采用SDF+3DGS双重表征、3D高斯泼溅和可变形3DGS表示，并用LiDAR增强几何约束。文章还提出基于先验引导的残差SDF与强度感知多模态注意力两个论文思路，并详细描述了从数据对齐、先验构建、混合优化到资产导出的四阶段流程。",
+      "highlights": [
+        "GIS先验+残差SDF解决弱纹理白墙噪声",
+        "LiDAR强度仲裁玻璃幕墙穿透与倒影问题",
+        "按几何属性分解场景并混合SDF与3DGS",
+        "统一光栅化实现半透明软遮挡实时渲染"
+      ],
+      "qa": [
+        {
+          "q": "该方案为什么要把城市场景分解为三个子空间场？",
+          "a": "因为城市由人工规则几何体（建筑、道路）、自然不规则几何体（植被）和动态物体（车辆）组成，不能对所有物体一视同仁。静态几何场有明确表面边界，适合Mesh输出；体积场结构复杂，适合3D高斯点云；动态场随时间变化，适合4D可动画模型。这种“分而治之，混合输出”能针对不同几何属性选择最优数学表示。"
+        },
+        {
+          "q": "残差SDF中的零初始化策略如何解决白墙重建的噪声问题？",
+          "a": "将最终SDF定义为固定的GIS先验场与可学习残差场之和，训练初期强制残差输出为0，使优化起点即为平整的GIS模型。在缺乏纹理梯度的白墙区域，残差网络没有梯度驱动会倾向于保持为0，重建结果自动退化为平整的GIS平面，从而从根本上消除噪声和凹凸不平的伪影。"
+        },
+        {
+          "q": "面对玻璃幕墙，方案如何避免LiDAR穿透或镜面反射导致的几何错误？",
+          "a": "方案构建基于LiDAR强度的物理置信度掩码：高强度区域信任LiDAR，低强度或穿透区域则判定出现视觉-几何冲突，自动屏蔽光度损失并切换到GIS平面约束，将SDF零等势面强制锁定在GIS平面上，只允许优化外观，从而重建出平整的玻璃几何，而非凹陷的倒影几何。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:49.812Z",
+      "attemptedHash": "2c6b7e81dc6d3d886de13da7ccbbbf7d015e45fab93d676cf94868986e00f491",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7413,
+        "completion_tokens": 520,
+        "total_tokens": 7933
+      }
+    },
+    "_posts/微分方程速成笔记.md": {
+      "sourceHash": "d1e2c3f1a4daaf99cb1f74d753ba3fda53860ec6b3998ff56e16ceb50eff8215",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一份微分方程速成复习笔记，面向高数期末考试。文章先梳理了阶、通解、特解、线性方程等基本概念，随后按题型分类讲解解法：一阶方程涵盖可分离变量、齐次、一阶线性、积分方程和伯努利方程；二阶部分讲解缺 y 型与缺 x 型可降阶方程，以及常系数线性齐次与非齐次方程的待定系数法和叠加原理；最后补充了高阶常系数方程的特征根对应表与欧拉方程的算子法。每种题型均配有例题与详细解答步骤。",
+      "highlights": [
+        "按题型分类整理各阶微分方程解法",
+        "每类方程均配有完整例题与解答",
+        "非齐次方程用待定系数法求特解",
+        "欧拉方程用微分算子 D 换元求解"
+      ],
+      "qa": [
+        {
+          "q": "如何判断一个微分方程是不是线性的？",
+          "a": "看 y 和它的各阶导数是否都是一次的，且系数都是 x 的函数。例如 y''-2y=3 是线性的；而 y'=y^2+1、y'=sin y+6y、y'y=1 都是非线性的，因为 y 出现了二次、出现在 sin 中或与导数相乘。"
+        },
+        {
+          "q": "二阶常系数非齐次方程的通解如何构成？求特解时 k 怎么定？",
+          "a": "通解 = 对应齐次方程通解 + 一个非齐次特解。用待定系数法时，对 f(x)=P_m(x)e^{αx}，设 y*=x^k Q_m(x)e^{αx}，看 α 是否为特征根：不是根 k=0，单根 k=1，重根 k=2；对含 cosβx、sinβx 的类型，则看 α±βi 是否为特征根，不是根 k=0，是根 k=1。"
+        },
+        {
+          "q": "欧拉方程怎么识别和求解？",
+          "a": "识别特征是每一项中 x 的次数与导数阶数严格一致，如 x^2y''+4xy'+2y=0。解法是令 x=e^t（默认 x>0），记 D=d/dt，将 x^k y^{(k)} 替换为 D(D-1)…(D-k+1)y，化为关于 t 的常系数线性方程求解，最后把 t 换回 ln x、e^t 换回 x。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:51.187Z",
+      "attemptedHash": "d1e2c3f1a4daaf99cb1f74d753ba3fda53860ec6b3998ff56e16ceb50eff8215",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6552,
+        "completion_tokens": 542,
+        "total_tokens": 7094
+      }
+    },
+    "_posts/对-UrbanScene3D-数据集的一次初步调研.md": {
+      "sourceHash": "828e020755a90f1824dca918113b2a28119c453d98d536a76fffa859d502861e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "作者为“基于 GIS 先验的 SDF 城市级三维重建”调研 UrbanScene3D 数据集，判断其能否跑通研究路线。文章逐一分析主要目录：Simulator.zip 本质是 UE 工程；Proxy 为近似 GIS 体块的粗代理几何；Image/Polytech 提供 DJI 航拍图像；Reconstructed 等为辅助产物。作者认为该数据集不适合直接作为标准 benchmark，但 Image + Proxy 可构成最小实验闭环，并提出先裁剪主体建筑、解决坐标系对齐的简化实验设想。",
+      "highlights": [
+        "Simulator.zip 本质是 UE 工程文件",
+        "Proxy 是近似 GIS 体块的粗灰模",
+        "Image/Polytech 提供航拍训练图像",
+        "坐标系对齐是关键工程问题"
+      ],
+      "qa": [
+        {
+          "q": "UrbanScene3D 能直接当作端到端城市级重建 benchmark 吗？",
+          "a": "作者认为不能。各部分资源定位不完全统一，Simulator 更像仿真工程，Proxy 只是较粗的代理几何而非精确 GIS，不同目录之间还需额外处理坐标系和配准问题。"
+        },
+        {
+          "q": "Proxy 目录能直接用作 GIS 先验吗？",
+          "a": "不能整场直接用。Polytech_proxy 中主体建筑近似 GIS 立方体，但主体之外模型精度稍高、并非规则体块，带有混合属性，更实际的用法是先裁剪，只保留主体建筑作为先验。"
+        },
+        {
+          "q": "如果只想先验证方法可行性，最小实验闭环是什么？",
+          "a": "作者建议只用 Image + Proxy：从 Image/Polytech 选取覆盖主体建筑的航拍图像，从 Polytech_proxy 裁剪主体建筑规则体块，手工或半自动对齐坐标系，再用体块作为 SDF 几何先验，在图像监督下恢复细节。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:51.668Z",
+      "attemptedHash": "828e020755a90f1824dca918113b2a28119c453d98d536a76fffa859d502861e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2215,
+        "completion_tokens": 397,
+        "total_tokens": 2612
+      }
+    },
+    "_posts/排序算法汇总.md": {
+      "sourceHash": "7200c3b0d655ec9f297abcf58f595d0c8b46845427876e3e8afc38620362234e",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文汇总了多种常见排序算法的核心思想、特征与复杂度。文章依次介绍了冒泡排序、快速排序、直接插入排序、希尔排序、选择排序和堆排序：冒泡排序通过相邻比较交换让大元素逐步右移，并给出可提前结束的优化写法；快速排序采用分治与分区递归，附 C++ 实现；插入排序把元素逐个插入已排序区；希尔排序按 gap 分组做插入排序并逐步缩小间隔；选择排序每轮选出最小元素放到已排序区末尾；堆排序则介绍了大顶堆的构建与 heapify 调整过程。文中还说明了各算法的时间空间复杂度与稳定性。",
+      "highlights": [
+        "覆盖冒泡、快排、插入、希尔、选择、堆排序",
+        "逐一说明各算法思路、示例与复杂度",
+        "多数算法附带 Python 或 C++ 代码实现",
+        "标注了每种排序是否稳定"
+      ],
+      "qa": [
+        {
+          "q": "冒泡排序的最好时间复杂度是多少？",
+          "a": "最好情况是 O(n)，即数组已经有序时，配合标志位检测可以提前结束。"
+        },
+        {
+          "q": "快速排序的最坏时间复杂度是多少？",
+          "a": "最坏为 O(n²)，文章说明当数组已近似有序时可能出现这种情况，其平均复杂度为 O(n log n)，且是不稳定排序。"
+        },
+        {
+          "q": "哪些排序算法是稳定的？",
+          "a": "文章中标注冒泡排序和直接插入排序是稳定排序（✅），快速排序、希尔排序、选择排序和堆排序均为不稳定排序（❌）。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:57:03.140Z",
+      "attemptedHash": "7200c3b0d655ec9f297abcf58f595d0c8b46845427876e3e8afc38620362234e",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7016,
+        "completion_tokens": 338,
+        "total_tokens": 7354
+      }
+    },
+    "_posts/思想道德与法治复习笔记.md": {
+      "sourceHash": "92161f2391299c678be6c43c58eb7a5e4d0ef8ac85c4b06ec8fc6678c86b0d95",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是《思想道德与法治》课程的复习笔记，按绪论及前六章梳理核心考点。绪论阐明道德与法治相互支撑的关系；第一章讲人生观、人生价值及实现条件；第二章讲理想与信念的内涵、特征及理想与现实的关系；第三章讲中国精神、伟大建党精神与爱国主义；第四章讲社会主义核心价值观的内容与践行；第五章讲社会主义道德核心、原则与公民道德建设；第六章讲法律特征、习近平法治思想、宪法地位与法治思维。",
+      "highlights": [
+        "以思想道德与法治关系为绪论重点",
+        "覆盖人生观、理想信念至法治素养六章",
+        "逐条整理定义、特征与核心地位",
+        "多处标注考研考点便于复习"
+      ],
+      "qa": [
+        {
+          "q": "人生观的主要内容及其关系是什么？",
+          "a": "人生观是人们对人生的总看法，主要包括人生目的、人生态度和人生价值。其中人生目的是核心，决定人生态度和人生价值；人生态度影响人生目的与价值；人生价值制约人生目的和人生态度。"
+        },
+        {
+          "q": "理想与现实是什么关系？",
+          "a": "二者是对立统一的关系。对立性表现为“应然”与“实然”的矛盾；统一性表现为理想受现实规定和制约，并在认识现实的基础上发展起来。二者相互包含与转化，在一定条件下理想可以转化为未来的现实。"
+        },
+        {
+          "q": "全面依法治国的基本格局中，科学立法、严格执法、公正司法、全民守法各处于什么地位？",
+          "a": "科学立法是前提，严格执法是关键，公正司法是重点，全民守法是基础。其中公正是法治的生命线，是司法活动最高的价值追求，公正司法是维护社会公平正义的最后一道防线。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:52.298Z",
+      "attemptedHash": "92161f2391299c678be6c43c58eb7a5e4d0ef8ac85c4b06ec8fc6678c86b0d95",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4333,
+        "completion_tokens": 361,
+        "total_tokens": 4694
+      }
+    },
+    "_posts/日语中延长音お、う选择.md": {
+      "sourceHash": "ac4de04c89c8e35d79923e74bb811626a2f596a06299e271b0c844899bfb0aea",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文讲解日语「お段」假名长音的书写规则。核心原则是：绝大多数情况下用「う」表示お段长音，如「こう」「とう」「おう」「きょう」。只有极少数词源清晰的词汇用「お」，如「おお」（大）、「とお」（十）、「ほお」（頬）、「こお」（氷）。外来语和拟声词则用长音符号「ー」表示，如コーヒー、スポーツ。文章最后总结：书写时首选「う」，只有特殊词汇才记作「お」。",
+      "highlights": [
+        "お段长音通常写作「う」",
+        "例外用「お」：おお、とお等",
+        "外来语长音用「ー」表示",
+        "书写首选「う」，特殊词才用「お」"
+      ],
+      "qa": [
+        {
+          "q": "「お段」假名的长音一般怎么书写？",
+          "a": "绝大多数情况使用「う」来书写，例如「こう」「とう」「おう」「きょう」，表示前面お段假名的长音。"
+        },
+        {
+          "q": "哪些情况下「お段」长音用「お」？",
+          "a": "只有极少数词源清晰或发音习惯特殊的词汇直接使用「お」，如「おお」（大）、「とお」（十）、「ほお」（頬）、「こお」（氷）。"
+        },
+        {
+          "q": "外来语中的长音怎么表示？",
+          "a": "在外来语（片假名）中，长音通常使用长音符号「ー」表示，如コーヒー、スポーツ，不涉及「お/う」的选择。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:55.879Z",
+      "attemptedHash": "ac4de04c89c8e35d79923e74bb811626a2f596a06299e271b0c844899bfb0aea",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1093,
+        "completion_tokens": 364,
+        "total_tokens": 1457
+      }
+    },
+    "_posts/日语中的方位描述.md": {
+      "sourceHash": "6df69143aa47d6bf63551ca270df27dd8cafce7e510fde0c809908298b68d01d",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文介绍日语中方位描述的相关表达。首先用表格列出上下左右前后、中/里、外、旁边/附近等基础方位词的汉字、假名、罗马字及近似中文读音；接着讲解句型「A は B の C に います/あります」，说明主语、助词「の」「に」以及「います」（用于人和动物）与「あります」（用于无生命物体）的用法，并给出四个例句；最后补充近く、遠く、間、向かい等实用方位词及例句，并列出东南西北四个方向的日语说法。",
+      "highlights": [
+        "列出上下左右前后等基础方位词的日语说法",
+        "讲解「A は B の C に います/あります」句型",
+        "います用于人和动物，あります用于无生命物体",
+        "补充东南西北及近く、間、向かい等词汇"
+      ],
+      "qa": [
+        {
+          "q": "日语中表示「A在B的C方位」应该用什么句型？",
+          "a": "基本句型是「A は B の C に います/あります」。其中「A は」是主语，「B の C」表示在B的C方位，「の」是表示“的”的助词，C是方位词，「に」表示存在的位置。"
+        },
+        {
+          "q": "「います」和「あります」有什么区别？",
+          "a": "「います (imasu)」用于人、动物等有生命的物体；「あります (arimasu)」用于无生命物体，例如桌子、书、建筑物等。文中的例子是「王さんは机の前にいます」和「本は机の上にあります」。"
+        },
+        {
+          "q": "文章里介绍了哪些表示东南西北的日语词汇？",
+          "a": "东是「東（ひがし / higashi）」，西是「西（にし / nishi）」，南是「南（みなみ / minami）」，北是「北（きた / kita）」。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:56.059Z",
+      "attemptedHash": "6df69143aa47d6bf63551ca270df27dd8cafce7e510fde0c809908298b68d01d",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1472,
+        "completion_tokens": 430,
+        "total_tokens": 1902
+      }
+    },
+    "_posts/校园跑脚本开发日志.md": {
+      "sourceHash": "eb06f9d99a3319539b78d3308e5942a214facd38afa3a0e75247a9e7a64248d9",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文记录了大连理工大学开发区校区“校园跑”自动化工具 school-runing-dut 的开发历程。项目在雷电模拟器上运行 Python 脚本，最初尝试用 GPX 路径文件方案，因模拟器不支持导入 GPX 而失败；转向实时控制后，历经历时修改 GPS、adb 广播、sensor 模拟、telnet/socket 等多种尝试均“静默失败”，最终从 ldconsole.exe help 输出中发现 locate 命令才成功。此后还加入了平滑配速、定向 GPS 噪声、防漂移等拟人化反作弊算法，并完善功能、修复多个 Bug。",
+      "highlights": [
+        "GPX 方案因雷电模拟器不支持导入而失败",
+        "关键突破是发现 ldconsole 的 locate 命令",
+        "用平滑配速、GPS 噪声、防漂移实现拟人化",
+        "GUI 使用 tkinter，工作线程配合 queue 通信"
+      ],
+      "qa": [
+        {
+          "q": "为什么最初用 GPX 路径文件的方案没有成功？",
+          "a": "因为雷电模拟器根本不支持导入 GPX 文件，而该项目原本打算用 Python 生成 GPX 文件后在模拟器里导入播放。"
+        },
+        {
+          "q": "脚本向模拟器发送位置命令后为什么“静默失败”？",
+          "a": "脚本成功发送了命令但模拟器里的位置纹丝不动，文章推测原因是 Keep 这类 APP 会进行反作弊检测：如果 GPS 在移动而加速度计、计步器数据为 0，就会判定 GPS 数据为假并忽略它。"
+        },
+        {
+          "q": "最终用什么命令让模拟器中的位置开始移动？",
+          "a": "是从 ldconsole.exe help 的输出中发现官方命令 locate，即 subprocess.run([console_exe_path, \"locate\", \"--index\", \"0\", \"--LLI\", f\"{lon},{lat}\"])，使用后模拟器中的光标开始移动。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:56.249Z",
+      "attemptedHash": "eb06f9d99a3319539b78d3308e5942a214facd38afa3a0e75247a9e7a64248d9",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2813,
+        "completion_tokens": 416,
+        "total_tokens": 3229
+      }
+    },
+    "_posts/极简条件下的房间3D重建，DA3与各3DGS-Pipeline方案横评.md": {
+      "sourceHash": "521aa900954f269552176e61a6a1b98d7d4473e85aaeaae43aa18b06f96a7292",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "作者在极少素材、极低质量的极端条件下（165张约500×700手机照片、15mm广角、室内暗光、大量白墙和反光地板）对比测试了多种结合深度先验的3DGS重建Pipeline，测试环境为12600KF + RTX 5070 12G + 64G RAM。结果发现传统SfM（COLMAP）在弱纹理场景下容易失败或断裂，而Depth Anything 3单目深度先验显著提升重建质量。结论推荐Depth Anything 3 + DepthSplat作为最佳快速方案，Depth Anything 3 + DN-Splatter作为最佳质量方案，不推荐耗时且易破碎的COLMAP + SuGaR。",
+      "highlights": [
+        "测试素材为165张手机暗光照片，15mm广角",
+        "传统COLMAP在弱纹理白墙场景易失败或断裂",
+        "快速方案：DA3 + DepthSplat，约1.5分钟",
+        "质量方案：DA3 + DN-Splatter，30k迭代几乎无断裂"
+      ],
+      "qa": [
+        {
+          "q": "在极少素材、极低质量的极端条件下，哪种Pipeline重建速度最快？",
+          "a": "Depth Anything 3 + DepthSplat，处理时间约1.5min+1s，效果干净、快速且带Mesh，但对没拍到或没拍好的地方会断裂。"
+        },
+        {
+          "q": "哪个方案的重建质量最好？",
+          "a": "Depth Anything 3 + DN-Splatter 30k迭代，处理时间为1.5min+30min~1h，内部细节丰富、外部相对干净，是唯一一个几乎无断裂的方案（包括基本没拍到的地板或反光严重的地板），但视觉效果仍不算满意。"
+        },
+        {
+          "q": "为什么传统COLMAP方案在测试中表现不佳？",
+          "a": "COLMAP在大面积弱纹理场景下容易失败或断裂，且耗时过长。例如COLMAP + SuGaR非SDF模式（Mesh模式和无约束模式）重建失败，SDF模式训练约1.5h以上且结果破碎、漂浮椭球过多，不推荐使用。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:56.502Z",
+      "attemptedHash": "521aa900954f269552176e61a6a1b98d7d4473e85aaeaae43aa18b06f96a7292",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 3042,
+        "completion_tokens": 464,
+        "total_tokens": 3506
+      }
+    },
+    "_posts/用-GLOMAP-替换-COLMAP-加速-3DGS-重建管线.md": {
+      "sourceHash": "f374fc67b15fffabe1df97d4891f91c00e52b886c1cb497e13674867981a11e6",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章介绍在 3DGS 数据预处理阶段用全局式 SfM 系统 GLOMAP 替换增量式重建的 COLMAP 以加速稀疏重建。核心思路是前端仍用 COLMAP 做特征提取与匹配，仅将 colmap mapper 换成 glomap mapper，GLOMAP 读取 database.db 并输出标准 COLMAP 稀疏模型格式。文中给出了系统级依赖安装与 CMake 编译命令、Python 管线中注入 LD_LIBRARY_PATH 等环境变量并替换调用逻辑的做法，并记录了在 GCC 14 与 Conda 混合环境下编译时遭遇的 CMake、OpenGL、CGAL、Boost ABI、SQLite 等问题的排查过程。",
+      "highlights": [
+        "前端保留 COLMAP，仅将 mapper 替换为 glomap mapper",
+        "GLOMAP 读取 database.db，输出 COLMAP 稀疏模型格式",
+        "用系统级 Boost 与 Conda 依赖混合编译以对齐 ABI",
+        "Python 中注入 LD_LIBRARY_PATH 解决 SQLite 运行冲突"
+      ],
+      "qa": [
+        {
+          "q": "用 GLOMAP 替换 COLMAP 后，管线中哪些部分保持不变？",
+          "a": "前端保持不变，继续使用 COLMAP 进行特征提取（Feature Extractor）和匹配（Matcher），只把后端的 colmap mapper 替换为 glomap mapper；输入输出上，GLOMAP 直接读取 COLMAP 的 database.db，并输出标准的 COLMAP 稀疏模型格式（.bin）。"
+        },
+        {
+          "q": "文章推荐的 GLOMAP 编译策略是什么？",
+          "a": "推荐“系统级依赖 + Conda 环境”的混合编译策略：用 apt 安装 libgl1-mesa-dev、libglu-mesa-dev、libcgal-dev、libboost-all-dev 等系统开发库，然后在 Conda 环境激活状态下用指定的 CMake 配置（强制链接系统 Boost 和 OpenGL，设置 CGAL_DIR、BOOST_ROOT 等）进行编译并用 ninja 安装。"
+        },
+        {
+          "q": "运行时出现 SQLite 相关报错的原因和解决办法是什么？",
+          "a": "原因是编译时为解决 OpenGL 问题在 RPATH 中引入了 /usr/lib，导致 GLOMAP 运行时优先加载系统的旧版 libsqlite3.so，而非 Conda 的新版，新代码配旧库导致崩溃。解决办法是在 Python 脚本中修改 LD_LIBRARY_PATH，把 Conda 的 lib 目录放在最前面，强制优先加载 Conda 的动态库。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:51:57.751Z",
+      "attemptedHash": "f374fc67b15fffabe1df97d4891f91c00e52b886c1cb497e13674867981a11e6",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4305,
+        "completion_tokens": 560,
+        "total_tokens": 4865
+      }
+    },
+    "_posts/线代与解几1-9章复习笔记.md": {
+      "sourceHash": "feffdbcb98af2e1af27981b905af011a389d6f5d8253d8be5973b7155dc6cbb5",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一份线性代数与空间解析几何第1至9章的期末复习笔记，以公式和要点罗列为主。内容涵盖矩阵与行列式性质（特殊分块、秩、转置、伴随矩阵、初等矩阵逆）、分块矩阵求逆公式、初等变换解矩阵方程、向量代数（数量积、投影、向量积、混合积）、空间平面与直线方程及位置关系判定、距离公式、向量组线性相关性、矩阵秩的深入性质、线性表示、施密特正交化与正交矩阵、向量空间、特征值与特征向量等考点。",
+      "highlights": [
+        "汇总分块行列式、分块矩阵求逆等常用公式",
+        "整理空间平面、直线方程及位置关系判定方法",
+        "梳理矩阵秩、伴随矩阵秩与线性相关性结论",
+        "归纳特征值性质及矩阵变换后特征值规律"
+      ],
+      "qa": [
+        {
+          "q": "若 AB=O，矩阵的秩满足什么关系？",
+          "a": "根据文章中的西尔维斯特不等式推论，若 AB=O，则 r(A)+r(B) ≤ n，其中 n 是矩阵的阶数。"
+        },
+        {
+          "q": "如何求点到平面的距离？",
+          "a": "已知平面 π: Ax+By+Cz+D=0，点 P0(x0,y0,z0)，距离 d = |Ax0+By0+Cz0+D| / √(A²+B²+C²)。"
+        },
+        {
+          "q": "向量组 a1, a1+a2 在 a1, a2 线性无关时是否线性无关？",
+          "a": "文章例 5-8 表明：通过初等变换 C2-C1 得 r([a1, a1+a2]) = r([a1, a2]) = 2，秩为 2 即满秩，因此 a1, a1+a2 线性无关。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:00.211Z",
+      "attemptedHash": "feffdbcb98af2e1af27981b905af011a389d6f5d8253d8be5973b7155dc6cbb5",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7881,
+        "completion_tokens": 410,
+        "total_tokens": 8291
+      }
+    },
+    "_posts/积分复习笔记.md": {
+      "sourceHash": "5c5f2237333304b80108f08ec979f483296836c37ec24a3d69a3edb5c0c31e35",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一份大一微积分期末复习笔记，系统梳理了积分学核心内容。第一部分涵盖不定积分的原函数存在定理、基本积分公式（含特殊三角与被积不出函数）、三角代换、根式代换、倒代换及分部积分的表格法（DI法），并给出幂函数、三角函数、循环型三类示例。第二部分为定积分，包括定义、奇偶周期性、华理士公式与变上限积分求导。第三部分为反常积分的P积分、Q积分及比较判别法。第四部分为面积、旋转体体积、弧长与旋转曲面面积等几何应用。文末附默写自测表与参考答案。",
+      "highlights": [
+        "整理不定积分基本公式与三角代换、分部积分表格法",
+        "定积分部分含华理士公式与变上限积分求导",
+        "反常积分敛散性判别与几何应用公式汇总",
+        "附默写自测表及参考答案供考前复习"
+      ],
+      "qa": [
+        {
+          "q": "分部积分的表格法（DI法）怎么使用？",
+          "a": "将一列求导直到0，另一列积分，符号交替（+、-、+、-），结果为对角线相乘相加。适用于 ∫P(x)e^{ax}dx、∫P(x)sin ax dx 等；遇循环型需在重复出现原函数形式时停止并移项解方程。"
+        },
+        {
+          "q": "华理士公式（点火公式）如何计算？",
+          "a": "在[0, π/2]上，当n为正偶数时，I_n = (n-1)/n · (n-3)/(n-2) … (1/2) · (π/2)；当n为正奇数时，I_n = (n-1)/n · (n-3)/(n-2) … (2/3) · 1。扩展至[0, π]时偶数结果为2I_n，[0, 2π]时偶数结果为4I_n。"
+        },
+        {
+          "q": "反常积分中P积分和Q积分的敛散性如何判断？",
+          "a": "无穷区间 ∫ₐ^{+∞} 1/x^p dx（a>0）：p>1收敛，p≤1发散。瑕点（无界函数）∫ₐᵇ 1/(x-a)^q dx：q<1收敛，q≥1发散。混合型 ∫ₐ^{+∞} dx/(x^α ln^β x)：α>1收敛，α<1发散，α=1时β>1收敛、β≤1发散。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:00.525Z",
+      "attemptedHash": "5c5f2237333304b80108f08ec979f483296836c37ec24a3d69a3edb5c0c31e35",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 6732,
+        "completion_tokens": 561,
+        "total_tokens": 7293
+      }
+    },
+    "_posts/线代与几何5-6-7-章笔记.md": {
+      "sourceHash": "4c0f2e566e1bdff397eeba0668c5c6bf869eb958b89fb737ef033031c5f04fc4",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是线性代数第五、六、七章的学习笔记。第五章讲解向量组线性相关性的定义与判定、矩阵的秩及其不等式（如Sylvester不等式）、伴随矩阵的秩以及向量组的线性表示与等价；第六章梳理齐次与非齐次线性方程组的解的判定、基础解系、解的结构及三平面几何意义；第七章介绍向量空间、基与维数、过渡矩阵与坐标变换、内积与正交性、施密特正交化及正交矩阵。",
+      "highlights": [
+        "向量组线性无关加分量仍无关，相关删分量仍相关",
+        "齐次方程组基础解系含n-r(A)个向量",
+        "伴随矩阵秩：满秩为n，降一阶为1，再降为0",
+        "正交矩阵列向量组为标准正交向量组"
+      ],
+      "qa": [
+        {
+          "q": "矩阵的秩有哪些重要不等式？",
+          "a": "乘积的秩满足Sylvester不等式：r(A)+r(B)-k≤r(AB)≤min{r(A),r(B)}，其中k为中间维度；AB=0时rank(A)+rank(B)≤n；并列拼接有r(A+B)≤r([A,B])≤r(A)+r(B)。"
+        },
+        {
+          "q": "齐次线性方程组Ax=0的基础解系是什么？",
+          "a": "基础解系是解集的极大无关组，仅齐次方程组才有此概念。当r(A)<n时有非零解，基础解系含n-r(A)个向量，通解为基础解系的任意线性组合。"
+        },
+        {
+          "q": "施密特正交化的作用是什么？",
+          "a": "将线性无关向量组a1,…,am化为与之等价的正交向量组b1,…,bm，若需标准正交基，还要将各向量单位化。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:00.948Z",
+      "attemptedHash": "4c0f2e566e1bdff397eeba0668c5c6bf869eb958b89fb737ef033031c5f04fc4",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 5824,
+        "completion_tokens": 389,
+        "total_tokens": 6213
+      }
+    },
+    "_posts/神经隐式几何与可微渲染中的的底层数学原理与计算管线：从场论基础到物理约束.md": {
+      "sourceHash": "105bac849da8e3dcb6a0faaac48e573f4f6902fb5b42084edb43c7f4c514e8b7",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章围绕神经隐式几何与可微渲染的底层数学原理展开，剥离SDFoam的工程细节，梳理三大核心支柱：符号距离场（SDF）提供几何定义，体渲染积分结合SDF到密度的无偏转换构建从几何到图像的可微映射，程函方程约束作为物理正则化保证几何真实性。最后指出显式骨架加隐式细节的混合表征正成为实时高保真三维重建的主流方向。",
+      "highlights": [
+        "SDF以零水平集定义表面，具备度量信息与无限分辨率",
+        "体渲染通过可微积分将SDF无偏映射为密度以提取锐利表面",
+        "程函方程约束梯度范数为1，抑制病态几何与伪影",
+        "显式骨架加隐式细节的混合表征成为主流趋势"
+      ],
+      "qa": [
+        {
+          "q": "为什么神经重建普遍采用SDF，而不是占用场（Occupancy Field）？",
+          "a": "SDF具备占用场没有的度量信息：其梯度∇f(x)正交于等值面并指向表面法线方向，为光线步进和碰撞检测提供几何导数；同时作为连续函数，SDF理论上具有无限空间分辨率，支持任意精度的布尔运算与平滑融合，克服体素网格的离散化伪影。"
+        },
+        {
+          "q": "为什么需要把SDF转换成体密度？这种转换如何做到无偏？",
+          "a": "传统NeRF直接拟合体密度σ会导致几何表面模糊，呈雾状。文章介绍现代方法（如NeuS）引入基于Logistic分布的转换函数，使密度以SDF为0处为中心呈钟形分布，只有靠近表面时密度趋于极大。可学习的方差s控制分布陡峭程度，训练后期s增大使表面收敛为硬表面，从而保证一阶导数存在，实现无偏的表面重建。"
+        },
+        {
+          "q": "程函方程正则在几何优化中起什么作用？",
+          "a": "仅靠RGB损失约束几何是病态问题，网络可能生成错误几何欺骗渲染方程。程函方程要求SDF的梯度范数恒为1，作为软约束项加入总损失。它能消除高频噪声、确保零水平集锐利唯一，并保证学习到的场具有明确的几何度量意义，避免光线步进因梯度过大过小导致穿模或死循环。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:01.514Z",
+      "attemptedHash": "105bac849da8e3dcb6a0faaac48e573f4f6902fb5b42084edb43c7f4c514e8b7",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2352,
+        "completion_tokens": 502,
+        "total_tokens": 2854
+      }
+    },
+    "_posts/线性代数一至三章复习.md": {
+      "sourceHash": "7324b938ebad2f7d5ee589e168ddc8e3810cf0727e5de0baf32db897858ff54c",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本篇为线性代数一至三章复习笔记，以定义、公式和实例梳理了若干核心概念：三角矩阵与反三角矩阵的判定及行列式公式、矩阵乘法的条件与结果维度、标量矩阵的定义与性质、矩阵可交换的条件、标准基向量提取行/列/元素的技巧、代数余子式及其在行列式展开中的应用、范德蒙德行列式的连乘公式与推论，以及分块矩阵的行列式性质。",
+      "highlights": [
+        "三角矩阵上/下三角及反三角行列式公式",
+        "矩阵相乘要求前列数等于后行数",
+        "标准基向量可提取矩阵的行、列或元素",
+        "范德蒙德行列式等于所有(xj-xi)连乘"
+      ],
+      "qa": [
+        {
+          "q": "两个矩阵相乘需要满足什么条件？",
+          "a": "第一个矩阵A的列数必须等于第二个矩阵B的行数。乘积矩阵的行数等于A的行数，列数等于B的列数。"
+        },
+        {
+          "q": "什么时候两个同阶方阵A和B可交换（AB=BA）？",
+          "a": "常见条件包括：A或B是单位矩阵、标量矩阵或零矩阵；A是B的逆矩阵；A是B的多项式（如A=3B²-5B+2I）；若A、B都可对角化，则当且仅当它们同时可对角化时可交换。一般情况只能直接计算AB与BA比较。"
+        },
+        {
+          "q": "范德蒙德行列式的值如何计算？",
+          "a": "其值等于所有(xj-xi)的连乘积，其中下标满足i<j。由此可知，当且仅当所有xi互不相等时，范德蒙德行列式不为零。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:02.439Z",
+      "attemptedHash": "7324b938ebad2f7d5ee589e168ddc8e3810cf0727e5de0baf32db897858ff54c",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 7551,
+        "completion_tokens": 381,
+        "total_tokens": 7932
+      }
+    },
+    "_posts/编程命名习惯介绍.md": {
+      "sourceHash": "f86893826f48302973b390f5952b17265b863b4b7bbb49d0475c7fdfef122404",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文系统介绍了编程中的命名习惯。文章先提出命名总体原则：见名知意、项目内保持一致性、避免歧义、长短适中、使用专业词汇和常用动词。随后分别讲解变量、函数、类与结构体、常量、枚举的命名规范，并给出对应代码示例。文章还总结常见命名结构模式（如动词+名词、名词+修饰词、动词+状态），整理了大量常用英文命名词汇表，涵盖对象、数量、集合、状态、动作、布尔前缀、文件系统网络等情境，最后附总结表和实用建议。",
+      "highlights": [
+        "命名应见名知意、保持一致、避免歧义",
+        "变量用名词，函数用动词，类用大驼峰",
+        "常量全大写，文件名用小写下划线",
+        "提供大量中英文命名词汇与情境表"
+      ],
+      "qa": [
+        {
+          "q": "变量、函数和类分别应该用什么命名风格？",
+          "a": "根据文章总结表，变量用 camelCase（如 studentCount），函数用 camelCase（如 getAverageScore()），类用 PascalCase（如 UserProfile），常量用 UPPER_SNAKE_CASE，枚举用 PascalCase 加大写枚举项，文件名用 snake_case。"
+        },
+        {
+          "q": "布尔变量命名有什么推荐做法？",
+          "a": "文章建议布尔变量用肯定式加动词，常见前缀包括 is（isRunning）、has（hasError）、can（canRead）、should（shouldUpdate）等，使含义一目了然。"
+        },
+        {
+          "q": "命名时有哪些实用建议？",
+          "a": "文章建议避免缩写（除非行业通用如 id、url、api），避免魔法数字应用常量命名替代，避免重复词汇如 userUserInfo，命名随语境简化，并在代码重构时同步更新命名以免误导。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:05.700Z",
+      "attemptedHash": "f86893826f48302973b390f5952b17265b863b4b7bbb49d0475c7fdfef122404",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4306,
+        "completion_tokens": 387,
+        "total_tokens": 4693
+      }
+    },
+    "_posts/解决vscode写的cpp程序在控制台默认编码不一致问题.md": {
+      "sourceHash": "9ae7ff1bc7684599b7899ac0058cd8b2ec402c1d516733859a14c2b3425488c5",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "文章针对用 VSCode 编写 C++ 程序时，源文件编码与 Windows 控制台默认编码不一致导致中文输出乱码的问题，给出了一种简单的解决办法：在代码中调用 system(\"chcp 65001\")，把控制台的活动代码页临时切换为 UTF-8，与源文件编码匹配。文中给出了包含 <windows.h> 的示例代码，并提醒该命令需放在任何中文输出之前执行。该方法简单直接，但需要在每个需要中文输出的程序中添加这行代码。",
+      "highlights": [
+        "用 system(\"chcp 65001\") 切换控制台编码",
+        "65001 即 UTF-8，可与源文件编码匹配",
+        "命令需在任何中文输出之前执行",
+        "每个需要中文输出的程序都要加这行代码"
+      ],
+      "qa": [
+        {
+          "q": "为什么 VSCode 写的 C++ 程序在控制台输出中文会乱码？",
+          "a": "因为控制台的默认编码与源文件编码不一致，文章通过将控制台编码临时改为 UTF-8 来解决这一问题。"
+        },
+        {
+          "q": "如何在 C++ 程序中临时把控制台编码改为 UTF-8？",
+          "a": "在代码中使用 system(\"chcp 65001\") 命令，即可临时将控制台的活动代码页设置为 UTF-8。"
+        },
+        {
+          "q": "使用 system(\"chcp 65001\") 时有什么注意事项？",
+          "a": "这行代码需要放在任何中文输出之前执行；该方法简单直接，但需要在每个需要中文输出的程序中添加这行代码。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:05.786Z",
+      "attemptedHash": "9ae7ff1bc7684599b7899ac0058cd8b2ec402c1d516733859a14c2b3425488c5",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 589,
+        "completion_tokens": 341,
+        "total_tokens": 930
+      }
+    },
+    "_posts/质数筛选算法的汇总.md": {
+      "sourceHash": "6f4d9c49655e26137ddcf0029eea5cf81fdb7cded444edfc221d22f397cdb7d8",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文汇总了常见的质数筛选算法。首先介绍试除法，即用不超过√n的数逐一试除判断质数，并给出只判奇数和步长为6的优化。随后讲解埃拉托斯特尼筛法，用标记倍数的方式一次性筛出小于N的质数，并附一段C语言欧拉筛实现。接着介绍欧拉筛（线性筛），每个合数仅被其最小质因子筛掉一次，达到O(N)。最后简述分段筛和Miller-Rabin素性测试两种适用于大范围的算法，并以表格综合比较各算法适用范围、时间复杂度和特点。",
+      "highlights": [
+        "试除法判断单个数，复杂度O(√n)",
+        "埃氏筛O(N log log N)生成大量质数",
+        "欧拉筛每个数只被最小质因子筛一次",
+        "分段筛与Miller-Rabin应对大范围和大数"
+      ],
+      "qa": [
+        {
+          "q": "试除法检测1到N的所有数的时间复杂度是多少？",
+          "a": "检测单个数为O(√n)，检测1~N所有数则为O(N√N)。"
+        },
+        {
+          "q": "埃拉托斯特尼筛法的时间复杂度和空间复杂度是多少？",
+          "a": "时间复杂度为O(N log log N)，空间复杂度为O(N)。"
+        },
+        {
+          "q": "线性筛为什么能做到O(N)？",
+          "a": "因为它是在埃氏筛基础上改进，每个数只会被它的最小质因子筛掉一次，因此整体是真正意义上的O(N)。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:06.055Z",
+      "attemptedHash": "6f4d9c49655e26137ddcf0029eea5cf81fdb7cded444edfc221d22f397cdb7d8",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1804,
+        "completion_tokens": 325,
+        "total_tokens": 2129
+      }
+    },
+    "_posts/结构体，类，迭代器学习日志.md": {
+      "sourceHash": "1a8b1f190260c5ea5489d3fd4b9addbff42d47e75ffd10c4923e3c180e04a467",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一篇 C++ 学习日志，内容涵盖结构体、迭代器、std::sort 与匿名函数四个主题。文章介绍了结构体的定义、使用与初始化方式，并对比了 struct 与 class 在默认访问权限和用途惯例上的差异；讲解了迭代器的作用、基础操作、分类以及迭代器失效问题；说明了 std::sort 的调用形式与三种自定义比较规则的写法；最后介绍了 Lambda 表达式的结构、捕获列表及主要应用场景。",
+      "highlights": [
+        "struct 与 class 主要区别是默认访问权限",
+        "迭代器类似指针，统一遍历 STL 容器",
+        "sort 可用函数、Lambda 或仿函数定制规则",
+        "Lambda 通过捕获列表形成闭包"
+      ],
+      "qa": [
+        {
+          "q": "C++ 中结构体和类的主要区别是什么？",
+          "a": "结构体和类几乎是等价的，它们最主要的区别在于默认的访问权限：结构体成员默认是 public，而类成员默认是 private。用途惯例上，结构体通常用于简单的数据集合，类通常用于复杂的面向对象设计。"
+        },
+        {
+          "q": "迭代器失效是什么？如何避免？",
+          "a": "迭代器失效指在迭代器指向的容器上执行某些操作后，该迭代器不再指向原来或任何有效元素。对于 std::vector，插入（除尾部）、删除（除尾部）、调整大小都会导致失效，操作后应使用函数返回的新迭代器；对于 list/map/set，erase 会返回指向被删除元素下一个元素的有效迭代器。"
+        },
+        {
+          "q": "使用 std::sort 时如何自定义排序规则？",
+          "a": "自定义排序规则的核心是提供一个比较函数或比较对象，它接受两个参数、返回 bool，并实现严格弱序。文中给出三种写法：普通函数（函数指针）、Lambda 表达式（C++11 起最推荐）以及重载圆括号运算符的函数对象（Functor）。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:06.308Z",
+      "attemptedHash": "1a8b1f190260c5ea5489d3fd4b9addbff42d47e75ffd10c4923e3c180e04a467",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 4803,
+        "completion_tokens": 416,
+        "total_tokens": 5219
+      }
+    },
+    "_posts/计算几何初识：沃罗诺伊图与德劳内三角剖分（Voronoi-Diagram-Delaunay-Triangulation）.md": {
+      "sourceHash": "7488cf1752c50559adaef566bfac3ae6a097361797a0059d43645505a1cbdc20",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文围绕 SDFoam 论文，从数学定义与工程应用角度剖析其底层的沃罗诺伊图与德劳内三角剖分。文章先给出 Voronoi Cell 的形式化定义与凸多面体、空间完备性等性质，再说明 Delaunay 作为其对偶图及其空球特性，随后指出仅存储种子点即可隐式确定拓扑、支撑可微渲染，最后解释 SDFoam 选择 Voronoi 的自适应离散化与显隐混合表征优势。",
+      "highlights": [
+        "Voronoi Cell 是凸多面体，便于光线求交",
+        "Delaunay 是 Voronoi 对偶图，具备空球特性",
+        "仅存种子点即可隐式确定拓扑关系",
+        "Voronoi 划分自适应，支持加密与稀疏"
+      ],
+      "qa": [
+        {
+          "q": "什么是沃罗诺伊图？",
+          "a": "它把空间划分为 n 个区域，每个区域 C_i 包含所有到种子点 p_i 的距离小于等于到其他任何种子点距离的点，即 C_i = { x | ||x - p_i|| <= ||x - p_j||, 对所有 j != i }。"
+        },
+        {
+          "q": "为什么 SDFoam 选择 Voronoi 而不是体素网格或高斯椭球？",
+          "a": "因为体素网格空间利用率低、存在分辨率与内存矛盾。Voronoi 具有空间自适应性：细节丰富区域加密种子点使气泡变小，平坦空旷区域种子点稀疏使气泡变大，从而节省计算资源。"
+        },
+        {
+          "q": "德劳内三角剖分的空球特性有什么作用？",
+          "a": "空球特性指任何 Delaunay 四面体的外接球内部不包含其他种子点，它最大化了网格中最小角的度数，避免狭长病态的四面体，使网格在拓扑上更鲁棒。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:06.657Z",
+      "attemptedHash": "7488cf1752c50559adaef566bfac3ae6a097361797a0059d43645505a1cbdc20",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2105,
+        "completion_tokens": 411,
+        "total_tokens": 2516
+      }
+    },
+    "_posts/随机数的生成方式.md": {
+      "sourceHash": "30e8a02e068bd7e1c139147297bfbb6a17d9e4d7ba627063246423fc50b718e2",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文介绍在 C 语言中使用 rand() 和 srand() 生成随机数的方法。文章说明计算机生成的是伪随机数，需用 time(NULL) 作为种子初始化，且 srand() 只需在程序开始时调用一次。rand() 返回 0 到 RAND_MAX 之间的整数，通过取模运算可生成指定范围随机数，如 [min, max] 使用 rand() % (max - min + 1) + min，还可用 (double)rand() / RAND_MAX 生成 0.0 到 1.0 的浮点数，并给出完整示例代码。",
+      "highlights": [
+        "伪随机数需用时间做种子",
+        "srand() 只需调用一次",
+        "取模可限定随机数范围",
+        "示例含整数与浮点生成"
+      ],
+      "qa": [
+        {
+          "q": "为什么每次程序运行生成的随机数序列相同？",
+          "a": "因为计算机生成的是伪随机数，根据初始值（种子）通过确定性算法计算得出。如果每次程序运行使用的种子相同，生成的随机数序列也会相同。"
+        },
+        {
+          "q": "srand() 应该在什么时候调用？",
+          "a": "srand() 只需在程序开始时调用一次，用于初始化随机数生成器，通常使用 srand((unsigned int)time(NULL)) 或 srand(time(0))。"
+        },
+        {
+          "q": "如何生成指定范围 [min, max] 的随机整数？",
+          "a": "使用公式 rand() % (max - min + 1) + min。例如生成 [1, 10] 范围随机数，可写为 rand() % (10 - 1 + 1) + 1。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:10.062Z",
+      "attemptedHash": "30e8a02e068bd7e1c139147297bfbb6a17d9e4d7ba627063246423fc50b718e2",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1253,
+        "completion_tokens": 367,
+        "total_tokens": 1620
+      }
+    },
+    "_posts/高数上期中考复习提纲精简版.md": {
+      "sourceHash": "a9fcc92ad363d2d87811135fc13dff7a7d667df3fea5ee58dd8ea431c0a1d6fa",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "这是一份高数上期中考复习提纲精简版，面向大学微积分期中考试。内容涵盖基础三角恒等式与反三角函数关系、两个重要极限、递推数列极限的单调有界准则与压缩映射、高阶导数公式、带拉格朗日余项的泰勒公式与常用麦克劳林展开式、驻点与拐点等概念辨析、曲率与曲率圆、罗尔/拉格朗日/柯西中值定理及介值定理，最后补充了 tan、cot、sec、csc 和反三角函数的导数公式。",
+      "highlights": [
+        "整理三角恒等式与反三角函数关系",
+        "罗列高阶导数公式与泰勒展开式",
+        "辨析驻点、极值点、拐点等概念",
+        "汇总中值定理、介值定理与导数公式"
+      ],
+      "qa": [
+        {
+          "q": "递推数列的极限如何求解？",
+          "a": "文章给出两种方法：单调有界准则是先证明有界性、再证明单调性，最后令 A=f(A) 求极限值；压缩映射则是通过 a=f(a) 求解。"
+        },
+        {
+          "q": "泰勒公式的拉格朗日余项是什么？",
+          "a": "文章给出 R_n(x)=f^{(n+1)}(ξ)/(n+1)!·(x-x0)^{n+1}，泰勒公式主体为 f(x0)、f'(x0)/1!·(x-x0)、f''(x0)/2!·(x-x0)^2 …… 直到 f^{(n)}(x0)/n!·(x-x0)^n 加上余项 R_n。"
+        },
+        {
+          "q": "文章如何区分驻点和拐点？",
+          "a": "文章指出驻点、极值点、间断点、不可导点指“数”（x 值），而拐点指“点”，即坐标 (x, y)。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:11.491Z",
+      "attemptedHash": "a9fcc92ad363d2d87811135fc13dff7a7d667df3fea5ee58dd8ea431c0a1d6fa",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 1757,
+        "completion_tokens": 412,
+        "total_tokens": 2169
+      }
+    },
+    "_posts/高数上极限章节错题集.md": {
+      "sourceHash": "edcb864603bd252103452945bfd16930f73b2002fc4234ad653dc106bab8c663",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文是一份高数极限章节的错题集，收录了四道典型极限选择题及错题解析，涵盖泰勒展开、凑项法、通分与幂指函数极限等技巧，并总结了变上限积分求导的复合函数求导公式与被积函数含参变量时的换元法处理步骤。每道题均给出原题、手写解题步骤、答案及考点特点分析，强调泰勒展开精度和等价无穷小代换的注意事项。",
+      "highlights": [
+        "涵盖四道极限错题的完整解析与答案",
+        "总结变上限积分求导的公式与换元法",
+        "强调泰勒展开精度与等价无穷小代换注意事项"
+      ],
+      "qa": [
+        {
+          "q": "为什么在计算含ln(1+x)的极限时不能直接用等价无穷小x替换？",
+          "a": "因为分母是x²，ln(1+x)展开为x-½x²+o(x²)，若只替换为x会丢失-½x²这一与分母同阶的高阶项，导致精度不够，必须展开到与分母同阶的项数。"
+        },
+        {
+          "q": "遇到被积函数中含x的变限积分（如∫₀ˣ f(x-t)dt）应该如何求导？",
+          "a": "不能直接求导，需用换元法令u=x-t，将x从被积函数内部移到积分限或外部，变换后得到∫₀ˣ f(u)du，再按标准变上限积分求导得f(x)。"
+        },
+        {
+          "q": "计算∞-∞型极限时首选的解题思路是什么？",
+          "a": "首选通分，将差式化为分式，再利用代数公式（如平方差）把高阶无穷小拆分为低阶因子的乘积，然后分别求极限。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:12.115Z",
+      "attemptedHash": "edcb864603bd252103452945bfd16930f73b2002fc4234ad653dc106bab8c663",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2822,
+        "completion_tokens": 389,
+        "total_tokens": 3211
+      }
+    },
+    "_posts/针对-RackNerd-VPS-与中国移动出口带宽限制的排查与优化指南.md": {
+      "sourceHash": "aee4edd54a244266533e329f726c647e0a2d070c5f809d823f4f15d70d667392",
+      "promptVersion": "zh-summary-qa-v1",
+      "model": "opencode:deepseek-v4.1-flash",
+      "status": "ok",
+      "summary": "本文针对 RackNerd 等美西廉价 VPS 在中国移动宽带下晚高峰速度骤降、丢包严重的问题，梳理了从本地网络、VPS 负载到链路路由追踪的排查思路，指出瓶颈在于中国移动国际出口网关拥堵及 Cogent 等廉价线路互联质量差。文章解释了 TCP 协议因拥塞控制在高丢包下不断降速乃至失效的原因，并给出解决方案：部署基于 UDP 的 Hysteria 2，包括端口放行、官方脚本安装、配置文件编写、端口占用处理及客户端带宽设置等要点，以对抗丢包实现提速。",
+      "highlights": [
+        "晚高峰移动出口拥堵致丢包，TCP 协议降速失效",
+        "用 mtr 追踪路由，定位 223.120/221.183 出口瓶颈",
+        "Hysteria 2 基于 UDP，高丢包下仍可跑出高速",
+        "客户端须填写下行带宽才能触发提速效果"
+      ],
+      "qa": [
+        {
+          "q": "为什么基于 TCP 的 VLESS-Reality、VMess 在移动宽带上会失效？",
+          "a": "TCP 具有拥塞控制机制，链路丢包会被判定为拥堵，发送端主动降低发送窗口减速；在移动出口拥堵导致丢包率高达 20%-75% 的环境下，TCP 不断触发减速，实际吞吐量降到 Kbps 级别甚至断连。"
+        },
+        {
+          "q": "如何确认问题出在物理线路而非本地或 VPS？",
+          "a": "先确认本地访问国内网站正常、VPS 的 CPU Steal Time 较低以排除单点故障，再用 tracert 或 mtr 追踪路由；若在 IP 段为 223.120.*.* 或 221.183.*.* 的国际出口节点出现延迟突增和请求超时，即说明出口带宽拥堵。"
+        },
+        {
+          "q": "部署 Hysteria 2 时有哪些关键注意事项？",
+          "a": "需放行 TCP 和 UDP 端口；不使用 CDN 时域名 DNS 解析应关闭代理；RackNerd 可能预装 httpd 或 nginx 占用 80 端口，需停用；客户端配置中必须填写下行带宽，否则不会启动暴力发包模式，提速效果不明显；使用正式证书时关闭“不安全连接”，自签证书则开启。"
+        }
+      ],
+      "generatedAt": "2026-10-18T12:52:13.841Z",
+      "attemptedHash": "aee4edd54a244266533e329f726c647e0a2d070c5f809d823f4f15d70d667392",
+      "attempts": 0,
+      "retryAfter": null,
+      "usage": {
+        "prompt_tokens": 2341,
+        "completion_tokens": 502,
+        "total_tokens": 2843
+      }
+    }
+  }
+}

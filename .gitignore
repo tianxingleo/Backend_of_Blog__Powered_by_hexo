@@ -7,3 +7,13 @@ public/
 .deploy*/
 _multiconfig.yml
 repomix-output.xml
+
+# AI 摘要生成器本地配置（含密钥，严禁入库；.env.example 为可提交模板）
+.env
+.env.*
+!.env.example
+
+# AI 生成器运行期文件
+tools/ai/.generate.lock
+source/_data/.ai_summaries.json.tmp
+source/_data/ai_summaries.json.corrupt-*

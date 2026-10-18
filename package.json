@@ -3,19 +3,22 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "node tools/ai/cli.js generate && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "d": "hexo clean && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update\" && git push"
+    "ai:plan": "node tools/ai/cli.js plan",
+    "ai:generate": "node tools/ai/cli.js generate",
+    "d": "hexo clean && node tools/ai/cli.js generate && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update\" && git push"
   },
   "hexo": {
     "version": "8.1.1"
   },
   "dependencies": {
+    "dotenv": "^18.0.8",
     "hexo": "^8.1.1",
-    "hexo-all-minifier": "^0.5.7",
     "hexo-algoliasearch": "^2.0.1",
+    "hexo-all-minifier": "^0.5.7",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-katex": "^1.1.0",
     "hexo-generator-alias": "^1.0.0",

@@ -1189,17 +1189,11 @@ greetingBox:
       startTime: 20
       endTime: 24
 
-# 文章顶部ai摘要
+# 文章顶部ai摘要（构建时由 AI 预生成并静态写入页面，访客端不调用任何模型接口；
+# 摘要与问答缓存见 source/_data/ai_summaries.json，由 npm run ai:generate 增量维护）
 post_head_ai_description:
   enable: true
-  gptName: AnZhiYu
-  mode: tianli # 默认模式 可选值: tianli/local
-  switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
-  btnLink: https://afdian.net/item/886a79d4db6711eda42a52540025c377
-  randomNum: 3 # 按钮最大的随机次数，也就是一篇文章最大随机出来几种
-  basicWordCount: 1000 # 最低获取字符数, 最小1000, 最大1999
-  key: S-IQC7J39MX5C7PRZM
-  Referer: https://tianxingleo.top/
+  gptName: Tianxingleo
 
 # 快捷键配置
 shortcutKey:
