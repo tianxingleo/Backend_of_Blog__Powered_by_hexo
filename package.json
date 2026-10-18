@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "node scripts/generate-ai-summaries.js && hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "d": "hexo clean && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update - $(Get-Date -Format 'yyyy-MM-dd')\" && git push"
+    "d": "hexo clean && node scripts/generate-ai-summaries.js && node --max-old-space-size=12288 ./node_modules/hexo/bin/hexo generate && hexo deploy && hexo algolia && git add . && git commit -m \"Daily update - $(Get-Date -Format 'yyyy-MM-dd')\" && git push",
+    "ai:generate": "node scripts/generate-ai-summaries.js"
   },
   "hexo": {
     "version": "8.1.1"
