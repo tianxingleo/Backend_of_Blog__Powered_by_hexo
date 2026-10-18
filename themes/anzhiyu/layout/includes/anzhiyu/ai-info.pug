@@ -9,20 +9,8 @@ if (aiConf.enable !== false && page.ai !== false && page.ai !== "false" && (summ
       i.anzhiyufont.anzhiyu-icon-bilibili
       .ai-title-text AI-摘要
       i.anzhiyufont.anzhiyu-icon-arrow-rotate-right(title="重新播放摘要")
-      if summaryText
-        #ai-tag= "AI 预生成"
-      else
-        #ai-tag= "普通导读"
     //- 摘要在构建期静态写入；脚本加载后取出并清空，再以打字动画回放，禁用 JS 时仍可阅读
     .ai-explanation= summaryText || fallbackText
-    if summaryText && entry.qa && entry.qa.length
-      details.ai-qa-box
-        summary.ai-qa-toggle 常见问答（AI 预生成，点击展开）
-        .ai-qa-list
-          each item in entry.qa
-            .ai-qa-item
-              .ai-qa-q= "Q：" + item.q
-              .ai-qa-a= "A：" + item.a
     .ai-btn-box
       .ai-btn-item 介绍自己 🙈
       .ai-btn-item 重新播放摘要 👋

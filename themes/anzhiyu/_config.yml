@@ -1190,7 +1190,7 @@ greetingBox:
       endTime: 24
 
 # 文章顶部ai摘要（构建时由 AI 预生成并静态写入页面，访客端不调用任何模型接口；
-# 摘要与问答缓存见 source/_data/ai_summaries.json，由 npm run ai:generate 增量维护）
+# 摘要缓存见 source/_data/ai_summaries.json，由 npm run ai:generate 增量维护）
 post_head_ai_description:
   enable: true
   gptName: Tianxingleo

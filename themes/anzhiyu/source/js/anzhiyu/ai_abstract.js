@@ -32,8 +32,6 @@
     item.addEventListener("click", () => fn());
   });
 
-  const aiTag = document.getElementById("ai-tag");
-  if (aiTag) aiTag.addEventListener("click", onAiTagClick);
   if (aiTitleRefreshIcon) aiTitleRefreshIcon.addEventListener("click", replaySummary);
 
   startAI(summaryText);
@@ -194,11 +192,7 @@
 
   function introduce() {
     startAI(
-      `我是本站的阅读助手（${gptName}）。本文的摘要与常见问答在构建时由 AI 预生成并直接写入页面，访问时不会调用任何模型接口。点击下方按钮可以重新播放摘要或推荐相关文章。`
+      `我是本站的阅读助手（${gptName}）。本文摘要在构建时由 AI 预生成并直接写入页面，访问时不会调用任何模型接口。点击下方按钮可以重新播放摘要或推荐相关文章。`
     );
-  }
-
-  function onAiTagClick() {
-    startAI("本站 AI 摘要在构建时批量预生成、随页面静态下发，你的浏览器不会向任何模型服务发起请求。");
   }
 })();
