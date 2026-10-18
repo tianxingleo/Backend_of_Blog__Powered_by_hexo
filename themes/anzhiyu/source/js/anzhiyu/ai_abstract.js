@@ -397,6 +397,11 @@
     aiTitleRefreshIcon.style.opacity = "0.2";
     aiTitleRefreshIcon.style.transitionDuration = "0.3s";
     aiTitleRefreshIcon.style.transform = "rotate(" + 360 * refreshNum + "deg)";
+    if (mode !== "tianli") {
+      aiAbstractLocal();
+      refreshNum++;
+      return;
+    }
     if (truncateDescription.length <= basicWordCount) {
       let param = truncateDescription.length - Math.floor(Math.random() * randomNum);
       while (param === prevParam || truncateDescription.length - param === prevParam) {
@@ -435,9 +440,10 @@
 
   function showAiBtn() {
     if (mode === "tianli") {
-      document.getElementById("ai-tag").innerHTML = "TianliGPT";
+      document.getElementById("ai-tag").textContent = "TianliGPT";
     } else {
-      document.getElementById("ai-tag").innerHTML = gptName + " GPT";
+      document.getElementById("ai-tag").textContent =
+        post_ai.dataset.aiSource === "model" ? "AI · 预生成" : "静态导读";
     }
   }
 })();
