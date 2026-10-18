@@ -1,26 +1,36 @@
+- const aiRecords = site.data && site.data.ai_summaries && site.data.ai_summaries.entries || {}
+- const aiPostSource = String(page.source || "").replace(/\\/g, "/").replace(/^source\//, "")
+- const aiRecord = aiRecords[aiPostSource] || aiRecords["_posts/" + aiPostSource.split("/").pop()]
 - let pageFillDescription = get_page_fill_description()
 - let gptName = theme.post_head_ai_description.gptName
 - let mode = theme.post_head_ai_description.mode
 - let switchBtn = theme.post_head_ai_description.switchBtn
-if (pageFillDescription && page.ai)
-  .post-ai-description
+if page.ai !== false && ((aiRecord && aiRecord.summary) || (pageFillDescription && page.ai))
+  .post-ai-description(data-ai-summary=(aiRecord && aiRecord.summary || ''), data-ai-source=(aiRecord && aiRecord.kind || 'manual'))
     .ai-title
       i.anzhiyufont.anzhiyu-icon-bilibili
       .ai-title-text AI-摘要
       if (switchBtn)
         #ai-Toggle 切换
-      i.anzhiyufont.anzhiyu-icon-arrow-rotate-right
-      i.anzhiyufont.anzhiyu-icon-circle-dot(title="朗读摘要")
+      i.anzhiyufont.anzhiyu-icon-arrow-rotate-right(title='重播摘要')
+      i.anzhiyufont.anzhiyu-icon-circle-dot(title="朗读摘要" style=(mode == "local" ? "display:none" : ""))
       #ai-tag
         if mode == "tianli"
           = "Tianli GPT"
         else
-          = gptName + " GPT"
+          = aiRecord && aiRecord.kind == "model" ? "AI · 预生成" : "静态导读"
     .ai-explanation AI初始化中...
     .ai-btn-box
       .ai-btn-item 介绍自己 🙈
-      .ai-btn-item 生成本文简介 👋
+      .ai-btn-item 查看文章摘要 👋
       .ai-btn-item 推荐相关文章 📖
       .ai-btn-item 前往主页 🏠
       .ai-btn-item#go-tianli-blog 前往爱发电购买
+    if aiRecord && aiRecord.qa && aiRecord.qa.length
+      .ai-static-qa
+        .ai-static-qa-title 你可能还想知道
+        each item in aiRecord.qa
+          details.ai-static-question
+            summary= item.q
+            p= item.a
     script(data-pjax src=url_for(theme.asset.ai_abstract_js))

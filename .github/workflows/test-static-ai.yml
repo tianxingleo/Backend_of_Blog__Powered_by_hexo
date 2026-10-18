@@ -1,0 +1,40 @@
+name: Validate static AI blog build
+
+on:
+  pull_request:
+    paths:
+      - 'tools/generate-ai-summaries.js'
+      - 'source/_data/ai_summaries.json'
+      - 'themes/anzhiyu/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/test-static-ai.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - name: Generate AI cache without API key and build static pages
+        run: |
+          npm run build 2>&1 | tee /tmp/hexo-build.log
+          if grep -q 'Script load failed' /tmp/hexo-build.log; then
+            echo 'Hexo attempted to auto-load the AI CLI as a plugin'
+            exit 1
+          fi
+      - name: Verify cache and rendered posts
+        run: |
+          node -e "const d=require('./source/_data/ai_summaries.json'); if(Object.keys(d.entries).length < 1) process.exit(1); console.log('AI cache entries:', Object.keys(d.entries).length)"
+          test -d public/posts
+          sha256sum source/_data/ai_summaries.json > /tmp/ai-cache.sha256
+          npm run ai:generate
+          sha256sum -c /tmp/ai-cache.sha256
